@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CMS DevOps Academy · Full platform</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f4f9fe;
+      font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+      color: #0b263a;
+      line-height: 1.6;
+      padding: 2rem 1.2rem;
+    }
+
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+
+    /* ---------- HEADER / ACADEMY BRAND ---------- */
+    .academy-header {
+      background: #ffffff;
+      border-radius: 2.8rem;
+      padding: 1.8rem 2.5rem;
+      box-shadow: 0 16px 36px -12px rgba(0, 30, 50, 0.08);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 2.8rem;
+      border: 1px solid rgba(0, 60, 100, 0.04);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-icon {
+      background: linear-gradient(145deg, #0c3b57, #1b5c7e);
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.8rem;
+      box-shadow: 0 8px 14px -4px rgba(0, 50, 80, 0.25);
+    }
+
+    .brand h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #082434;
+    }
+
+    .brand h1 span {
+      font-weight: 400;
+      font-size: 0.8rem;
+      background: #dce9f5;
+      color: #003359;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      margin-left: 0.5rem;
+      letter-spacing: 0.2px;
+    }
+
+    .header-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.8rem 1.5rem;
+    }
+
+    .header-actions .cta-btn {
+      background: #0b2b44;
+      color: white;
+      padding: 0.45rem 1.6rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: 0.2s;
+      text-decoration: none;
+      cursor: default;
+    }
+
+    .header-actions .cta-btn i {
+      color: #8fcbff;
+    }
+
+    .header-actions .cta-btn:hover {
+      background: #144a6b;
+      transform: scale(1.01);
+    }
+
+    .header-actions .date-badge {
+      background: #f0f7ff;
+      padding: 0.3rem 1.3rem;
+      border-radius: 60px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border: 1px solid #d2e0ed;
+      color: #16445f;
+    }
+
+    /* ---------- NAV GRID (all sections) ---------- */
+    .nav-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2.8rem;
+    }
+
+    .nav-item {
+      background: white;
+      padding: 0.9rem 0.6rem;
+      border-radius: 2rem;
+      text-align: center;
+      font-weight: 600;
+      color: #1a405a;
+      box-shadow: 0 4px 12px rgba(0, 20, 30, 0.02);
+      border: 1px solid #e6eff8;
+      transition: 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      cursor: default;
+      font-size: 0.95rem;
+    }
+
+    .nav-item i {
+      color: #1a6b97;
+      font-size: 1.1rem;
+    }
+
+    .nav-item:hover {
+      background: #e8f2fc;
+      border-color: #b3cee8;
+      transform: translateY(-3px);
+    }
+
+    /* ---------- MAIN CONTENT (cards) ---------- */
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin: 2.2rem 0 1.2rem;
+    }
+
+    .section-title h2 {
+      font-size: 1.7rem;
+      font-weight: 650;
+      color: #082434;
+      letter-spacing: -0.3px;
+    }
+
+    .section-title h2 i {
+      color: #0066a0;
+      margin-right: 0.6rem;
+    }
+
+    .section-title .badge-soft {
+      background: white;
+      padding: 0.2rem 1.6rem;
+      border-radius: 60px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      border: 1px solid #d2e0ed;
+      color: #16445f;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.8rem;
+      margin: 1rem 0 1.8rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 1.8rem;
+      padding: 1.6rem 1.6rem 1.4rem;
+      box-shadow: 0 6px 18px rgba(0, 20, 30, 0.03);
+      border: 1px solid rgba(0,0,0,0.02);
+      transition: 0.25s;
+      display: flex;
+      flex-direction: column;
+      border-bottom: 3px solid transparent;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 34px -12px rgba(0, 50, 80, 0.10);
+      border-bottom-color: #1b6b99;
+    }
+
+    .card-icon {
+      font-size: 1.8rem;
+      color: #006696;
+      margin-bottom: 0.3rem;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #0b2b44;
+      margin-bottom: 0.3rem;
+    }
+
+    .card p {
+      color: #1f4460;
+      font-size: 0.95rem;
+      flex: 1;
+      margin-bottom: 0.8rem;
+    }
+
+    .card .meta-tag {
+      display: inline-block;
+      background: #eaf2fa;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.15rem 0.9rem;
+      border-radius: 30px;
+      color: #1f5b7e;
+      letter-spacing: 0.2px;
+      text-transform: uppercase;
+      align-self: flex-start;
+    }
+
+    .card-footer-link {
+      margin-top: 0.7rem;
+      border-top: 1px solid #ecf3fa;
+      padding-top: 0.7rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .card-footer-link a {
+      color: #006696;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: 0.2s;
+    }
+
+    .card-footer-link a i {
+      font-size: 0.7rem;
+    }
+
+    .card-footer-link a:hover {
+      color: #003153;
+    }
+    .card-footer-link a:hover i {
+      transform: translateX(4px);
+    }
+
+    /* special community card */
+    .card.community {
+      background: #f2f9ff;
+      border-left: 4px solid #0077be;
+    }
+
+    /* ---------- FOOTER ---------- */
+    .footer-note {
+      margin-top: 3.8rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid #d3e0ec;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.2rem 2.5rem;
+      color: #3d627e;
+      font-size: 0.9rem;
+    }
+
+    .footer-note i {
+      color: #2f7aa8;
+      margin-right: 4px;
+    }
+
+    @media (max-width: 700px) {
+      .academy-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem 1.2rem;
+      }
+      .brand h1 {
+        font-size: 1.5rem;
+      }
+      .nav-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ========== ACADEMY HEADER ========== -->
+  <header class="academy-header">
+    <div class="brand">
+      <div class="brand-icon"><i class="fas fa-graduation-cap"></i></div>
+      <h1>CMS DevOps Academy <span>v2.0</span></h1>
+    </div>
+    <div class="header-actions">
+      <span class="date-badge"><i class="far fa-calendar-alt"></i> <span id="headerDate"></span></span>
+      <a href="#" class="cta-btn" onclick="event.preventDefault(); alert('🚀 Enroll now – CMS DevOps Academy');"><i class="fas fa-rocket"></i> Get started</a>
+    </div>
+  </header>
+
+  <!-- ========== NAVIGATION (9 sections) ========== -->
+  <div class="nav-grid">
+    <div class="nav-item"><i class="fas fa-home"></i> Portfolio</div>
+    <div class="nav-item"><i class="fas fa-book-open"></i> Azure DevOps</div>
+    <div class="nav-item"><i class="fas fa-pen-fancy"></i> Blog</div>
+    <div class="nav-item"><i class="fas fa-code-branch"></i> Terraform</div>
+    <div class="nav-item"><i class="fas fa-question-circle"></i> Interview Q</div>
+    <div class="nav-item"><i class="fas fa-briefcase"></i> Freelancing</div>
+    <div class="nav-item"><i class="fas fa-calendar-check"></i> Mock Booking</div>
+    <div class="nav-item"><i class="fas fa-file-alt"></i> Resume Review</div>
+    <div class="nav-item"><i class="fas fa-users"></i> Community</div>
+  </div>
+
+  <!-- ========== MAIN CARDS (showcase each section) ========== -->
+  <div class="section-title">
+    <h2><i class="fas fa-th-large"></i> All services & resources</h2>
+    <span class="badge-soft"><i class="fas fa-star"></i> 9 domains</span>
+  </div>
+
+  <div class="card-grid" id="mainGrid">
+    <!-- Cards injected via JS -->
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <div class="footer-note">
+    <span><i class="fas fa-graduation-cap"></i> CMS DevOps Academy</span>
+    <span><i class="fas fa-circle" style="color: #2b7aa0; font-size: 0.35rem; align-self: center;"></i></span>
+    <span><i class="fas fa-users"></i> #community · #devops</span>
+    <span><i class="fas fa-calendar-week"></i> daily updates</span>
+  </div>
+</div>
+
+<script>
+  (function() {
+    // ---------- date ----------
+    const now = new Date();
+    const dateStr = now.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    document.getElementById('headerDate').textContent = dateStr;
+
+    // ---------- DATA: 9 sections with cards ----------
+    const sections = [
+      {
+        id: 'portfolio',
+        icon: 'fa-home',
+        title: 'Portfolio',
+        desc: 'Showcase of DevOps projects, architectures, and case studies.',
+        tag: 'featured',
+        link: '#portfolio'
+      },
+      {
+        id: 'azure',
+        icon: 'fa-cloud',
+        title: 'Azure DevOps Course',
+        desc: 'End-to-end Azure Pipelines, Boards, Repos, and Artifacts.',
+        tag: 'course',
+        link: '#azure'
+      },
+      {
+        id: 'blog',
+        icon: 'fa-pen-fancy',
+        title: 'Blog',
+        desc: 'Daily articles: CI/CD, K8s, automation, and cloud native.',
+        tag: 'new',
+        link: '#blog'
+      },
+      {
+        id: 'terraform',
+        icon: 'fa-code-branch',
+        title: 'Terraform Projects',
+        desc: 'Infra as Code — modules, workspaces, state management, AWS/Azure.',
+        tag: 'projects',
+        link: '#terraform'
+      },
+      {
+        id: 'interview',
+        icon: 'fa-question-circle',
+        title: 'Interview Questions',
+        desc: 'Curated DevOps / SRE questions with detailed answers.',
+        tag: 'Q&A',
+        link: '#interview'
+      },
+      {
+        id: 'freelance',
+        icon: 'fa-briefcase',
+        title: 'Freelancing Services',
+        desc: 'CI/CD setup, cloud migration, K8s consulting & support.',
+        tag: 'services',
+        link: '#freelance'
+      },
+      {
+        id: 'mock',
+        icon: 'fa-calendar-check',
+        title: 'Mock Interview Booking',
+        desc: '1:1 mock sessions with DevOps experts. Real-time feedback.',
+        tag: 'booking',
+        link: '#mock'
+      },
+      {
+        id: 'resume',
+        icon: 'fa-file-alt',
+        title: 'Resume Review',
+        desc: 'Professional resume review for DevOps / SRE roles.',
+        tag: 'review',
+        link: '#resume'
+      },
+      {
+        id: 'community',
+        icon: 'fa-users',
+        title: 'Community',
+        desc: 'Join the CMS DevOps community — slack, events, mentorship.',
+        tag: 'join',
+        link: '#community',
+        extraClass: 'community'
+      }
+    ];
+
+    const grid = document.getElementById('mainGrid');
+    if (!grid) return;
+
+    function renderCards(items) {
+      let html = '';
+      items.forEach(s => {
+        const extra = s.extraClass ? ` ${s.extraClass}` : '';
+        html += `
+          <div class="card${extra}">
+            <div class="card-icon"><i class="fas ${s.icon}"></i></div>
+            <h3>${s.title}</h3>
+            <p>${s.desc}</p>
+            <span class="meta-tag"><i class="fas fa-tag"></i> ${s.tag}</span>
+            <div class="card-footer-link">
+              <a href="#" onclick="event.preventDefault(); alert('🔗 ${s.title} — explore more');">
+                explore <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        `;
+      });
+      grid.innerHTML = html;
+    }
+
+    renderCards(sections);
+
+    // optional console
+    console.log('🚀 CMS DevOps Academy · 9 pillars active');
+  })();
+</script>
+
+</body>
+</html>

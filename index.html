@@ -552,6 +552,140 @@
       margin-bottom: 0.2rem;
     }
 
+    /* ========== GITHUB ACTIONS SECTION ========== */
+    .github-section {
+      background: white;
+      border-radius: 1.8rem;
+      padding: 2rem;
+      margin-top: 1rem;
+      box-shadow: 0 6px 18px rgba(0, 20, 30, 0.03);
+      border: 1px solid rgba(0,0,0,0.02);
+    }
+
+    .github-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid #ecf3fa;
+      padding-bottom: 1rem;
+    }
+
+    .github-tabs .tab-btn {
+      background: #f4f9fe;
+      border: none;
+      padding: 0.5rem 1.5rem;
+      border-radius: 60px;
+      font-weight: 600;
+      color: #1a405a;
+      cursor: pointer;
+      transition: 0.2s;
+      font-size: 0.9rem;
+    }
+
+    .github-tabs .tab-btn:hover {
+      background: #e8f2fc;
+    }
+
+    .github-tabs .tab-btn.active {
+      background: #24292e;
+      color: white;
+    }
+
+    .github-qa-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      max-height: 600px;
+      overflow-y: auto;
+      padding-right: 0.5rem;
+    }
+
+    .github-qa-grid::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .github-qa-grid::-webkit-scrollbar-track {
+      background: #f4f9fe;
+      border-radius: 10px;
+    }
+
+    .github-qa-grid::-webkit-scrollbar-thumb {
+      background: #24292e;
+      border-radius: 10px;
+    }
+
+    .github-qa-item {
+      background: #f8faff;
+      border-radius: 1.2rem;
+      padding: 1.5rem;
+      border: 1px solid #e6eff8;
+      transition: 0.25s;
+      border-left: 4px solid #24292e;
+    }
+
+    .github-qa-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px -8px rgba(0, 50, 80, 0.08);
+    }
+
+    .github-qa-item .q-number {
+      display: inline-block;
+      background: #24292e;
+      color: white;
+      padding: 0.1rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .github-qa-item h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0b2b44;
+      margin-bottom: 0.5rem;
+    }
+
+    .github-qa-item h4 i {
+      color: #24292e;
+      margin-right: 0.5rem;
+    }
+
+    .github-qa-item .answer {
+      color: #1f4460;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .github-qa-item .answer code {
+      background: #eaf2fa;
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      color: #24292e;
+    }
+
+    .github-qa-item .answer pre {
+      background: #f4f9fe;
+      padding: 0.8rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.8rem;
+      border: 1px solid #d2e0ed;
+      margin: 0.3rem 0;
+    }
+
+    .github-qa-item .answer ul, 
+    .github-qa-item .answer ol {
+      padding-left: 1.5rem;
+      margin: 0.3rem 0;
+    }
+
+    .github-qa-item .answer li {
+      margin-bottom: 0.2rem;
+    }
+
     /* ========== INTERVIEW QUESTIONS SECTION ========== */
     .interview-section {
       background: white;
@@ -1037,6 +1171,9 @@
       .azure-qa-grid {
         grid-template-columns: 1fr;
       }
+      .github-qa-grid {
+        grid-template-columns: 1fr;
+      }
       .sidebar {
         position: static;
       }
@@ -1067,11 +1204,18 @@
       .azure-qa-item {
         padding: 1.2rem;
       }
+      .github-qa-item {
+        padding: 1.2rem;
+      }
       .interview-tabs .tab-btn {
         padding: 0.4rem 1rem;
         font-size: 0.8rem;
       }
       .azure-tabs .tab-btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
+      }
+      .github-tabs .tab-btn {
         padding: 0.4rem 1rem;
         font-size: 0.8rem;
       }
@@ -1234,6 +1378,24 @@
       <button class="tab-btn" onclick="filterAzureQA('advanced', this)"><i class="fas fa-star"></i> Advanced</button>
     </div>
     <div class="azure-qa-grid" id="azureQAGrid"></div>
+  </div>
+
+  <!-- ========================================================== -->
+  <!-- ========== GITHUB ACTIONS CI/CD SECTION ========== -->
+  <!-- ========================================================== -->
+  <div class="section-title" style="margin-top: 3.5rem;">
+    <h2><i class="fab fa-github"></i> GitHub Actions - CI/CD Scenario Questions</h2>
+    <span class="badge-soft"><i class="fas fa-question-circle"></i> 25 Scenario Q&A</span>
+  </div>
+
+  <div class="github-section">
+    <div class="github-tabs">
+      <button class="tab-btn active" onclick="filterGithubQA('all', this)"><i class="fas fa-list"></i> All Scenarios</button>
+      <button class="tab-btn" onclick="filterGithubQA('beginner', this)"><i class="fas fa-seedling"></i> Beginner</button>
+      <button class="tab-btn" onclick="filterGithubQA('intermediate', this)"><i class="fas fa-chart-line"></i> Intermediate</button>
+      <button class="tab-btn" onclick="filterGithubQA('advanced', this)"><i class="fas fa-star"></i> Advanced</button>
+    </div>
+    <div class="github-qa-grid" id="githubQAGrid"></div>
   </div>
 
   <!-- ========================================================== -->
@@ -1489,6 +1651,70 @@
     }
 
     // ==========================================================
+    // ========== GITHUB ACTIONS CI/CD SCENARIO QUESTIONS ==========
+    // ==========================================================
+    const githubQA = [
+      // Beginner Scenarios (1-8)
+      { id: 1, question: 'Scenario: You need to run a simple CI pipeline on every push to main branch. How do you configure it?', answer: 'Create a YAML file at <code>.github/workflows/ci.yml</code> with:<br><pre>name: CI\non:\n  push:\n    branches: [ main ]\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - name: Run build\n        run: echo "Building..."</pre>', level: 'beginner' },
+      { id: 2, question: 'Scenario: You want to run a workflow only when a pull request is opened. How?', answer: 'Use <code>on: pull_request</code> trigger:<br><pre>on:\n  pull_request:\n    branches: [ main ]</pre>This triggers when a PR is opened, updated, or reopened.', level: 'beginner' },
+      { id: 3, question: 'Scenario: You need to install Node.js in your GitHub Actions workflow. How?', answer: 'Use the <code>actions/setup-node</code> action:<br><pre>steps:\n  - uses: actions/checkout@v4\n  - uses: actions/setup-node@v4\n    with:\n      node-version: \'18\'\n  - run: npm install\n  - run: npm test</pre>', level: 'beginner' },
+      { id: 4, question: 'Scenario: You want to cache npm dependencies to speed up your workflow. How?', answer: 'Use <code>actions/cache</code> action:<br><pre>steps:\n  - uses: actions/checkout@v4\n  - uses: actions/setup-node@v4\n    with:\n      node-version: \'18\'\n  - uses: actions/cache@v3\n    with:\n      path: ~/.npm\n      key: ${{ runner.os }}-node-${{ hashFiles(\'**/package-lock.json\') }}\n  - run: npm install\n  - run: npm test</pre>', level: 'beginner' },
+      { id: 5, question: 'Scenario: You need to run a workflow manually. How do you enable manual triggers?', answer: 'Use <code>workflow_dispatch</code> trigger:<br><pre>on:\n  workflow_dispatch:\n    inputs:\n      environment:\n        description: \'Deploy environment\'\n        required: true\n        type: choice\n        options:\n          - dev\n          - staging\n          - production</pre>', level: 'beginner' },
+      { id: 6, question: 'Scenario: You want to run a job only on the main branch. How?', answer: 'Use conditional <code>if</code> on job or step level:<br><pre>jobs:\n  deploy:\n    if: github.ref == \'refs/heads/main\'\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo "Deploying..."</pre>', level: 'beginner' },
+      { id: 7, question: 'Scenario: You need to run a workflow every day at 9 AM. How?', answer: 'Use <code>schedule</code> trigger with cron syntax:<br><pre>on:\n  schedule:\n    - cron: \'0 9 * * *\'</pre>This runs daily at 9:00 AM UTC.', level: 'beginner' },
+      { id: 8, question: 'Scenario: You want to use environment variables in your workflow. How?', answer: 'Use <code>env</code> context:<br><pre>env:\n  NODE_ENV: production\n  API_URL: https://api.example.com\n\nsteps:\n  - run: echo ${{ env.NODE_ENV }}</pre>', level: 'beginner' },
+
+      // Intermediate Scenarios (9-18)
+      { id: 9, question: 'Scenario: You need to deploy to Azure Web App after successful build. How do you do it?', answer: 'Use <code>azure/webapps-deploy</code> action:<br><pre>jobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-node@v4\n        with:\n          node-version: \'18\'\n      - run: npm install\n      - run: npm run build\n      - name: Deploy to Azure Web App\n        uses: azure/webapps-deploy@v2\n        with:\n          app-name: \'my-webapp\'\n          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}\n          package: \'./build\'</pre>', level: 'intermediate' },
+      { id: 10, question: 'Scenario: You want to use secrets in your workflow. How do you store and access them?', answer: 'Store secrets in GitHub Settings > Secrets and variables > Actions. Access them using <code>${{ secrets.SECRET_NAME }}</code>.<br><pre>steps:\n  - run: echo ${{ secrets.API_KEY }}</pre>', level: 'intermediate' },
+      { id: 11, question: 'Scenario: You need to run jobs in parallel to speed up your workflow. How?', answer: 'Jobs run in parallel by default. You can control with <code>needs</code>:<br><pre>jobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo "Testing..."\n  lint:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo "Linting..."\n  build:\n    needs: [test, lint]\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo "Building..."</pre>', level: 'intermediate' },
+      { id: 12, question: 'Scenario: You want to run a job on different operating systems. How?', answer: 'Use matrix strategy:<br><pre>jobs:\n  build:\n    runs-on: ${{ matrix.os }}\n    strategy:\n      matrix:\n        os: [ubuntu-latest, windows-latest, macos-latest]\n    steps:\n      - run: echo "Running on ${{ matrix.os }}"</pre>', level: 'intermediate' },
+      { id: 13, question: 'Scenario: You need to upload test results as artifacts. How?', answer: 'Use <code>actions/upload-artifact</code>:<br><pre>steps:\n  - uses: actions/checkout@v4\n  - run: npm test\n  - uses: actions/upload-artifact@v3\n    with:\n      name: test-results\n      path: test-results/</pre>', level: 'intermediate' },
+      { id: 14, question: 'Scenario: You want to skip CI when commit message contains [skip ci]. How?', answer: 'Use conditional check at workflow level or job level:<br><pre>jobs:\n  build:\n    if: ${{ !contains(github.event.head_commit.message, \'[skip ci]\') }}\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo "Building..."</pre>', level: 'intermediate' },
+      { id: 15, question: 'Scenario: You need to build and push Docker image to Docker Hub. How?', answer: 'Use docker/login-action and docker/build-push-action:<br><pre>steps:\n  - uses: actions/checkout@v4\n  - uses: docker/login-action@v2\n    with:\n      username: ${{ secrets.DOCKER_USERNAME }}\n      password: ${{ secrets.DOCKER_PASSWORD }}\n  - uses: docker/build-push-action@v4\n    with:\n      push: true\n      tags: user/app:latest</pre>', level: 'intermediate' },
+      { id: 16, question: 'Scenario: You need to run a job conditionally based on previous job success. How?', answer: 'Use <code>if</code> with <code>always()</code>, <code>success()</code>, or <code>failure()</code>:<br><pre>jobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: npm test\n  deploy:\n    runs-on: ubuntu-latest\n    if: success()\n    needs: test\n    steps:\n      - run: echo "Deploying..."</pre>', level: 'intermediate' },
+      { id: 17, question: 'Scenario: You want to create a reusable workflow for multiple projects. How?', answer: 'Create a separate workflow file and use <code>workflow_call</code>:<br><pre># reusable-workflow.yml\non:\n  workflow_call:\n    inputs:\n      environment:\n        type: string\n        required: true\n    secrets:\n      api-key:\n        required: true</pre>Then call it:<br><pre>jobs:\n  call-workflow:\n    uses: ./.github/workflows/reusable-workflow.yml\n    with:\n      environment: dev\n    secrets:\n      api-key: ${{ secrets.API_KEY }}</pre>', level: 'intermediate' },
+      { id: 18, question: 'Scenario: You need to run a workflow on a schedule and on push. How?', answer: 'Use multiple triggers in <code>on</code>:<br><pre>on:\n  push:\n    branches: [ main ]\n  schedule:\n    - cron: \'0 9 * * *\'</pre>This runs on push to main AND daily at 9 AM.', level: 'intermediate' },
+
+      // Advanced Scenarios (19-25)
+      { id: 19, question: 'Scenario: You need to implement Blue-Green deployment using GitHub Actions. How?', answer: 'Create two deployment environments (blue and green). Use deployment slots or separate services.<br><pre>jobs:\n  deploy-blue:\n    environment: blue\n    steps:\n      - run: echo "Deploy to Blue environment"\n  switch-traffic:\n    needs: deploy-blue\n    steps:\n      - run: echo "Switch traffic to Blue"\n  cleanup-green:\n    needs: switch-traffic\n    steps:\n      - run: echo "Cleanup Green environment"</pre>', level: 'advanced' },
+      { id: 20, question: 'Scenario: You want to integrate SonarQube for code quality scanning. How?', answer: 'Use <code>SonarQube</code> action:<br><pre>steps:\n  - uses: actions/checkout@v4\n  - uses: SonarQube/sonarqube-action@v1\n    with:\n      host: ${{ secrets.SONAR_HOST }}\n      token: ${{ secrets.SONAR_TOKEN }}'</pre>', level: 'advanced' },
+      { id: 21, question: 'Scenario: You need to deploy to Kubernetes cluster using GitHub Actions. How?', answer: 'Use <code>azure/aks-set-context</code> or <code>actions-hub/kubectl</code>:<br><pre>steps:\n  - uses: actions/checkout@v4\n  - uses: azure/aks-set-context@v1\n    with:\n      creds: ${{ secrets.AZURE_CREDENTIALS }}\n      cluster-name: my-aks\n      resource-group: rg\n  - uses: actions-hub/kubectl@master\n    with:\n      args: apply -f ./manifests/</pre>', level: 'advanced' },
+      { id: 22, question: 'Scenario: You want to implement canary deployment with gradual rollout. How?', answer: 'Use progressive deployment strategy:<br><pre>jobs:\n  deploy-10:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo "Deploy 10% traffic"\n  wait-verify:\n    runs-on: ubuntu-latest\n    needs: deploy-10\n    steps:\n      - run: sleep 300\n  deploy-50:\n    runs-on: ubuntu-latest\n    needs: wait-verify\n    steps:\n      - run: echo "Deploy 50% traffic"\n  deploy-100:\n    runs-on: ubuntu-latest\n    needs: deploy-50\n    steps:\n      - run: echo "Full rollout"</pre>', level: 'advanced' },
+      { id: 23, question: 'Scenario: You need to automate dependency updates using GitHub Actions. How?', answer: 'Use <code>dependabot</code> or create workflow with <code>actions/github-script</code>:<br><pre>steps:\n  - uses: actions/checkout@v4\n  - name: Update dependencies\n    uses: actions/github-script@v6\n    with:\n      script: |\n        // Script to update package.json dependencies\n        // Create PR with updates</pre>', level: 'advanced' },
+      { id: 24, question: 'Scenario: You want to implement security scanning with Snyk in your workflow. How?', answer: 'Use <code>snyk/actions</code> action:<br><pre>steps:\n  - uses: actions/checkout@v4\n  - uses: actions/setup-node@v4\n  - uses: snyk/actions/setup@master\n  - uses: snyk/actions/node@master\n    env:\n      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}\n    with:\n      args: --severity-threshold=high</pre>', level: 'advanced' },
+      { id: 25, question: 'Scenario: You need to create a self-hosted runner for your GitHub Actions. How?', answer: 'Install and configure self-hosted runner:<br><pre># On target machine\n./config.sh --url https://github.com/owner/repo --token AUTH_TOKEN\n./run.sh</pre>Then use in workflow:<br><pre>jobs:\n  build:\n    runs-on: self-hosted\n    steps:\n      - run: echo "Running on self-hosted runner"</pre>', level: 'advanced' }
+    ];
+
+    // ---------- RENDER GITHUB QA ----------
+    function renderGithubQA(items) {
+      const grid = document.getElementById('githubQAGrid');
+      if (!grid) return;
+      let html = '';
+      items.forEach((item) => {
+        html += `
+          <div class="github-qa-item">
+            <span class="q-number">Scenario ${item.id}</span>
+            <h4><i class="fas fa-code"></i> ${item.question}</h4>
+            <div class="answer">${item.answer}</div>
+          </div>
+        `;
+      });
+      grid.innerHTML = html;
+    }
+    renderGithubQA(githubQA);
+
+    window.filterGithubQA = function(category, btn) {
+      document.querySelectorAll('.github-tabs .tab-btn').forEach(tab => tab.classList.remove('active'));
+      btn.classList.add('active');
+      let filtered = githubQA;
+      if (category === 'beginner') filtered = githubQA.filter(q => q.level === 'beginner');
+      else if (category === 'intermediate') filtered = githubQA.filter(q => q.level === 'intermediate');
+      else if (category === 'advanced') filtered = githubQA.filter(q => q.level === 'advanced');
+      renderGithubQA(filtered);
+    }
+
+    // ==========================================================
     // ========== INTERVIEW Q&A DATA (Terraform) ==========
     // ==========================================================
     const qaData = [
@@ -1632,6 +1858,7 @@
 
     console.log('🚀 CMS DevOps Academy · All features loaded!');
     console.log('📚 Azure DevOps Questions: ' + azureQA.length + ' loaded');
+    console.log('📚 GitHub Actions Scenarios: ' + githubQA.length + ' loaded');
     console.log('📚 Terraform Q&A: ' + qaData.length + ' loaded');
     console.log('📝 Blog Posts: ' + blogPosts.length + ' loaded');
   })();

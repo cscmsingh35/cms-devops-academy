@@ -98,7 +98,7 @@
       gap: 0.5rem;
       transition: 0.2s;
       text-decoration: none;
-      cursor: default;
+      cursor: pointer;
     }
 
     .header-actions .cta-btn i {
@@ -283,7 +283,155 @@
       border-left: 4px solid #0077be;
     }
 
-    /* ========== NEW: BLOG SECTION ========== */
+    /* ========== INTERVIEW QUESTIONS SECTION ========== */
+    .interview-section {
+      background: white;
+      border-radius: 1.8rem;
+      padding: 2rem;
+      margin-top: 1rem;
+      box-shadow: 0 6px 18px rgba(0, 20, 30, 0.03);
+      border: 1px solid rgba(0,0,0,0.02);
+    }
+
+    .interview-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid #ecf3fa;
+      padding-bottom: 1rem;
+    }
+
+    .interview-tabs .tab-btn {
+      background: #f4f9fe;
+      border: none;
+      padding: 0.5rem 1.5rem;
+      border-radius: 60px;
+      font-weight: 600;
+      color: #1a405a;
+      cursor: pointer;
+      transition: 0.2s;
+      font-size: 0.9rem;
+    }
+
+    .interview-tabs .tab-btn:hover {
+      background: #e8f2fc;
+    }
+
+    .interview-tabs .tab-btn.active {
+      background: #0b2b44;
+      color: white;
+    }
+
+    .qa-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .qa-item {
+      background: #f8faff;
+      border-radius: 1.2rem;
+      padding: 1.5rem;
+      border: 1px solid #e6eff8;
+      transition: 0.25s;
+      border-left: 4px solid #6b4c9a;
+    }
+
+    .qa-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px -8px rgba(0, 50, 80, 0.08);
+    }
+
+    .qa-item .q-number {
+      display: inline-block;
+      background: #6b4c9a;
+      color: white;
+      padding: 0.1rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .qa-item h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0b2b44;
+      margin-bottom: 0.5rem;
+    }
+
+    .qa-item h4 i {
+      color: #6b4c9a;
+      margin-right: 0.5rem;
+    }
+
+    .qa-item .answer {
+      color: #1f4460;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .qa-item .answer code {
+      background: #eaf2fa;
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: #6b4c9a;
+    }
+
+    .qa-item .answer pre {
+      background: #f4f9fe;
+      padding: 1rem;
+      border-radius: 12px;
+      margin: 0.5rem 0;
+      overflow-x: auto;
+      font-size: 0.85rem;
+      border: 1px solid #d2e0ed;
+    }
+
+    .qa-item .answer ul, 
+    .qa-item .answer ol {
+      padding-left: 1.5rem;
+      margin: 0.5rem 0;
+    }
+
+    .qa-item .answer li {
+      margin-bottom: 0.3rem;
+    }
+
+    .qa-item .answer table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
+    }
+
+    .qa-item .answer table th {
+      background: #6b4c9a;
+      color: white;
+      padding: 0.5rem 0.8rem;
+      text-align: left;
+    }
+
+    .qa-item .answer table td {
+      padding: 0.5rem 0.8rem;
+      border-bottom: 1px solid #ecf3fa;
+    }
+
+    .qa-item .answer table tr:nth-child(even) {
+      background: #f8faff;
+    }
+
+    .qa-item.terraform-qa {
+      border-left-color: #6b4c9a;
+    }
+
+    .qa-item.terraform-qa .q-number {
+      background: #6b4c9a;
+    }
+
+    /* ========== BLOG SECTION ========== */
     .blog-layout {
       display: grid;
       grid-template-columns: 2fr 1fr;
@@ -577,6 +725,7 @@
       text-decoration: none;
       border: 1px solid #d2e0ed;
       transition: 0.2s;
+      cursor: pointer;
     }
 
     .pagination a:hover {
@@ -613,7 +762,9 @@
       .blog-layout {
         grid-template-columns: 1fr;
       }
-      
+      .qa-grid {
+        grid-template-columns: 1fr;
+      }
       .sidebar {
         position: static;
       }
@@ -633,6 +784,13 @@
       }
       .blog-post h2 {
         font-size: 1.4rem;
+      }
+      .qa-item {
+        padding: 1.2rem;
+      }
+      .interview-tabs .tab-btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
       }
     }
   </style>
@@ -676,7 +834,38 @@
   </div>
 
   <!-- ========================================================== -->
-  <!-- ========== NEW: BLOG SECTION (FULL PAGE) ========== -->
+  <!-- ========== INTERVIEW QUESTIONS SECTION ========== -->
+  <!-- ========================================================== -->
+  <div class="section-title" style="margin-top: 3.5rem;">
+    <h2><i class="fas fa-question-circle"></i> Interview Questions</h2>
+    <span class="badge-soft"><i class="fas fa-code-branch"></i> Terraform · 14 Q&A</span>
+  </div>
+
+  <div class="interview-section">
+    <!-- Tabs -->
+    <div class="interview-tabs">
+      <button class="tab-btn active" onclick="filterQA('all', this)">
+        <i class="fas fa-list"></i> All Questions
+      </button>
+      <button class="tab-btn" onclick="filterQA('terraform', this)">
+        <i class="fas fa-code-branch"></i> Terraform
+      </button>
+      <button class="tab-btn" onclick="filterQA('beginner', this)">
+        <i class="fas fa-seedling"></i> Beginner
+      </button>
+      <button class="tab-btn" onclick="filterQA('advanced', this)">
+        <i class="fas fa-star"></i> Advanced
+      </button>
+    </div>
+
+    <!-- QA Grid -->
+    <div class="qa-grid" id="qaGrid">
+      <!-- QA items injected via JavaScript -->
+    </div>
+  </div>
+
+  <!-- ========================================================== -->
+  <!-- ========== BLOG SECTION ========== -->
   <!-- ========================================================== -->
   <div class="section-title" style="margin-top: 3.5rem;">
     <h2><i class="fas fa-newspaper"></i> 📰 Latest Blog Posts</h2>
@@ -855,6 +1044,147 @@
         grid.innerHTML = html;
       }
       renderCards(sections);
+    }
+
+    // ==========================================================
+    // ========== INTERVIEW Q&A DATA ==========
+    // ==========================================================
+    const qaData = [
+      {
+        id: 1,
+        question: 'What is a Terraform block?',
+        answer: 'A Terraform block is the root configuration block that defines Terraform-specific settings, such as the required Terraform version, required providers, and backend configuration. It controls how Terraform behaves but does not create infrastructure.',
+        category: 'terraform',
+        level: 'beginner'
+      },
+      {
+        id: 2,
+        question: 'What is the purpose of the Terraform block?',
+        answer: 'The Terraform block is used to: <ul><li>Specify the required Terraform version</li><li>Define required providers and their versions</li><li>Configure the backend for storing the Terraform state</li><li>Set global Terraform configuration options</li></ul>',
+        category: 'terraform',
+        level: 'beginner'
+      },
+      {
+        id: 3,
+        question: 'What is the syntax of a Terraform block?',
+        answer: '<pre>terraform {\n  required_version = ">= 1.5.0"\n  required_providers {\n    azurerm = {\n      source  = "hashicorp/azurerm"\n      version = "~> 4.0"\n    }\n  }\n}</pre>',
+        category: 'terraform',
+        level: 'beginner'
+      },
+      {
+        id: 4,
+        question: 'What is required_version?',
+        answer: 'The required_version argument specifies the Terraform CLI version required to run the configuration. It prevents users from using incompatible Terraform versions.<br><br><b>Example:</b><br><pre>terraform {\n  required_version = ">= 1.5.0"\n}</pre>',
+        category: 'terraform',
+        level: 'beginner'
+      },
+      {
+        id: 5,
+        question: 'What is required_providers?',
+        answer: 'The required_providers block specifies which providers Terraform should download, along with their source and version.<br><br><b>Example:</b><br><pre>required_providers {\n  azurerm = {\n    source  = "hashicorp/azurerm"\n    version = "~> 4.0"\n  }\n}</pre>',
+        category: 'terraform',
+        level: 'beginner'
+      },
+      {
+        id: 6,
+        question: 'What is the difference between required_providers and provider?',
+        answer: '<table><tr><th>required_providers</th><th>provider</th></tr><tr><td>Specifies the provider source and version</td><td>Configures the provider with credentials and settings</td></tr><tr><td>Used by Terraform during initialization</td><td>Used when creating resources</td></tr><tr><td>Downloaded during terraform init</td><td>Used during terraform plan and terraform apply</td></tr></table>',
+        category: 'terraform',
+        level: 'advanced'
+      },
+      {
+        id: 7,
+        question: 'What is a backend in Terraform?',
+        answer: 'A backend defines where Terraform stores its state file (terraform.tfstate). It can be local or remote.<br><br><b>Common backends:</b><ul><li>Local</li><li>Azure Storage Account</li><li>Amazon S3</li><li>Terraform Cloud</li><li>Google Cloud Storage</li></ul>',
+        category: 'terraform',
+        level: 'beginner'
+      },
+      {
+        id: 8,
+        question: 'Why should we use a remote backend?',
+        answer: 'A remote backend provides:<ul><li>Centralized state management</li><li>Team collaboration</li><li>State locking</li><li>Backup and recovery</li><li>Better security</li></ul>',
+        category: 'terraform',
+        level: 'advanced'
+      },
+      {
+        id: 9,
+        question: 'Can a Terraform project have multiple Terraform blocks?',
+        answer: 'Yes, multiple terraform blocks can exist across different .tf files, and Terraform merges them into a single configuration. However, certain settings (such as the backend configuration) can only be defined once.',
+        category: 'terraform',
+        level: 'advanced'
+      },
+      {
+        id: 10,
+        question: 'Does the Terraform block create resources?',
+        answer: 'No. The Terraform block only configures Terraform itself. Resources are created using the <code>resource</code> block.',
+        category: 'terraform',
+        level: 'beginner'
+      },
+      {
+        id: 11,
+        question: 'Which command downloads the providers?',
+        answer: '<code>terraform init</code><br><br>This command:<ul><li>Downloads providers</li><li>Initializes the backend</li><li>Creates the .terraform directory</li></ul>',
+        category: 'terraform',
+        level: 'beginner'
+      },
+      {
+        id: 12,
+        question: 'What happens if the provider version is not specified?',
+        answer: 'Terraform selects a compatible provider version automatically, which may lead to unexpected behavior if a newer version introduces breaking changes. Therefore, specifying a provider version is considered a <b>best practice</b>.',
+        category: 'terraform',
+        level: 'advanced'
+      },
+      {
+        id: 13,
+        question: 'Why should we specify the provider version?',
+        answer: 'Specifying the provider version ensures:<ul><li>Stable deployments</li><li>Consistent behavior across environments</li><li>Protection from breaking changes</li><li>Easier troubleshooting</li></ul>',
+        category: 'terraform',
+        level: 'advanced'
+      },
+      {
+        id: 14,
+        question: 'Explain the Terraform block in one minute.',
+        answer: '"The Terraform block is the root configuration block used to configure Terraform itself. It defines the required Terraform version, required providers, and backend configuration. It does not create infrastructure; instead, it tells Terraform which version to use, which providers to download, and where to store the state file. It is one of the first blocks processed when Terraform runs."',
+        category: 'terraform',
+        level: 'advanced'
+      }
+    ];
+
+    // ---------- RENDER INTERVIEW Q&A ----------
+    function renderQA(items) {
+      const grid = document.getElementById('qaGrid');
+      if (!grid) return;
+
+      let html = '';
+      items.forEach((item) => {
+        html += `
+          <div class="qa-item terraform-qa">
+            <span class="q-number">Q${item.id}</span>
+            <h4><i class="fas fa-question-circle"></i> ${item.question}</h4>
+            <div class="answer">${item.answer}</div>
+          </div>
+        `;
+      });
+      grid.innerHTML = html;
+    }
+
+    renderQA(qaData);
+
+    // ---------- FILTER FUNCTION ----------
+    window.filterQA = function(category, btn) {
+      // Update active tab
+      document.querySelectorAll('.tab-btn').forEach(tab => tab.classList.remove('active'));
+      btn.classList.add('active');
+
+      let filtered = qaData;
+      if (category === 'terraform') {
+        filtered = qaData.filter(q => q.category === 'terraform');
+      } else if (category === 'beginner') {
+        filtered = qaData.filter(q => q.level === 'beginner');
+      } else if (category === 'advanced') {
+        filtered = qaData.filter(q => q.level === 'advanced');
+      }
+      renderQA(filtered);
     }
 
     // ==========================================================
@@ -1038,6 +1368,7 @@
 
     console.log('🚀 CMS DevOps Academy · 9 pillars active');
     console.log('📝 Blog · ' + blogPosts.length + ' posts loaded');
+    console.log('📚 Interview Q&A · ' + qaData.length + ' questions loaded');
   })();
 </script>
 

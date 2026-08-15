@@ -428,6 +428,130 @@
       color: #2e7d32;
     }
 
+    /* ========== AZURE DEVOPS QUESTIONS SECTION ========== */
+    .azure-devops-section {
+      background: white;
+      border-radius: 1.8rem;
+      padding: 2rem;
+      margin-top: 1rem;
+      box-shadow: 0 6px 18px rgba(0, 20, 30, 0.03);
+      border: 1px solid rgba(0,0,0,0.02);
+    }
+
+    .azure-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid #ecf3fa;
+      padding-bottom: 1rem;
+    }
+
+    .azure-tabs .tab-btn {
+      background: #f4f9fe;
+      border: none;
+      padding: 0.5rem 1.5rem;
+      border-radius: 60px;
+      font-weight: 600;
+      color: #1a405a;
+      cursor: pointer;
+      transition: 0.2s;
+      font-size: 0.9rem;
+    }
+
+    .azure-tabs .tab-btn:hover {
+      background: #e8f2fc;
+    }
+
+    .azure-tabs .tab-btn.active {
+      background: #0078d4;
+      color: white;
+    }
+
+    .azure-qa-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      max-height: 600px;
+      overflow-y: auto;
+      padding-right: 0.5rem;
+    }
+
+    .azure-qa-grid::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .azure-qa-grid::-webkit-scrollbar-track {
+      background: #f4f9fe;
+      border-radius: 10px;
+    }
+
+    .azure-qa-grid::-webkit-scrollbar-thumb {
+      background: #0078d4;
+      border-radius: 10px;
+    }
+
+    .azure-qa-item {
+      background: #f8faff;
+      border-radius: 1.2rem;
+      padding: 1.5rem;
+      border: 1px solid #e6eff8;
+      transition: 0.25s;
+      border-left: 4px solid #0078d4;
+    }
+
+    .azure-qa-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px -8px rgba(0, 50, 80, 0.08);
+    }
+
+    .azure-qa-item .q-number {
+      display: inline-block;
+      background: #0078d4;
+      color: white;
+      padding: 0.1rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .azure-qa-item h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0b2b44;
+      margin-bottom: 0.5rem;
+    }
+
+    .azure-qa-item h4 i {
+      color: #0078d4;
+      margin-right: 0.5rem;
+    }
+
+    .azure-qa-item .answer {
+      color: #1f4460;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .azure-qa-item .answer code {
+      background: #eaf2fa;
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      color: #0078d4;
+    }
+
+    .azure-qa-item .answer ul, 
+    .azure-qa-item .answer ol {
+      padding-left: 1.5rem;
+      margin: 0.3rem 0;
+    }
+
+    .azure-qa-item .answer li {
+      margin-bottom: 0.2rem;
+    }
+
     /* ========== INTERVIEW QUESTIONS SECTION ========== */
     .interview-section {
       background: white;
@@ -543,6 +667,29 @@
 
     .qa-item .answer li {
       margin-bottom: 0.3rem;
+    }
+
+    .qa-item .answer table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
+    }
+
+    .qa-item .answer table th {
+      background: #6b4c9a;
+      color: white;
+      padding: 0.5rem 0.8rem;
+      text-align: left;
+    }
+
+    .qa-item .answer table td {
+      padding: 0.5rem 0.8rem;
+      border-bottom: 1px solid #ecf3fa;
+    }
+
+    .qa-item .answer table tr:nth-child(even) {
+      background: #f8faff;
     }
 
     .qa-item.terraform-qa {
@@ -887,6 +1034,9 @@
       .qa-grid {
         grid-template-columns: 1fr;
       }
+      .azure-qa-grid {
+        grid-template-columns: 1fr;
+      }
       .sidebar {
         position: static;
       }
@@ -914,7 +1064,14 @@
       .qa-item {
         padding: 1.2rem;
       }
+      .azure-qa-item {
+        padding: 1.2rem;
+      }
       .interview-tabs .tab-btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
+      }
+      .azure-tabs .tab-btn {
         padding: 0.4rem 1rem;
         font-size: 0.8rem;
       }
@@ -1062,6 +1219,24 @@
   </div>
 
   <!-- ========================================================== -->
+  <!-- ========== AZURE DEVOPS 100 QUESTIONS SECTION ========== -->
+  <!-- ========================================================== -->
+  <div class="section-title" style="margin-top: 3.5rem;">
+    <h2><i class="fab fa-microsoft"></i> Azure DevOps - Top 100 Questions</h2>
+    <span class="badge-soft"><i class="fas fa-question-circle"></i> 100 Q&A</span>
+  </div>
+
+  <div class="azure-devops-section">
+    <div class="azure-tabs">
+      <button class="tab-btn active" onclick="filterAzureQA('all', this)"><i class="fas fa-list"></i> All Questions</button>
+      <button class="tab-btn" onclick="filterAzureQA('beginner', this)"><i class="fas fa-seedling"></i> Beginner</button>
+      <button class="tab-btn" onclick="filterAzureQA('intermediate', this)"><i class="fas fa-chart-line"></i> Intermediate</button>
+      <button class="tab-btn" onclick="filterAzureQA('advanced', this)"><i class="fas fa-star"></i> Advanced</button>
+    </div>
+    <div class="azure-qa-grid" id="azureQAGrid"></div>
+  </div>
+
+  <!-- ========================================================== -->
   <!-- ========== INTERVIEW QUESTIONS SECTION ========== -->
   <!-- ========================================================== -->
   <div class="section-title" style="margin-top: 3.5rem;">
@@ -1175,7 +1350,146 @@
     }
 
     // ==========================================================
-    // ========== INTERVIEW Q&A DATA ==========
+    // ========== AZURE DEVOPS 100 QUESTIONS ==========
+    // ==========================================================
+    const azureQA = [
+      // Beginner Level (1-30)
+      { id: 1, question: 'What is Azure DevOps?', answer: 'Azure DevOps is a set of cloud-based tools for software development and delivery. It includes Azure Boards, Azure Repos, Azure Pipelines, Azure Test Plans, and Azure Artifacts.', level: 'beginner' },
+      { id: 2, question: 'What are the core services of Azure DevOps?', answer: '<ul><li>Azure Boards - Work tracking</li><li>Azure Repos - Source control</li><li>Azure Pipelines - CI/CD</li><li>Azure Test Plans - Testing</li><li>Azure Artifacts - Package management</li></ul>', level: 'beginner' },
+      { id: 3, question: 'What is Azure Boards?', answer: 'Azure Boards is a work tracking service that helps teams plan, track, and discuss work using Kanban boards, backlogs, and scrum practices.', level: 'beginner' },
+      { id: 4, question: 'What is Azure Repos?', answer: 'Azure Repos is a set of version control tools that you can use to manage your code. It supports both Git and Team Foundation Version Control (TFVC).', level: 'beginner' },
+      { id: 5, question: 'What is Azure Pipelines?', answer: 'Azure Pipelines is a continuous integration and continuous delivery (CI/CD) service that works with any language, platform, and cloud.', level: 'beginner' },
+      { id: 6, question: 'What is Azure Test Plans?', answer: 'Azure Test Plans provides tools for manual testing, exploratory testing, and continuous testing of your applications.', level: 'beginner' },
+      { id: 7, question: 'What is Azure Artifacts?', answer: 'Azure Artifacts is a package management service that allows you to create, host, and share packages with your team.', level: 'beginner' },
+      { id: 8, question: 'What is a Project in Azure DevOps?', answer: 'A Project is a container for all Azure DevOps services. It includes Boards, Repos, Pipelines, Test Plans, and Artifacts for a specific application.', level: 'beginner' },
+      { id: 9, question: 'What is a Pipeline in Azure DevOps?', answer: 'A Pipeline is a definition of a build, test, and deploy process. It can be defined using YAML or the classic editor.', level: 'beginner' },
+      { id: 10, question: 'What is YAML in Azure Pipelines?', answer: 'YAML is a human-readable configuration language used to define CI/CD pipelines. It\'s stored in the repository alongside your code.', level: 'beginner' },
+      { id: 11, question: 'What is a Release Pipeline?', answer: 'A Release Pipeline in Azure DevOps is used to deploy your application to different environments like Development, QA, Staging, and Production.', level: 'beginner' },
+      { id: 12, question: 'What is an Agent in Azure Pipelines?', answer: 'An Agent is a compute resource that runs your pipeline jobs. It can be Microsoft-hosted or self-hosted.', level: 'beginner' },
+      { id: 13, question: 'What is a Build Pipeline?', answer: 'A Build Pipeline (or CI pipeline) compiles your source code, runs tests, and creates artifacts that can be deployed.', level: 'beginner' },
+      { id: 14, question: 'What is a Repository in Azure Repos?', answer: 'A Repository is a location where your source code is stored. It can be Git or TFVC.', level: 'beginner' },
+      { id: 15, question: 'What is a Branch in Git?', answer: 'A Branch is a separate line of development in Git. It allows multiple developers to work on features simultaneously without affecting the main codebase.', level: 'beginner' },
+      { id: 16, question: 'What is Pull Request (PR)?', answer: 'A Pull Request is a way to propose changes to a repository. It allows code review, discussion, and automated checks before merging.', level: 'beginner' },
+      { id: 17, question: 'What is Continuous Integration (CI)?', answer: 'Continuous Integration is the practice of automatically building and testing code changes whenever a developer pushes to the repository.', level: 'beginner' },
+      { id: 18, question: 'What is Continuous Delivery (CD)?', answer: 'Continuous Delivery is the practice of automatically deploying tested code to production or staging environments.', level: 'beginner' },
+      { id: 19, question: 'What is a Work Item in Azure Boards?', answer: 'A Work Item is a record in Azure Boards that tracks work like User Stories, Tasks, Bugs, and Epics.', level: 'beginner' },
+      { id: 20, question: 'What are the types of Work Items?', answer: '<ul><li>Epic</li><li>Feature</li><li>User Story</li><li>Task</li><li>Bug</li><li>Issue</li></ul>', level: 'beginner' },
+      { id: 21, question: 'What is a Sprint in Agile?', answer: 'A Sprint is a time-boxed period (usually 2-4 weeks) where the team works on a set of prioritized tasks or user stories.', level: 'beginner' },
+      { id: 22, question: 'What is a Backlog?', answer: 'A Backlog is an ordered list of work items that the team needs to complete. It includes features, user stories, and tasks.', level: 'beginner' },
+      { id: 23, question: 'What is a Kanban Board?', answer: 'A Kanban Board is a visual tool that shows work items in different states (To Do, In Progress, Done). It helps teams manage workflow.', level: 'beginner' },
+      { id: 24, question: 'What is a Pipeline Trigger?', answer: 'A Pipeline Trigger defines when a pipeline should run. Common triggers include CI triggers (push to repo) and scheduled triggers.', level: 'beginner' },
+      { id: 25, question: 'What is a Stage in Azure Pipeline?', answer: 'A Stage is a logical grouping of jobs in a pipeline. It represents a phase like Build, Test, or Deploy.', level: 'beginner' },
+      { id: 26, question: 'What is a Job in Azure Pipeline?', answer: 'A Job is a collection of steps that run on a single agent. It represents a unit of work in the pipeline.', level: 'beginner' },
+      { id: 27, question: 'What is a Step in Azure Pipeline?', answer: 'A Step is the smallest unit of work in a pipeline. It can be a script, task, or command.', level: 'beginner' },
+      { id: 28, question: 'What is a Task in Azure Pipeline?', answer: 'A Task is a pre-built automation action in Azure Pipelines. Examples include <code>DotNetCoreCLI</code>, <code>AzureWebApp</code>, and <code>CopyFiles</code>.', level: 'beginner' },
+      { id: 29, question: 'What is a Variable in Azure Pipeline?', answer: 'A Variable is a named value that can be used in a pipeline. It helps share values across tasks and jobs.', level: 'beginner' },
+      { id: 30, question: 'How do you create a new project in Azure DevOps?', answer: 'Go to Azure DevOps > New Project > Enter project name and description > Choose visibility (Public or Private) > Click Create.', level: 'beginner' },
+
+      // Intermediate Level (31-70)
+      { id: 31, question: 'What is a Service Connection in Azure DevOps?', answer: 'A Service Connection allows Azure Pipelines to connect to external services like Azure, AWS, Docker Hub, or GitHub.', level: 'intermediate' },
+      { id: 32, question: 'What is a Self-hosted Agent?', answer: 'A Self-hosted Agent is an agent that you install and manage on your own infrastructure. It gives more control and access to internal resources.', level: 'intermediate' },
+      { id: 33, question: 'What is a Microsoft-hosted Agent?', answer: 'A Microsoft-hosted Agent is a pre-configured agent provided by Microsoft. It\'s maintained and updated automatically.', level: 'intermediate' },
+      { id: 34, question: 'How do you create a YAML pipeline?', answer: 'Create a <code>azure-pipelines.yml</code> file in your repository. Define stages, jobs, and steps. Then commit and push.', level: 'intermediate' },
+      { id: 35, question: 'What are Multi-stage Pipelines?', answer: 'Multi-stage pipelines allow you to define multiple stages (Build, Test, Deploy) in a single YAML file.', level: 'intermediate' },
+      { id: 36, question: 'What is a Deployment Job?', answer: 'A Deployment Job is a special type of job used for deploying to different environments. It supports deployment strategies like Blue-Green.', level: 'intermediate' },
+      { id: 37, question: 'What is Blue-Green Deployment?', answer: 'Blue-Green deployment is a strategy where two identical environments (Blue and Green) are used. Traffic switches instantly, minimizing downtime.', level: 'intermediate' },
+      { id: 38, question: 'What is Canary Deployment?', answer: 'Canary deployment is a strategy where new features are rolled out to a small subset of users before full deployment.', level: 'intermediate' },
+      { id: 39, question: 'What is a Variable Group?', answer: 'A Variable Group is a collection of variables that can be shared across multiple pipelines. It helps centralize configuration.', level: 'intermediate' },
+      { id: 40, question: 'What is Library in Azure DevOps?', answer: 'Library is a centralized storage for Variable Groups and Secure Files. It helps manage configuration across projects.', level: 'intermediate' },
+      { id: 41, question: 'What is a Secure File?', answer: 'A Secure File is a file stored in the Library that can be used in pipelines. Examples include certificates and configuration files.', level: 'intermediate' },
+      { id: 42, question: 'What is the difference between YAML and Classic Pipelines?', answer: 'YAML pipelines are defined as code in the repository. Classic pipelines use a visual editor. YAML is preferred for GitOps.', level: 'intermediate' },
+      { id: 43, question: 'What is an Artifact in Azure Pipeline?', answer: 'An Artifact is a file or collection of files produced by a pipeline. Examples include compiled binaries, packages, and container images.', level: 'intermediate' },
+      { id: 44, question: 'How do you publish artifacts in Azure Pipeline?', answer: 'Use the <code>PublishBuildArtifacts</code> task or <code>- publish</code> in YAML to publish artifacts from the pipeline.', level: 'intermediate' },
+      { id: 45, question: 'How do you download artifacts in Azure Pipeline?', answer: 'Use the <code>DownloadBuildArtifacts</code> task or <code>- download</code> in YAML to download artifacts.', level: 'intermediate' },
+      { id: 46, question: 'What is the difference between a Build and Release Pipeline?', answer: 'A Build Pipeline (CI) compiles and tests code. A Release Pipeline (CD) deploys artifacts to different environments.', level: 'intermediate' },
+      { id: 47, question: 'What is a Deployment Group?', answer: 'A Deployment Group is a set of target machines that can receive deployments. It\'s used for deploying to on-premise servers.', level: 'intermediate' },
+      { id: 48, question: 'What is a Test Suite in Azure Test Plans?', answer: 'A Test Suite is a container for test cases. It helps organize tests for manual and automated testing.', level: 'intermediate' },
+      { id: 49, question: 'What is a Test Case?', answer: 'A Test Case defines a specific test with steps, expected results, and validation criteria. It can be manual or automated.', level: 'intermediate' },
+      { id: 50, question: 'What is Test Automation in Azure DevOps?', answer: 'Test automation uses automated scripts to verify application functionality. It\'s integrated into CI/CD pipelines.', level: 'intermediate' },
+      { id: 51, question: 'What is a Sprint Review?', answer: 'A Sprint Review is a meeting at the end of a Sprint where the team demonstrates completed work to stakeholders.', level: 'intermediate' },
+      { id: 52, question: 'What is a Sprint Retrospective?', answer: 'A Sprint Retrospective is a meeting where the team reflects on what went well and what needs improvement.', level: 'intermediate' },
+      { id: 53, question: 'What is Definition of Done?', answer: 'Definition of Done is a shared understanding of what it means for a work item to be complete. It includes criteria like testing, documentation, and review.', level: 'intermediate' },
+      { id: 54, question: 'What is a Burndown Chart?', answer: 'A Burndown Chart shows the remaining work in a Sprint over time. It helps track progress and predict completion.', level: 'intermediate' },
+      { id: 55, question: 'What is a Velocity Chart?', answer: 'A Velocity Chart shows the amount of work completed in each Sprint. It helps predict future capacity.', level: 'intermediate' },
+      { id: 56, question: 'What is a Cumulative Flow Diagram?', answer: 'A Cumulative Flow Diagram shows the amount of work in different states over time. It helps identify bottlenecks.', level: 'intermediate' },
+      { id: 57, question: 'What is a Dashboard in Azure DevOps?', answer: 'A Dashboard is a customizable view of charts, widgets, and information from your Azure DevOps project.', level: 'intermediate' },
+      { id: 58, question: 'What are Widgets in Azure DevOps?', answer: 'Widgets are small components that display information on dashboards. Examples include charts, query results, and work item count.', level: 'intermediate' },
+      { id: 59, question: 'What is Query in Azure Boards?', answer: 'A Query is a way to search and filter work items based on specific criteria like state, assignment, or tags.', level: 'intermediate' },
+      { id: 60, question: 'What is a Tag in Azure Boards?', answer: 'A Tag is a keyword that helps categorize and filter work items. Multiple tags can be applied to a single work item.', level: 'intermediate' },
+      { id: 61, question: 'What is a Team in Azure DevOps?', answer: 'A Team is a group of people working on a project. Teams can be associated with specific areas and iterations.', level: 'intermediate' },
+      { id: 62, question: 'What is an Area Path?', answer: 'An Area Path organizes work items by product, feature, or team. It\'s a hierarchical structure.', level: 'intermediate' },
+      { id: 63, question: 'What is an Iteration Path?', answer: 'An Iteration Path organizes work by time (Sprints). It\'s used for planning and tracking work in Scrum.', level: 'intermediate' },
+      { id: 64, question: 'What is a Project Template?', answer: 'A Project Template defines the initial configuration and structure for an Azure DevOps project. Options include Agile, Scrum, and CMMI.', level: 'intermediate' },
+      { id: 65, question: 'What is the Difference between Agile, Scrum, and CMMI templates?', answer: '<ul><li>Agile - Lightweight for software development</li><li>Scrum - Focused on Sprint-based development</li><li>CMMI - Formal process for large teams</li></ul>', level: 'intermediate' },
+      { id: 66, question: 'What is a Wiki in Azure DevOps?', answer: 'A Wiki is a collaborative documentation space within Azure DevOps. It supports Markdown and is stored as code.', level: 'intermediate' },
+      { id: 67, question: 'How do you create a Wiki in Azure DevOps?', answer: 'Go to Project > Wiki > Create Wiki. You can create a provisioned wiki (documentation as code) or a code wiki (based on your repository).', level: 'intermediate' },
+      { id: 68, question: 'What is the Marketplace in Azure DevOps?', answer: 'The Marketplace is a platform for buying and installing extensions (tools, integrations, and services) for Azure DevOps.', level: 'intermediate' },
+      { id: 69, question: 'What are Extensions in Azure DevOps?', answer: 'Extensions add additional features to Azure DevOps. They can be created by Microsoft, partners, or the community.', level: 'intermediate' },
+      { id: 70, question: 'What is the DevOps Roadmap?', answer: 'The DevOps Roadmap is a guide for organizations to adopt DevOps practices. It includes phases like Plan, Develop, Deliver, and Operate.', level: 'intermediate' },
+
+      // Advanced Level (71-100)
+      { id: 71, question: 'What is Infrastructure as Code (IaC)?', answer: 'Infrastructure as Code is the practice of managing and provisioning infrastructure using code and configuration files rather than manual processes.', level: 'advanced' },
+      { id: 72, question: 'How do you integrate Terraform with Azure DevOps?', answer: 'Use Terraform tasks in Azure Pipelines. Install Terraform extension, add <code>TerraformCLI</code> tasks to plan, apply, and destroy resources.', level: 'advanced' },
+      { id: 73, question: 'What is Azure DevOps API?', answer: 'The Azure DevOps REST API provides programmatic access to Azure DevOps services. It allows automation, integration, and custom tool development.', level: 'advanced' },
+      { id: 74, question: 'What is the Difference between Azure DevOps and GitHub?', answer: '<ul><li>Azure DevOps - Full suite including Boards, Repos, Pipelines, Test Plans</li><li>GitHub - Source control focused with GitHub Actions for CI/CD</li></ul>', level: 'advanced' },
+      { id: 75, question: 'What is Managed Identity?', answer: 'Managed Identity is an Azure feature that provides automatically managed service principals. It allows secure authentication without storing credentials.', level: 'advanced' },
+      { id: 76, question: 'What is Service Principal?', answer: 'A Service Principal is an identity used by applications, services, and tools to access Azure resources. It\'s used in Service Connections.', level: 'advanced' },
+      { id: 77, question: 'What is Azure Key Vault integration?', answer: 'Azure Key Vault integration allows Azure Pipelines to securely access secrets, keys, and certificates stored in Key Vault.', level: 'advanced' },
+      { id: 78, question: 'What is a Workflow in GitHub Actions?', answer: 'A Workflow is a configurable automated process in GitHub Actions that runs one or more jobs. It\'s defined in YAML.', level: 'advanced' },
+      { id: 79, question: 'What is the Difference between GitHub Actions and Azure Pipelines?', answer: '<ul><li>GitHub Actions - Native to GitHub, uses YAML</li><li>Azure Pipelines - Part of Azure DevOps, supports YAML and Classic</li></ul>', level: 'advanced' },
+      { id: 80, question: 'How do you implement Blue-Green Deployment with Azure DevOps?', answer: 'Create two deployment slots. Use Azure DevOps release pipelines with deployment strategies. Switch traffic between slots after validation.', level: 'advanced' },
+      { id: 81, question: 'What is a Canary Deployment Strategy?', answer: 'Canary deployment releases to a small percentage of users first. It monitors for errors and gradually increases rollout.', level: 'advanced' },
+      { id: 82, question: 'What is a Deployment Slot?', answer: 'A Deployment Slot is a separate environment in Azure App Services. Slots allow staged deployments with zero downtime.', level: 'advanced' },
+      { id: 83, question: 'How do you use Docker with Azure Pipelines?', answer: 'Use Docker tasks in Azure Pipelines. Build Docker images, push to ACR/Docker Hub, and deploy to Kubernetes or Azure Container Instances.', level: 'advanced' },
+      { id: 84, question: 'What is AKS (Azure Kubernetes Service)?', answer: 'AKS is a managed Kubernetes service in Azure. It simplifies Kubernetes cluster management.', level: 'advanced' },
+      { id: 85, question: 'How do you deploy to AKS using Azure Pipelines?', answer: 'Use <code>Kubectl</code> or <code>Helm</code> tasks. Connect to AKS cluster using Service Connection and apply manifest files.', level: 'advanced' },
+      { id: 86, question: 'What is Helm?', answer: 'Helm is a package manager for Kubernetes. It simplifies deployment with charts that include templates and configurations.', level: 'advanced' },
+      { id: 87, question: 'What is the Difference between kubectl and Helm?', answer: '<ul><li>kubectl - Directly manages Kubernetes resources</li><li>Helm - Uses charts for templated and versioned deployments</li></ul>', level: 'advanced' },
+      { id: 88, question: 'How do you implement Security Scanning in Pipelines?', answer: 'Use security tools like Snyk, SonarQube, or WhiteSource. Add scanning tasks to pipelines and fail builds on critical vulnerabilities.', level: 'advanced' },
+      { id: 89, question: 'What is Container Security Scanning?', answer: 'Container security scanning checks for known vulnerabilities in container images. It analyzes packages and dependencies.', level: 'advanced' },
+      { id: 90, question: 'What is Vulnerability Scanning?', answer: 'Vulnerability scanning identifies security vulnerabilities in source code, dependencies, and infrastructure configurations.', level: 'advanced' },
+      { id: 91, question: 'What is Azure Policy?', answer: 'Azure Policy is a service that enforces organizational standards and compliance at scale. It prevents resource deployments that violate policies.', level: 'advanced' },
+      { id: 92, question: 'How do you integrate Azure Policy with DevOps?', answer: 'Use Azure Policy in CI/CD pipelines to validate infrastructure compliance. Block deployments that violate policies.', level: 'advanced' },
+      { id: 93, question: 'What is Infrastructure as Code Testing?', answer: 'IaC testing validates infrastructure code before deployment. It includes static analysis, validation, and unit tests.', level: 'advanced' },
+      { id: 94, question: 'What are Monitoring and Logging in DevOps?', answer: 'Monitoring tracks application health and performance. Logging captures events and errors for troubleshooting and analysis.', level: 'advanced' },
+      { id: 95, question: 'How do you integrate Application Insights with Azure DevOps?', answer: 'Use Application Insights for monitoring. Integrate with dashboards and alerts. Use data to improve CI/CD decisions.', level: 'advanced' },
+      { id: 96, question: 'What is SRE (Site Reliability Engineering)?', answer: 'SRE is a discipline that applies software engineering principles to operations. It focuses on reliability, automation, and performance.', level: 'advanced' },
+      { id: 97, question: 'What are SLIs and SLOs?', answer: '<ul><li>SLIs (Service Level Indicators) - Metrics like latency, error rate</li><li>SLOs (Service Level Objectives) - Targets for SLIs</li></ul>', level: 'advanced' },
+      { id: 98, question: 'What is ChatOps?', answer: 'ChatOps is a collaboration model that connects tools and teams through chat platforms like Teams or Slack.', level: 'advanced' },
+      { id: 99, question: 'What is GitOps?', answer: 'GitOps is a practice that uses Git as the single source of truth for infrastructure and application configuration.', level: 'advanced' },
+      { id: 100, question: 'What is the Future of DevOps?', answer: 'The future of DevOps includes AI/ML in operations, GitOps, serverless, edge computing, and increased automation.', level: 'advanced' }
+    ];
+
+    // ---------- RENDER AZURE DEVOPS QA ----------
+    function renderAzureQA(items) {
+      const grid = document.getElementById('azureQAGrid');
+      if (!grid) return;
+      let html = '';
+      items.forEach((item) => {
+        html += `
+          <div class="azure-qa-item">
+            <span class="q-number">Q${item.id}</span>
+            <h4><i class="fas fa-question-circle"></i> ${item.question}</h4>
+            <div class="answer">${item.answer}</div>
+          </div>
+        `;
+      });
+      grid.innerHTML = html;
+    }
+    renderAzureQA(azureQA);
+
+    window.filterAzureQA = function(category, btn) {
+      document.querySelectorAll('.azure-tabs .tab-btn').forEach(tab => tab.classList.remove('active'));
+      btn.classList.add('active');
+      let filtered = azureQA;
+      if (category === 'beginner') filtered = azureQA.filter(q => q.level === 'beginner');
+      else if (category === 'intermediate') filtered = azureQA.filter(q => q.level === 'intermediate');
+      else if (category === 'advanced') filtered = azureQA.filter(q => q.level === 'advanced');
+      renderAzureQA(filtered);
+    }
+
+    // ==========================================================
+    // ========== INTERVIEW Q&A DATA (Terraform) ==========
     // ==========================================================
     const qaData = [
       { id: 1, question: 'What is a Terraform block?', answer: 'A Terraform block is the root configuration block that defines Terraform-specific settings, such as the required Terraform version, required providers, and backend configuration. It controls how Terraform behaves but does not create infrastructure.', category: 'terraform', level: 'beginner' },
@@ -1212,7 +1526,7 @@
     renderQA(qaData);
 
     window.filterQA = function(category, btn) {
-      document.querySelectorAll('.tab-btn').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.interview-tabs .tab-btn').forEach(tab => tab.classList.remove('active'));
       btn.classList.add('active');
       let filtered = qaData;
       if (category === 'terraform') filtered = qaData.filter(q => q.category === 'terraform');
@@ -1317,6 +1631,9 @@
     }
 
     console.log('🚀 CMS DevOps Academy · All features loaded!');
+    console.log('📚 Azure DevOps Questions: ' + azureQA.length + ' loaded');
+    console.log('📚 Terraform Q&A: ' + qaData.length + ' loaded');
+    console.log('📝 Blog Posts: ' + blogPosts.length + ' loaded');
   })();
 </script>
 

@@ -283,6 +283,313 @@
       border-left: 4px solid #0077be;
     }
 
+    /* ========== NEW: BLOG SECTION ========== */
+    .blog-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .blog-post {
+      background: white;
+      border-radius: 1.8rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 6px 18px rgba(0, 20, 30, 0.03);
+      border: 1px solid rgba(0,0,0,0.02);
+      transition: 0.25s;
+    }
+
+    .blog-post:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 34px -12px rgba(0, 50, 80, 0.10);
+    }
+
+    .blog-post .post-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .blog-post .category {
+      background: #eaf2fa;
+      padding: 0.2rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #1f5b7e;
+      text-transform: uppercase;
+    }
+
+    .blog-post .date {
+      color: #6b8ba3;
+      font-size: 0.85rem;
+    }
+
+    .blog-post .read-time {
+      color: #6b8ba3;
+      font-size: 0.85rem;
+    }
+
+    .blog-post h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #0b2b44;
+      margin-bottom: 0.5rem;
+    }
+
+    .blog-post h2 a {
+      color: #0b2b44;
+      text-decoration: none;
+    }
+
+    .blog-post h2 a:hover {
+      color: #006696;
+    }
+
+    .blog-post .excerpt {
+      color: #1f4460;
+      font-size: 1rem;
+      margin: 0.8rem 0 1.2rem;
+      line-height: 1.7;
+    }
+
+    .blog-post .post-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      border-top: 1px solid #ecf3fa;
+      padding-top: 1rem;
+    }
+
+    .blog-post .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .blog-post .tags span {
+      background: #f0f7ff;
+      padding: 0.15rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      color: #16445f;
+    }
+
+    .blog-post .read-more {
+      color: #006696;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .blog-post .read-more:hover {
+      color: #003153;
+    }
+
+    .blog-post .read-more i {
+      transition: 0.2s;
+    }
+
+    .blog-post .read-more:hover i {
+      transform: translateX(4px);
+    }
+
+    /* Blog Sidebar */
+    .sidebar {
+      position: sticky;
+      top: 2rem;
+      align-self: start;
+    }
+
+    .sidebar-widget {
+      background: white;
+      border-radius: 1.8rem;
+      padding: 1.8rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 6px 18px rgba(0, 20, 30, 0.03);
+      border: 1px solid rgba(0,0,0,0.02);
+    }
+
+    .sidebar-widget h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0b2b44;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .sidebar-widget h3 i {
+      color: #006696;
+    }
+
+    .search-box {
+      display: flex;
+      background: #f4f9fe;
+      border-radius: 60px;
+      padding: 0.2rem;
+      border: 1px solid #d2e0ed;
+    }
+
+    .search-box input {
+      flex: 1;
+      border: none;
+      background: transparent;
+      padding: 0.6rem 1.2rem;
+      outline: none;
+      font-size: 0.9rem;
+    }
+
+    .search-box button {
+      background: #0b2b44;
+      border: none;
+      color: white;
+      padding: 0.6rem 1.5rem;
+      border-radius: 60px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .search-box button:hover {
+      background: #144a6b;
+    }
+
+    .category-list {
+      list-style: none;
+    }
+
+    .category-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #ecf3fa;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .category-list li:last-child {
+      border-bottom: none;
+    }
+
+    .category-list a {
+      color: #1f4460;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .category-list a:hover {
+      color: #006696;
+    }
+
+    .category-list .count {
+      background: #eaf2fa;
+      padding: 0.1rem 0.6rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+    }
+
+    .popular-post {
+      display: flex;
+      gap: 1rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid #ecf3fa;
+    }
+
+    .popular-post:last-child {
+      border-bottom: none;
+    }
+
+    .popular-post .num {
+      background: #eaf2fa;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.8rem;
+      color: #1f5b7e;
+      flex-shrink: 0;
+    }
+
+    .popular-post .info a {
+      color: #0b2b44;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .popular-post .info a:hover {
+      color: #006696;
+    }
+
+    .popular-post .info .small {
+      font-size: 0.75rem;
+      color: #6b8ba3;
+    }
+
+    .newsletter input {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      border: 1px solid #d2e0ed;
+      border-radius: 60px;
+      margin-bottom: 0.7rem;
+      font-size: 0.9rem;
+    }
+
+    .newsletter button {
+      width: 100%;
+      background: #0b2b44;
+      color: white;
+      border: none;
+      padding: 0.7rem;
+      border-radius: 60px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .newsletter button:hover {
+      background: #144a6b;
+    }
+
+    /* Pagination */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+
+    .pagination a {
+      padding: 0.5rem 1rem;
+      background: white;
+      border-radius: 8px;
+      color: #0b2b44;
+      text-decoration: none;
+      border: 1px solid #d2e0ed;
+      transition: 0.2s;
+    }
+
+    .pagination a:hover {
+      background: #0b2b44;
+      color: white;
+    }
+
+    .pagination a.active {
+      background: #0b2b44;
+      color: white;
+      border-color: #0b2b44;
+    }
+
     /* ---------- FOOTER ---------- */
     .footer-note {
       margin-top: 3.8rem;
@@ -301,6 +608,17 @@
       margin-right: 4px;
     }
 
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 992px) {
+      .blog-layout {
+        grid-template-columns: 1fr;
+      }
+      
+      .sidebar {
+        position: static;
+      }
+    }
+
     @media (max-width: 700px) {
       .academy-header {
         flex-direction: column;
@@ -312,6 +630,9 @@
       }
       .nav-grid {
         grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      }
+      .blog-post h2 {
+        font-size: 1.4rem;
       }
     }
   </style>
@@ -352,6 +673,70 @@
 
   <div class="card-grid" id="mainGrid">
     <!-- Cards injected via JS -->
+  </div>
+
+  <!-- ========================================================== -->
+  <!-- ========== NEW: BLOG SECTION (FULL PAGE) ========== -->
+  <!-- ========================================================== -->
+  <div class="section-title" style="margin-top: 3.5rem;">
+    <h2><i class="fas fa-newspaper"></i> 📰 Latest Blog Posts</h2>
+    <span class="badge-soft"><i class="fas fa-calendar-day"></i> Daily updates</span>
+  </div>
+
+  <div class="blog-layout">
+
+    <!-- ----- BLOG MAIN CONTENT ----- -->
+    <main id="blogMain">
+      <!-- Blog posts injected by JavaScript -->
+    </main>
+
+    <!-- ----- BLOG SIDEBAR ----- -->
+    <aside class="sidebar">
+      
+      <!-- Search -->
+      <div class="sidebar-widget">
+        <h3><i class="fas fa-search"></i> Search</h3>
+        <div class="search-box">
+          <input type="text" placeholder="Search articles..." id="searchInput" />
+          <button onclick="searchBlog()"><i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <!-- Categories -->
+      <div class="sidebar-widget">
+        <h3><i class="fas fa-tags"></i> Categories</h3>
+        <ul class="category-list" id="categoryList">
+          <!-- Injected by JS -->
+        </ul>
+      </div>
+
+      <!-- Popular Posts -->
+      <div class="sidebar-widget">
+        <h3><i class="fas fa-fire"></i> Popular</h3>
+        <div id="popularPosts">
+          <!-- Injected by JS -->
+        </div>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="sidebar-widget">
+        <h3><i class="fas fa-envelope"></i> Newsletter</h3>
+        <div class="newsletter">
+          <input type="email" placeholder="Your email address" />
+          <button onclick="alert('✅ Subscribed successfully!')">Subscribe</button>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- Pagination -->
+  <div class="pagination">
+    <a href="#" onclick="event.preventDefault(); alert('Previous page');">Prev</a>
+    <a href="#" class="active">1</a>
+    <a href="#" onclick="event.preventDefault(); alert('Page 2');">2</a>
+    <a href="#" onclick="event.preventDefault(); alert('Page 3');">3</a>
+    <a href="#" onclick="event.preventDefault(); alert('Next page');">Next</a>
   </div>
 
   <!-- ========== FOOTER ========== -->
@@ -448,33 +833,211 @@
     ];
 
     const grid = document.getElementById('mainGrid');
-    if (!grid) return;
+    if (grid) {
+      function renderCards(items) {
+        let html = '';
+        items.forEach(s => {
+          const extra = s.extraClass ? ` ${s.extraClass}` : '';
+          html += `
+            <div class="card${extra}">
+              <div class="card-icon"><i class="fas ${s.icon}"></i></div>
+              <h3>${s.title}</h3>
+              <p>${s.desc}</p>
+              <span class="meta-tag"><i class="fas fa-tag"></i> ${s.tag}</span>
+              <div class="card-footer-link">
+                <a href="#" onclick="event.preventDefault(); alert('🔗 ${s.title} — explore more');">
+                  explore <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          `;
+        });
+        grid.innerHTML = html;
+      }
+      renderCards(sections);
+    }
 
-    function renderCards(items) {
+    // ==========================================================
+    // ========== BLOG DATA ==========
+    // ==========================================================
+    const blogPosts = [
+      {
+        id: 1,
+        title: '🚀 Complete CI/CD Pipeline with GitHub Actions',
+        excerpt: 'Learn how to build a production-grade CI/CD pipeline for Node.js applications using GitHub Actions, Docker, and AWS ECS.',
+        date: '15 August 2026',
+        category: 'CI/CD',
+        readTime: '8 min read',
+        tags: ['GitHub Actions', 'Docker', 'AWS', 'Node.js']
+      },
+      {
+        id: 2,
+        title: '☁️ Kubernetes Networking: A Deep Dive',
+        excerpt: 'Understanding Services, Ingress Controllers, Network Policies, and how they work together in a Kubernetes cluster.',
+        date: '14 August 2026',
+        category: 'Kubernetes',
+        readTime: '12 min read',
+        tags: ['K8s', 'Networking', 'Ingress', 'Services']
+      },
+      {
+        id: 3,
+        title: '🔐 Terraform Security Best Practices',
+        excerpt: 'Secure your Infrastructure as Code with Terraform state encryption, sensitive variable handling, and policy as code.',
+        date: '13 August 2026',
+        category: 'Terraform',
+        readTime: '9 min read',
+        tags: ['Terraform', 'Security', 'IaC', 'AWS']
+      },
+      {
+        id: 4,
+        title: '🐳 Docker Multi-Stage Builds Explained',
+        excerpt: 'Reduce your Docker image size by 80% using multi-stage builds. Production-ready Dockerfile patterns.',
+        date: '12 August 2026',
+        category: 'Docker',
+        readTime: '6 min read',
+        tags: ['Docker', 'Optimization', 'DevOps']
+      },
+      {
+        id: 5,
+        title: '📊 Prometheus & Grafana Monitoring Stack',
+        excerpt: 'Complete guide to setting up monitoring for your microservices with Prometheus metrics and Grafana dashboards.',
+        date: '11 August 2026',
+        category: 'Monitoring',
+        readTime: '10 min read',
+        tags: ['Prometheus', 'Grafana', 'Monitoring', 'Alerting']
+      },
+      {
+        id: 6,
+        title: '🔒 DevSecOps: Shift-Left Security Approach',
+        excerpt: 'How to integrate security scanners, SAST, DAST, and vulnerability checks early in your CI/CD pipeline.',
+        date: '10 August 2026',
+        category: 'Security',
+        readTime: '7 min read',
+        tags: ['DevSecOps', 'Security', 'SAST', 'DAST']
+      }
+    ];
+
+    // ---------- RENDER BLOG POSTS ----------
+    function renderPosts(posts) {
+      const main = document.getElementById('blogMain');
+      if (!main) return;
+
       let html = '';
-      items.forEach(s => {
-        const extra = s.extraClass ? ` ${s.extraClass}` : '';
+      posts.forEach(post => {
         html += `
-          <div class="card${extra}">
-            <div class="card-icon"><i class="fas ${s.icon}"></i></div>
-            <h3>${s.title}</h3>
-            <p>${s.desc}</p>
-            <span class="meta-tag"><i class="fas fa-tag"></i> ${s.tag}</span>
-            <div class="card-footer-link">
-              <a href="#" onclick="event.preventDefault(); alert('🔗 ${s.title} — explore more');">
-                explore <i class="fas fa-arrow-right"></i>
+          <article class="blog-post">
+            <div class="post-meta">
+              <span class="category">${post.category}</span>
+              <span class="date"><i class="far fa-calendar-alt"></i> ${post.date}</span>
+              <span class="read-time"><i class="far fa-clock"></i> ${post.readTime}</span>
+            </div>
+            <h2><a href="#" onclick="event.preventDefault(); alert('📖 Reading: ${post.title}');">${post.title}</a></h2>
+            <p class="excerpt">${post.excerpt}</p>
+            <div class="post-footer">
+              <div class="tags">
+                ${post.tags.map(tag => `<span>#${tag}</span>`).join('')}
+              </div>
+              <a href="#" class="read-more" onclick="event.preventDefault(); alert('📖 Reading: ${post.title}');">
+                Read Full Article <i class="fas fa-arrow-right"></i>
               </a>
+            </div>
+          </article>
+        `;
+      });
+      main.innerHTML = html;
+    }
+
+    renderPosts(blogPosts);
+
+    // ---------- RENDER CATEGORIES ----------
+    function renderCategories() {
+      const categoryList = document.getElementById('categoryList');
+      if (!categoryList) return;
+
+      const categories = {};
+      blogPosts.forEach(post => {
+        categories[post.category] = (categories[post.category] || 0) + 1;
+      });
+
+      let html = '';
+      Object.keys(categories).forEach(cat => {
+        html += `
+          <li>
+            <a onclick="filterByCategory('${cat}');">${cat}</a>
+            <span class="count">${categories[cat]}</span>
+          </li>
+        `;
+      });
+      categoryList.innerHTML = html;
+    }
+
+    renderCategories();
+
+    // ---------- RENDER POPULAR POSTS ----------
+    function renderPopular() {
+      const container = document.getElementById('popularPosts');
+      if (!container) return;
+
+      const popular = blogPosts.slice(0, 4);
+      let html = '';
+      popular.forEach((post, index) => {
+        html += `
+          <div class="popular-post">
+            <div class="num">${index + 1}</div>
+            <div class="info">
+              <a href="#" onclick="event.preventDefault(); alert('📖 ${post.title}');">${post.title}</a>
+              <div class="small">${post.date}</div>
             </div>
           </div>
         `;
       });
-      grid.innerHTML = html;
+      container.innerHTML = html;
     }
 
-    renderCards(sections);
+    renderPopular();
 
-    // optional console
+    // ---------- SEARCH FUNCTION ----------
+    window.searchBlog = function() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      if (!query) {
+        renderPosts(blogPosts);
+        return;
+      }
+
+      const filtered = blogPosts.filter(post => 
+        post.title.toLowerCase().includes(query) ||
+        post.excerpt.toLowerCase().includes(query) ||
+        post.category.toLowerCase().includes(query) ||
+        post.tags.some(tag => tag.toLowerCase().includes(query))
+      );
+
+      if (filtered.length === 0) {
+        document.getElementById('blogMain').innerHTML = `
+          <div style="background: white; border-radius: 1.8rem; padding: 3rem; text-align: center;">
+            <i class="fas fa-search" style="font-size: 3rem; color: #b3cee8;"></i>
+            <h3 style="margin: 1rem 0;">No results found for "${query}"</h3>
+            <p style="color: #6b8ba3;">Try different keywords or browse categories</p>
+          </div>
+        `;
+      } else {
+        renderPosts(filtered);
+      }
+    }
+
+    // Enter key support for search
+    document.getElementById('searchInput').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') window.searchBlog();
+    });
+
+    // ---------- FILTER BY CATEGORY ----------
+    window.filterByCategory = function(category) {
+      const filtered = blogPosts.filter(post => post.category === category);
+      renderPosts(filtered);
+      document.getElementById('searchInput').value = category;
+    }
+
     console.log('🚀 CMS DevOps Academy · 9 pillars active');
+    console.log('📝 Blog · ' + blogPosts.length + ' posts loaded');
   })();
 </script>
 

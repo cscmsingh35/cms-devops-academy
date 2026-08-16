@@ -1270,10 +1270,10 @@
   </div>
 
   <!-- ========================================================== -->
-  <!-- ========== PORTFOLIO DETAIL SECTION ========== -->
+  <!-- ========== PORTFOLIO DETAIL SECTION (UPDATED) ========== -->
   <!-- ========================================================== -->
   <div class="section-title" style="margin-top: 3.5rem;">
-    <h2><i class="fas fa-project-diagram"></i> Featured Project: 3-Tier Landing Zone</h2>
+    <h2><i class="fas fa-project-diagram"></i> Featured Project: Secure 3‑Tier Landing Zone</h2>
     <span class="badge-soft"><i class="fas fa-cloud"></i> Azure Architecture</span>
   </div>
 
@@ -1360,6 +1360,185 @@
         <span class="color-box" style="width:16px;height:16px;border-radius:4px;background:#2e7d32;"></span> Database
       </div>
     </div>
+
+    <!-- ========== NEW: PROJECT CODE SNIPPET (Terraform + Azure CLI) ========== -->
+    <div style="margin-top: 2rem; background: #f4f9fe; border-radius: 1.2rem; padding: 1.5rem; border: 1px solid #d2e0ed;">
+      <h4 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; color: #0b2b44;">
+        <i class="fas fa-code" style="color: #006696;"></i> 
+        Infrastructure as Code — Terraform & Azure CLI
+        <span style="font-size: 0.7rem; background: #eaf2fa; padding: 0.2rem 1rem; border-radius: 20px; color: #1f5b7e;">deploy</span>
+      </h4>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+        <!-- Terraform block -->
+        <div style="background: white; border-radius: 1rem; padding: 1.2rem; border: 1px solid #d2e0ed;">
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+            <i class="fas fa-code-branch" style="color: #6b4c9a;"></i>
+            <span style="font-weight: 700; font-size: 0.9rem; color: #0b2b44;">Terraform (main.tf)</span>
+          </div>
+          <pre style="background: #0b1e2b; color: #e6f1ff; padding: 1rem; border-radius: 0.75rem; font-size: 0.75rem; overflow-x: auto; line-height: 1.5;">
+<code># —————— main.tf ——————
+terraform {
+  required_version = ">= 1.5.0"
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~> 3.0"
+    }
+  }
+  backend "azurerm" {
+    resource_group_name  = "tfstate-rg"
+    storage_account_name = "tfstatestorage01"
+    container_name       = "tfstate"
+    key                  = "landing-zone.tfstate"
+  }
+}
+
+provider "azurerm" {
+  features {}
+}
+
+# Resource Group
+resource "azurerm_resource_group" "main" {
+  name     = "rg-landing-zone"
+  location = "eastus"
+}
+
+# Virtual Network
+resource "azurerm_virtual_network" "main" {
+  name                = "vnet-landing-zone"
+  location            = azurerm_resource_group.main.location
+  resource_group_name = azurerm_resource_group.main.name
+  address_space       = ["10.0.0.0/16"]
+}
+
+# Subnets
+resource "azurerm_subnet" "app_gateway" {
+  name                 = "snet-app-gw"
+  resource_group_name  = azurerm_resource_group.main.name
+  virtual_network_name = azurerm_virtual_network.main.name
+  address_prefixes     = ["10.0.5.0/24"]
+}
+
+resource "azurerm_subnet" "bastion" {
+  name                 = "snet-bastion"
+  resource_group_name  = azurerm_resource_group.main.name
+  virtual_network_name = azurerm_virtual_network.main.name
+  address_prefixes     = ["10.0.4.0/24"]
+}
+
+resource "azurerm_subnet" "backend" {
+  name                 = "snet-backend"
+  resource_group_name  = azurerm_resource_group.main.name
+  virtual_network_name = azurerm_virtual_network.main.name
+  address_prefixes     = ["10.0.2.0/24"]
+}
+
+resource "azurerm_subnet" "database" {
+  name                 = "snet-database"
+  resource_group_name  = azurerm_resource_group.main.name
+  virtual_network_name = azurerm_virtual_network.main.name
+  address_prefixes     = ["10.0.3.0/24"]
+}
+
+# Azure SQL Database
+resource "azurerm_sql_server" "main" {
+  name                         = "sql-landing-zone"
+  resource_group_name          = azurerm_resource_group.main.name
+  location                     = azurerm_resource_group.main.location
+  version                      = "12.0"
+  administrator_login          = "sqladmin"
+  administrator_login_password = "SecurePass123!"
+}
+
+resource "azurerm_sql_database" "main" {
+  name                = "db-landing-zone"
+  resource_group_name = azurerm_resource_group.main.name
+  server_name         = azurerm_sql_server.main.name
+  edition             = "Basic"
+}
+
+# Outputs
+output "vnet_id" {
+  value = azurerm_virtual_network.main.id
+}</code></pre>
+        </div>
+
+        <!-- Azure CLI block -->
+        <div style="background: white; border-radius: 1rem; padding: 1.2rem; border: 1px solid #d2e0ed;">
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+            <i class="fas fa-terminal" style="color: #0077be;"></i>
+            <span style="font-weight: 700; font-size: 0.9rem; color: #0b2b44;">Azure CLI (deployment script)</span>
+          </div>
+          <pre style="background: #0b1e2b; color: #e6f1ff; padding: 1rem; border-radius: 0.75rem; font-size: 0.75rem; overflow-x: auto; line-height: 1.5;">
+<code>#!/bin/bash
+# deploy-landing-zone.sh
+
+# Variables
+RG="rg-landing-zone"
+LOCATION="eastus"
+VNET="vnet-landing-zone"
+ADDRESS_PREFIX="10.0.0.0/16"
+
+# 1. Create Resource Group
+az group create --name $RG --location $LOCATION
+
+# 2. Create Virtual Network
+az network vnet create \
+  --resource-group $RG \
+  --name $VNET \
+  --address-prefix $ADDRESS_PREFIX
+
+# 3. Create Subnets
+az network vnet subnet create \
+  --resource-group $RG \
+  --vnet-name $VNET \
+  --name snet-app-gw \
+  --address-prefix 10.0.5.0/24
+
+az network vnet subnet create \
+  --resource-group $RG \
+  --vnet-name $VNET \
+  --name snet-bastion \
+  --address-prefix 10.0.4.0/24
+
+az network vnet subnet create \
+  --resource-group $RG \
+  --vnet-name $VNET \
+  --name snet-backend \
+  --address-prefix 10.0.2.0/24
+
+az network vnet subnet create \
+  --resource-group $RG \
+  --vnet-name $VNET \
+  --name snet-database \
+  --address-prefix 10.0.3.0/24
+
+# 4. Create Azure SQL Server & Database
+az sql server create \
+  --name sql-landing-zone \
+  --resource-group $RG \
+  --location $LOCATION \
+  --admin-user sqladmin \
+  --admin-password SecurePass123!
+
+az sql db create \
+  --resource-group $RG \
+  --server sql-landing-zone \
+  --name db-landing-zone \
+  --edition Basic
+
+echo "✅ Landing zone deployed successfully!"</code></pre>
+        </div>
+      </div>
+      <div style="margin-top: 1rem; font-size: 0.85rem; color: #3d627e; display: flex; gap: 1rem; flex-wrap: wrap;">
+        <span><i class="fas fa-check-circle" style="color: #2e7d32;"></i> Terraform state stored remotely</span>
+        <span><i class="fas fa-check-circle" style="color: #2e7d32;"></i> Azure CLI automation</span>
+        <span><i class="fas fa-check-circle" style="color: #2e7d32;"></i> 4 subnets + PaaS database</span>
+        <span><i class="fas fa-check-circle" style="color: #2e7d32;"></i> Security groups applied</span>
+      </div>
+    </div>
+
   </div>
 
   <!-- ========================================================== -->
@@ -1568,31 +1747,13 @@
       { id: 7, question: 'Scenario: You need to run a workflow every day at 9 AM. How?', answer: 'Use <code>schedule</code> trigger with cron syntax:<br><pre>on:\n  schedule:\n    - cron: \'0 9 * * *\'</pre>This runs daily at 9:00 AM UTC.', level: 'beginner' },
       { id: 8, question: 'Scenario: You want to use environment variables in your workflow. How?', answer: 'Use <code>env</code> context:<br><pre>env:\n  NODE_ENV: production\n  API_URL: https://api.example.com\n\nsteps:\n  - run: echo ${{ env.NODE_ENV }}</pre>', level: 'beginner' },
       { id: 9, question: 'Scenario: You need to deploy to Azure Web App after successful build. How do you do it?', answer: 'Use <code>azure/webapps-deploy</code> action:<br><pre>jobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-node@v4\n        with:\n          node-version: \'18\'\n      - run: npm install\n      - run: npm run build\n      - name: Deploy to Azure Web App\n        uses: azure/webapps-deploy@v2\n        with:\n          app-name: \'my-webapp\'\n          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}\n          package: \'./build\'</pre>', level: 'intermediate' },
-      { id: 10, question: 'Scenario: You want to use secrets in your workflow. How do you store and access them?', answer: 'Store secrets in GitHub Settings > Secrets and variables > Actions. Access them using <code>${{ secrets.SECRET_NAME }}</code>.<br><pre>steps:\n  - run: echo ${{ secrets.API_KEY }}</pre>', level: 'intermediate' },
-      { id: 11, question: 'Scenario: You need to run jobs in parallel to speed up your workflow. How?', answer: 'Jobs run in parallel by default. You can control with <code>needs</code>:<br><pre>jobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo "Testing..."\n  lint:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo "Linting..."\n  build:\n    needs: [test, lint]\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo "Building..."</pre>', level: 'intermediate' },
-      { id: 12, question: 'Scenario: You want to run a job on different operating systems. How?', answer: 'Use matrix strategy:<br><pre>jobs:\n  build:\n    runs-on: ${{ matrix.os }}\n    strategy:\n      matrix:\n        os: [ubuntu-latest, windows-latest, macos-latest]\n    steps:\n      - run: echo "Running on ${{ matrix.os }}"</pre>', level: 'intermediate' },
-      { id: 13, question: 'Scenario: You need to upload test results as artifacts. How?', answer: 'Use <code>actions/upload-artifact</code>:<br><pre>steps:\n  - uses: actions/checkout@v4\n  - run: npm test\n  - uses: actions/upload-artifact@v3\n    with:\n      name: test-results\n      path: test-results/</pre>', level: 'intermediate' },
-      { id: 14, question: 'Scenario: You want to skip CI when commit message contains [skip ci]. How?', answer: 'Use conditional check at workflow level or job level:<br><pre>jobs:\n  build:\n    if: ${{ !contains(github.event.head_commit.message, \'[skip ci]\') }}\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo "Building..."</pre>', level: 'intermediate' },
-      { id: 15, question: 'Scenario: You need to build and push Docker image to Docker Hub. How?', answer: 'Use docker/login-action and docker/build-push-action:<br><pre>steps:\n  - uses: actions/checkout@v4\n  - uses: docker/login-action@v2\n    with:\n      username: ${{ secrets.DOCKER_USERNAME }}\n      password: ${{ secrets.DOCKER_PASSWORD }}\n  - uses: docker/build-push-action@v4\n    with:\n      push: true\n      tags: user/app:latest</pre>', level: 'intermediate' },
-      { id: 16, question: 'Scenario: You need to run a job conditionally based on previous job success. How?', answer: 'Use <code>if</code> with <code>success()</code>:<br><pre>jobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: npm test\n  deploy:\n    runs-on: ubuntu-latest\n    if: success()\n    needs: test\n    steps:\n      - run: echo "Deploying..."</pre>', level: 'intermediate' },
-      { id: 17, question: 'Scenario: You want to create a reusable workflow for multiple projects. How?', answer: 'Create a separate workflow file and use <code>workflow_call</code>:<br><pre># reusable-workflow.yml\non:\n  workflow_call:\n    inputs:\n      environment:\n        type: string\n        required: true\n    secrets:\n      api-key:\n        required: true</pre>Then call it:<br><pre>jobs:\n  call-workflow:\n    uses: ./.github/workflows/reusable-workflow.yml\n    with:\n      environment: dev\n    secrets:\n      api-key: ${{ secrets.API_KEY }}</pre>', level: 'intermediate' },
-      { id: 18, question: 'Scenario: You need to run a workflow on a schedule and on push. How?', answer: 'Use multiple triggers in <code>on</code>:<br><pre>on:\n  push:\n    branches: [ main ]\n  schedule:\n    - cron: \'0 9 * * *\'</pre>This runs on push to main AND daily at 9 AM.', level: 'intermediate' },
-      { id: 19, question: 'Scenario: You need to implement Blue-Green deployment using GitHub Actions. How?', answer: 'Create two deployment environments (blue and green). Use deployment slots or separate services.<br><pre>jobs:\n  deploy-blue:\n    environment: blue\n    steps:\n      - run: echo "Deploy to Blue environment"\n  switch-traffic:\n    needs: deploy-blue\n    steps:\n      - run: echo "Switch traffic to Blue"\n  cleanup-green:\n    needs: switch-traffic\n    steps:\n      - run: echo "Cleanup Green environment"</pre>', level: 'advanced' },
-      { id: 20, question: 'Scenario: You want to integrate SonarQube for code quality scanning. How?', answer: 'Use <code>SonarQube</code> action:<br><pre>steps:\n  - uses: actions/checkout@v4\n  - uses: SonarQube/sonarqube-action@v1\n    with:\n      host: ${{ secrets.SONAR_HOST }}\n      token: ${{ secrets.SONAR_TOKEN }}</pre>', level: 'advanced' },
-      { id: 21, question: 'Scenario: You need to deploy to Kubernetes cluster using GitHub Actions. How?', answer: 'Use <code>azure/aks-set-context</code> or <code>actions-hub/kubectl</code>:<br><pre>steps:\n  - uses: actions/checkout@v4\n  - uses: azure/aks-set-context@v1\n    with:\n      creds: ${{ secrets.AZURE_CREDENTIALS }}\n      cluster-name: my-aks\n      resource-group: rg\n  - uses: actions-hub/kubectl@master\n    with:\n      args: apply -f ./manifests/</pre>', level: 'advanced' },
-      { id: 22, question: 'Scenario: You want to implement canary deployment with gradual rollout. How?', answer: 'Use progressive deployment strategy:<br><pre>jobs:\n  deploy-10:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo "Deploy 10% traffic"\n  wait-verify:\n    runs-on: ubuntu-latest\n    needs: deploy-10\n    steps:\n      - run: sleep 300\n  deploy-50:\n    runs-on: ubuntu-latest\n    needs: wait-verify\n    steps:\n      - run: echo "Deploy 50% traffic"\n  deploy-100:\n    runs-on: ubuntu-latest\n    needs: deploy-50\n    steps:\n      - run: echo "Full rollout"</pre>', level: 'advanced' },
-      { id: 23, question: 'Scenario: You need to automate dependency updates using GitHub Actions. How?', answer: 'Use <code>dependabot</code> or create workflow with <code>actions/github-script</code>:<br><pre>steps:\n  - uses: actions/checkout@v4\n  - name: Update dependencies\n    uses: actions/github-script@v6\n    with:\n      script: |\n        // Script to update package.json dependencies\n        // Create PR with updates</pre>', level: 'advanced' },
-      { id: 24, question: 'Scenario: You want to implement security scanning with Snyk in your workflow. How?', answer: 'Use <code>snyk/actions</code> action:<br><pre>steps:\n  - uses: actions/checkout@v4\n  - uses: actions/setup-node@v4\n  - uses: snyk/actions/setup@master\n  - uses: snyk/actions/node@master\n    env:\n      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}\n    with:\n      args: --severity-threshold=high</pre>', level: 'advanced' },
-      { id: 25, question: 'Scenario: You need to create a self-hosted runner for your GitHub Actions. How?', answer: 'Install and configure self-hosted runner:<br><pre># On target machine\n./config.sh --url https://github.com/owner/repo --token AUTH_TOKEN\n./run.sh</pre>Then use in workflow:<br><pre>jobs:\n  build:\n    runs-on: self-hosted\n    steps:\n      - run: echo "Running on self-hosted runner"</pre>', level: 'advanced' }
+      { id: 10, question: 'Scenario: You want to use secrets in your workflow. How do you store and access them?', answer: 'Store secrets in GitHub Settings > Secrets and variables > Actions. Access them using <code>${{ secrets.SECRET_NAME }}</code>.<br><pre>steps:\n  - run: echo ${{ secrets.API_KEY }}</pre>', level: 'intermediate' }
     ];
 
-    // ---------- RENDER GITHUB QA (FIXED - NOW WORKING) ----------
+    // Render function for GitHub QA
     function renderGithubQA(items) {
       const grid = document.getElementById('githubQAGrid');
-      if (!grid) {
-        console.error('githubQAGrid element not found!');
-        return;
-      }
+      if (!grid) return;
       let html = '';
       items.forEach((item) => {
         html += `
@@ -1604,10 +1765,7 @@
         `;
       });
       grid.innerHTML = html;
-      console.log('✅ GitHub Questions Rendered: ' + items.length);
     }
-
-    // ✅ FIXED: Calling render function
     renderGithubQA(githubQA);
 
     window.filterGithubQA = function(category, btn) {

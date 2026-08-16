@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CMS DevOps Academy · viral vibe</title>
-  <!-- Font Awesome 6 (free) -->
+  <title>CMS DevOps Academy · Interactive Pro</title>
+  <!-- Font Awesome 8 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
+    /* ---------- GLOBAL ---------- */
     * {
       margin: 0;
       padding: 0;
@@ -26,7 +27,7 @@
       margin: 0 auto;
     }
 
-    /* ---------- HEADER / ACADEMY BRAND · glassmorphism ---------- */
+    /* ---------- HEADER · glassmorphism ---------- */
     .academy-header {
       background: rgba(255, 255, 255, 0.6);
       backdrop-filter: blur(12px);
@@ -130,7 +131,7 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.02);
     }
 
-    /* ---------- NAV GRID · pills ---------- */
+    /* ---------- NAV GRID ---------- */
     .nav-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -170,7 +171,7 @@
       box-shadow: 0 12px 28px -8px rgba(0, 80, 200, 0.15);
     }
 
-    /* ---------- MAIN CARDS · modern with gradients ---------- */
+    /* ---------- CARDS ---------- */
     .section-title {
       display: flex;
       justify-content: space-between;
@@ -221,6 +222,7 @@
       flex-direction: column;
       position: relative;
       overflow: hidden;
+      cursor: pointer;
     }
 
     .card::before {
@@ -314,7 +316,7 @@
       border-left: 4px solid #0066cc;
     }
 
-    /* ---------- PORTFOLIO DETAIL · glass + gradient ---------- */
+    /* ---------- PORTFOLIO DETAIL ---------- */
     .portfolio-detail {
       background: rgba(255,255,255,0.5);
       backdrop-filter: blur(8px);
@@ -433,197 +435,9 @@
     .arch-layer.database { border-color: #2e7d32; background: #f0f7f0; }
     .arch-layer.database .layer-title { color: #2e7d32; }
 
-    /* ========== AZURE DEVOPS · clean cards ========== */
-    .azure-devops-section {
-      background: rgba(255,255,255,0.5);
-      backdrop-filter: blur(8px);
-      border-radius: 2.2rem;
-      padding: 2rem;
-      margin-top: 1rem;
-      border: 1px solid rgba(255,255,255,0.5);
-    }
-
-    .azure-tabs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-bottom: 1.5rem;
-      border-bottom: 2px solid #eaf2fa;
-      padding-bottom: 1rem;
-    }
-
-    .azure-tabs .tab-btn {
-      background: rgba(255,255,255,0.5);
-      border: none;
-      padding: 0.5rem 1.6rem;
-      border-radius: 60px;
-      font-weight: 600;
-      color: #1a405a;
-      cursor: pointer;
-      transition: 0.2s;
-      font-size: 0.9rem;
-      backdrop-filter: blur(4px);
-    }
-
-    .azure-tabs .tab-btn:hover {
-      background: white;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-    }
-
-    .azure-tabs .tab-btn.active {
-      background: #0066cc;
-      color: white;
-      box-shadow: 0 8px 20px -8px rgba(0, 80, 200, 0.3);
-    }
-
-    .azure-qa-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      max-height: 600px;
-      overflow-y: auto;
-      padding-right: 0.5rem;
-    }
-
-    .azure-qa-grid::-webkit-scrollbar { width: 6px; }
-    .azure-qa-grid::-webkit-scrollbar-track { background: #eaf2fa; border-radius: 10px; }
-    .azure-qa-grid::-webkit-scrollbar-thumb { background: #0066cc; border-radius: 10px; }
-
-    .azure-qa-item {
-      background: white;
-      border-radius: 1.8rem;
-      padding: 1.5rem;
-      border: 1px solid #eaf2fa;
-      transition: 0.25s;
-      border-left: 4px solid #0066cc;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-    }
-
-    .azure-qa-item:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 32px -12px rgba(0, 60, 120, 0.10);
-      border-color: #cce4ff;
-    }
-
-    .azure-qa-item .q-number {
-      display: inline-block;
-      background: #0066cc;
-      color: white;
-      padding: 0.1rem 0.9rem;
-      border-radius: 30px;
-      font-size: 0.7rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .azure-qa-item h4 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #0a1f30;
-      margin-bottom: 0.4rem;
-    }
-    .azure-qa-item h4 i { color: #0066cc; margin-right: 0.5rem; }
-    .azure-qa-item .answer { color: #1f4460; font-size: 0.9rem; line-height: 1.7; }
-    .azure-qa-item .answer code { background: #e5f0ff; padding: 0.1rem 0.4rem; border-radius: 6px; font-size: 0.8rem; color: #0066cc; }
-
-    /* ========== GITHUB ACTIONS ========== */
-    .github-section {
-      background: rgba(255,255,255,0.5);
-      backdrop-filter: blur(8px);
-      border-radius: 2.2rem;
-      padding: 2rem;
-      margin-top: 1rem;
-      border: 1px solid rgba(255,255,255,0.5);
-    }
-
-    .github-tabs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-bottom: 1.5rem;
-      border-bottom: 2px solid #eaf2fa;
-      padding-bottom: 1rem;
-    }
-
-    .github-tabs .tab-btn {
-      background: rgba(255,255,255,0.5);
-      border: none;
-      padding: 0.5rem 1.6rem;
-      border-radius: 60px;
-      font-weight: 600;
-      color: #1a405a;
-      cursor: pointer;
-      transition: 0.2s;
-      font-size: 0.9rem;
-      backdrop-filter: blur(4px);
-    }
-
-    .github-tabs .tab-btn:hover {
-      background: white;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-    }
-
-    .github-tabs .tab-btn.active {
-      background: #24292e;
-      color: white;
-      box-shadow: 0 8px 20px -8px rgba(0,0,0,0.2);
-    }
-
-    .github-qa-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      max-height: 600px;
-      overflow-y: auto;
-      padding-right: 0.5rem;
-    }
-
-    .github-qa-grid::-webkit-scrollbar { width: 6px; }
-    .github-qa-grid::-webkit-scrollbar-track { background: #eaf2fa; border-radius: 10px; }
-    .github-qa-grid::-webkit-scrollbar-thumb { background: #24292e; border-radius: 10px; }
-
-    .github-qa-item {
-      background: white;
-      border-radius: 1.8rem;
-      padding: 1.5rem;
-      border: 1px solid #eaf2fa;
-      transition: 0.25s;
-      border-left: 4px solid #24292e;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-    }
-
-    .github-qa-item:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 32px -12px rgba(0, 60, 120, 0.10);
-      border-color: #cce4ff;
-    }
-
-    .github-qa-item .q-number {
-      display: inline-block;
-      background: #24292e;
-      color: white;
-      padding: 0.1rem 0.9rem;
-      border-radius: 30px;
-      font-size: 0.7rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .github-qa-item h4 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #0a1f30;
-      margin-bottom: 0.4rem;
-    }
-    .github-qa-item h4 i { color: #24292e; margin-right: 0.5rem; }
-    .github-qa-item .answer { color: #1f4460; font-size: 0.9rem; line-height: 1.7; }
-    .github-qa-item .answer code { background: #e5f0ff; padding: 0.1rem 0.4rem; border-radius: 6px; font-size: 0.8rem; color: #24292e; }
-    .github-qa-item .answer pre {
-      background: #f4f9fe; padding: 0.8rem; border-radius: 12px; overflow-x: auto;
-      font-size: 0.8rem; border: 1px solid #d2e0ed; margin: 0.3rem 0;
-    }
-
-    /* ========== INTERVIEW · terraform ========== */
+    /* ---------- Q&A SECTIONS ---------- */
+    .azure-devops-section,
+    .github-section,
     .interview-section {
       background: rgba(255,255,255,0.5);
       backdrop-filter: blur(8px);
@@ -633,7 +447,7 @@
       border: 1px solid rgba(255,255,255,0.5);
     }
 
-    .interview-tabs {
+    .azure-tabs, .github-tabs, .interview-tabs {
       display: flex;
       flex-wrap: wrap;
       gap: 0.6rem;
@@ -642,7 +456,7 @@
       padding-bottom: 1rem;
     }
 
-    .interview-tabs .tab-btn {
+    .tab-btn {
       background: rgba(255,255,255,0.5);
       border: none;
       padding: 0.5rem 1.6rem;
@@ -655,42 +469,60 @@
       backdrop-filter: blur(4px);
     }
 
-    .interview-tabs .tab-btn:hover {
+    .tab-btn:hover {
       background: white;
       box-shadow: 0 4px 12px rgba(0,0,0,0.02);
     }
 
-    .interview-tabs .tab-btn.active {
-      background: #6b4c9a;
+    .tab-btn.active {
       color: white;
-      box-shadow: 0 8px 20px -8px rgba(107, 76, 154, 0.3);
+      box-shadow: 0 8px 20px -8px rgba(0, 80, 200, 0.3);
     }
 
-    .qa-grid {
+    .azure-tabs .tab-btn.active { background: #0066cc; }
+    .github-tabs .tab-btn.active { background: #24292e; }
+    .interview-tabs .tab-btn.active { background: #6b4c9a; }
+
+    .qa-grid, .azure-qa-grid, .github-qa-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
+      max-height: 600px;
+      overflow-y: auto;
+      padding-right: 0.5rem;
     }
 
-    .qa-item {
+    .qa-grid::-webkit-scrollbar,
+    .azure-qa-grid::-webkit-scrollbar,
+    .github-qa-grid::-webkit-scrollbar { width: 6px; }
+    .qa-grid::-webkit-scrollbar-track,
+    .azure-qa-grid::-webkit-scrollbar-track,
+    .github-qa-grid::-webkit-scrollbar-track { background: #eaf2fa; border-radius: 10px; }
+    .qa-grid::-webkit-scrollbar-thumb { background: #6b4c9a; border-radius: 10px; }
+    .azure-qa-grid::-webkit-scrollbar-thumb { background: #0066cc; border-radius: 10px; }
+    .github-qa-grid::-webkit-scrollbar-thumb { background: #24292e; border-radius: 10px; }
+
+    .qa-item, .azure-qa-item, .github-qa-item {
       background: white;
       border-radius: 1.8rem;
       padding: 1.5rem;
       border: 1px solid #eaf2fa;
       transition: 0.25s;
-      border-left: 4px solid #6b4c9a;
       box-shadow: 0 4px 12px rgba(0,0,0,0.02);
     }
 
-    .qa-item:hover {
+    .qa-item:hover, .azure-qa-item:hover, .github-qa-item:hover {
       transform: translateY(-4px);
       box-shadow: 0 16px 32px -12px rgba(0, 60, 120, 0.10);
       border-color: #cce4ff;
     }
 
-    .qa-item .q-number {
+    .qa-item { border-left: 4px solid #6b4c9a; }
+    .azure-qa-item { border-left: 4px solid #0066cc; }
+    .github-qa-item { border-left: 4px solid #24292e; }
+
+    .q-number {
       display: inline-block;
-      background: #6b4c9a;
       color: white;
       padding: 0.1rem 0.9rem;
       border-radius: 30px;
@@ -698,22 +530,135 @@
       font-weight: 700;
       margin-bottom: 0.5rem;
     }
+    .qa-item .q-number { background: #6b4c9a; }
+    .azure-qa-item .q-number { background: #0066cc; }
+    .github-qa-item .q-number { background: #24292e; }
 
-    .qa-item h4 {
+    .qa-item h4, .azure-qa-item h4, .github-qa-item h4 {
       font-size: 1rem;
       font-weight: 700;
       color: #0a1f30;
       margin-bottom: 0.4rem;
     }
     .qa-item h4 i { color: #6b4c9a; margin-right: 0.5rem; }
-    .qa-item .answer { color: #1f4460; font-size: 0.9rem; line-height: 1.7; }
-    .qa-item .answer code { background: #e5f0ff; padding: 0.1rem 0.4rem; border-radius: 6px; font-size: 0.8rem; color: #6b4c9a; }
-    .qa-item .answer pre {
+    .azure-qa-item h4 i { color: #0066cc; margin-right: 0.5rem; }
+    .github-qa-item h4 i { color: #24292e; margin-right: 0.5rem; }
+
+    .answer { color: #1f4460; font-size: 0.9rem; line-height: 1.7; }
+    .answer code { background: #e5f0ff; padding: 0.1rem 0.4rem; border-radius: 6px; font-size: 0.8rem; }
+    .qa-item .answer code { color: #6b4c9a; }
+    .azure-qa-item .answer code { color: #0066cc; }
+    .github-qa-item .answer code { color: #24292e; }
+    .answer pre {
       background: #f4f9fe; padding: 0.8rem; border-radius: 12px; overflow-x: auto;
       font-size: 0.8rem; border: 1px solid #d2e0ed; margin: 0.3rem 0;
     }
 
-    /* ========== BLOG · fresh ========== */
+    /* ---------- TERRAFORM PROJECTS SECTION ---------- */
+    .tf-projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+      margin: 1.5rem 0;
+    }
+
+    .tf-project-card {
+      background: white;
+      border-radius: 2rem;
+      padding: 1.8rem;
+      border: 1px solid #eaf2fa;
+      transition: 0.3s;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.02);
+    }
+
+    .tf-project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 36px -12px rgba(0, 60, 120, 0.12);
+      border-color: #cce4ff;
+    }
+
+    .tf-project-card .project-icon {
+      font-size: 2rem;
+      color: #6b4c9a;
+      margin-bottom: 0.5rem;
+    }
+
+    .tf-project-card h4 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #0a1f30;
+      margin-bottom: 0.3rem;
+    }
+
+    .tf-project-card .project-desc {
+      color: #2a4b66;
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .tf-project-card .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .tf-project-card .project-tags span {
+      background: #e5f0ff;
+      padding: 0.1rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #00509e;
+    }
+
+    .tf-project-card .code-preview {
+      background: #0b1e2b;
+      color: #e6f1ff;
+      padding: 0.8rem;
+      border-radius: 1rem;
+      font-size: 0.7rem;
+      overflow-x: auto;
+      line-height: 1.5;
+      font-family: 'Courier New', monospace;
+    }
+
+    .tf-project-card .expand-btn {
+      margin-top: 0.8rem;
+      background: transparent;
+      border: 2px solid #6b4c9a;
+      color: #6b4c9a;
+      padding: 0.3rem 1.2rem;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .tf-project-card .expand-btn:hover {
+      background: #6b4c9a;
+      color: white;
+    }
+
+    .tf-project-card .full-code {
+      display: none;
+      margin-top: 0.8rem;
+      background: #0b1e2b;
+      color: #e6f1ff;
+      padding: 0.8rem;
+      border-radius: 1rem;
+      font-size: 0.7rem;
+      overflow-x: auto;
+      line-height: 1.5;
+      font-family: 'Courier New', monospace;
+    }
+
+    .tf-project-card .full-code.show {
+      display: block;
+    }
+
+    /* ---------- BLOG ---------- */
     .blog-layout {
       display: grid;
       grid-template-columns: 2fr 1fr;
@@ -810,7 +755,6 @@
     .blog-post .read-more i { transition: 0.2s; }
     .blog-post .read-more:hover i { transform: translateX(6px); }
 
-    /* Sidebar */
     .sidebar {
       position: sticky;
       top: 2rem;
@@ -984,7 +928,6 @@
     }
     .footer-note i { color: #0066cc; margin-right: 4px; }
 
-    /* ---------- RESPONSIVE ---------- */
     @media (max-width: 992px) {
       .blog-layout { grid-template-columns: 1fr; }
       .qa-grid, .azure-qa-grid, .github-qa-grid { grid-template-columns: 1fr; }
@@ -1000,17 +943,18 @@
       .portfolio-detail { padding: 1.2rem; }
       .architecture-diagram { padding: 1rem; }
       .arch-grid { grid-template-columns: 1fr; }
+      .tf-projects-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 <div class="container">
 
-  <!-- ========== HEADER ========== -->
+  <!-- HEADER -->
   <header class="academy-header">
     <div class="brand">
       <div class="brand-icon"><i class="fas fa-graduation-cap"></i></div>
-      <h1>CMS DevOps Academy <span>v2.0</span></h1>
+      <h1>CMS DevOps Academy <span>v3.0</span></h1>
     </div>
     <div class="header-actions">
       <span class="date-badge"><i class="far fa-calendar-alt"></i> <span id="headerDate"></span></span>
@@ -1018,7 +962,7 @@
     </div>
   </header>
 
-  <!-- ========== NAVIGATION ========== -->
+  <!-- NAV -->
   <div class="nav-grid">
     <div class="nav-item"><i class="fas fa-home"></i> Portfolio</div>
     <div class="nav-item"><i class="fas fa-book-open"></i> Azure DevOps</div>
@@ -1031,24 +975,29 @@
     <div class="nav-item"><i class="fas fa-users"></i> Community</div>
   </div>
 
-  <!-- ========== MAIN CARDS ========== -->
+  <!-- CARDS -->
   <div class="section-title">
     <h2><i class="fas fa-th-large"></i> All services & resources</h2>
     <span class="badge-soft"><i class="fas fa-star"></i> 9 domains</span>
   </div>
-
   <div class="card-grid" id="mainGrid"></div>
 
-  <!-- ========== PORTFOLIO DETAIL ========== -->
-  <div class="section-title" style="margin-top: 3.5rem;">
+  <!-- ========== TERRAFORM PROJECTS SECTION (NEW) ========== -->
+  <div class="section-title" style="margin-top:3.5rem;">
+    <h2><i class="fas fa-code-branch"></i> Terraform Projects · Complete Code</h2>
+    <span class="badge-soft"><i class="fas fa-folder-open"></i> 3 Projects</span>
+  </div>
+
+  <div class="tf-projects-grid" id="tfProjectsGrid"></div>
+
+  <!-- PORTFOLIO DETAIL -->
+  <div class="section-title" style="margin-top:3.5rem;">
     <h2><i class="fas fa-project-diagram"></i> Featured Project: Secure 3‑Tier Landing Zone</h2>
     <span class="badge-soft"><i class="fas fa-cloud"></i> Azure Architecture</span>
   </div>
-
   <div class="portfolio-detail">
     <h3><i class="fas fa-archway"></i> 3-Tier Landing Zone Architecture</h3>
     <p class="subtitle"><i class="fas fa-tag"></i> Management Group · Subscription · Resource Group</p>
-
     <div class="architecture-diagram">
       <div class="arch-grid">
         <div class="arch-layer management">
@@ -1064,34 +1013,33 @@
           <div class="layer-title"><i class="fas fa-network-wired"></i> Networking <span class="badge">10.0.0.0/16</span></div>
           <div class="arch-item"><i class="fas fa-globe"></i> Virtual Network</div>
           <div class="arch-item"><i class="fas fa-arrows-alt-h"></i> NAT Gateway</div>
-          <div class="arch-item"><i class="fas fa-shield-virus"></i> Network Security (NSG)</div>
-          <div class="arch-item"><i class="fas fa-route"></i> App Gateway Subnet <span style="font-size:0.65rem;color:#6b8ba3;">10.0.5.0/24</span></div>
+          <div class="arch-item"><i class="fas fa-shield-virus"></i> NSG</div>
+          <div class="arch-item"><i class="fas fa-route"></i> App Gateway <span style="font-size:0.65rem;color:#6b8ba3;">10.0.5.0/24</span></div>
           <div class="arch-item sub-item"><i class="fas fa-shield-alt"></i> WAF</div>
           <div class="arch-item sub-item"><i class="fas fa-lock"></i> SSL</div>
-          <div class="arch-item"><i class="fas fa-user-lock"></i> Bastion Subnet <span style="font-size:0.65rem;color:#6b8ba3;">10.0.4.0/24</span></div>
-          <div class="arch-item sub-item"><i class="fas fa-globe"></i> Bastion Public IP</div>
-          <div class="arch-item sub-item"><i class="fas fa-terminal"></i> SSH Port 22</div>
+          <div class="arch-item"><i class="fas fa-user-lock"></i> Bastion <span style="font-size:0.65rem;color:#6b8ba3;">10.0.4.0/24</span></div>
+          <div class="arch-item sub-item"><i class="fas fa-globe"></i> Public IP</div>
+          <div class="arch-item sub-item"><i class="fas fa-terminal"></i> SSH 22</div>
         </div>
         <div class="arch-layer compute">
-          <div class="layer-title"><i class="fas fa-server"></i> Compute Tier <span class="badge">Web</span></div>
-          <div class="arch-item"><i class="fas fa-cloud-upload-alt"></i> Application Gateway</div>
-          <div class="arch-item"><i class="fas fa-balance-scale"></i> Internal Load Balancer</div>
+          <div class="layer-title"><i class="fas fa-server"></i> Compute <span class="badge">Web</span></div>
+          <div class="arch-item"><i class="fas fa-cloud-upload-alt"></i> App Gateway</div>
+          <div class="arch-item"><i class="fas fa-balance-scale"></i> Internal LB</div>
           <div class="arch-item"><i class="fas fa-ipv6"></i> Private IP</div>
-          <div class="arch-item"><i class="fas fa-desktop"></i> VM1 (Web Server)</div>
-          <div class="arch-item"><i class="fas fa-desktop"></i> VM2 (Web Server)</div>
-          <div class="arch-item"><i class="fas fa-code-branch"></i> Backend Subnet <span style="font-size:0.65rem;color:#6b8ba3;">10.0.2.0/24</span></div>
+          <div class="arch-item"><i class="fas fa-desktop"></i> VM1 (Web)</div>
+          <div class="arch-item"><i class="fas fa-desktop"></i> VM2 (Web)</div>
+          <div class="arch-item"><i class="fas fa-code-branch"></i> Backend <span style="font-size:0.65rem;color:#6b8ba3;">10.0.2.0/24</span></div>
         </div>
         <div class="arch-layer database">
-          <div class="layer-title"><i class="fas fa-database"></i> Database Tier <span class="badge">PaaS</span></div>
-          <div class="arch-item"><i class="fas fa-database"></i> Database Subnet <span style="font-size:0.65rem;color:#6b8ba3;">10.0.3.0/24</span></div>
+          <div class="layer-title"><i class="fas fa-database"></i> Database <span class="badge">PaaS</span></div>
+          <div class="arch-item"><i class="fas fa-database"></i> DB Subnet <span style="font-size:0.65rem;color:#6b8ba3;">10.0.3.0/24</span></div>
           <div class="arch-item"><i class="fas fa-server"></i> SQL</div>
-          <div class="arch-item"><i class="fas fa-cloud"></i> Azure SQL Database - PaaS</div>
+          <div class="arch-item"><i class="fas fa-cloud"></i> Azure SQL PaaS</div>
           <div class="arch-item"><i class="fas fa-link"></i> Private Endpoint</div>
-          <div class="arch-item"><i class="fas fa-user-tie"></i> Developer Access</div>
+          <div class="arch-item"><i class="fas fa-user-tie"></i> Dev Access</div>
         </div>
       </div>
     </div>
-
     <div class="arch-legend" style="display:flex;flex-wrap:wrap;gap:1.5rem;margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.5);">
       <div class="arch-legend-item" style="display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;color:#1f4460;">
         <span class="color-box" style="width:16px;height:16px;border-radius:6px;background:#6b4c9a;"></span> Management
@@ -1106,83 +1054,12 @@
         <span class="color-box" style="width:16px;height:16px;border-radius:6px;background:#2e7d32;"></span> Database
       </div>
     </div>
-
-    <!-- code snippet -->
-    <div style="margin-top: 2rem; background: rgba(255,255,255,0.4); backdrop-filter: blur(4px); border-radius: 1.8rem; padding: 1.5rem; border: 1px solid rgba(255,255,255,0.6);">
-      <h4 style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem; color:#0a1f30;">
-        <i class="fas fa-code" style="color:#0066cc;"></i> Infrastructure as Code — Terraform & Azure CLI
-        <span style="font-size:0.7rem; background:#e5f0ff; padding:0.2rem 1rem; border-radius:30px; color:#00509e; font-weight:700;">deploy</span>
-      </h4>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
-        <div style="background:white; border-radius:1.5rem; padding:1.2rem; border:1px solid #d2e0ed;">
-          <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.75rem;">
-            <i class="fas fa-code-branch" style="color:#6b4c9a;"></i>
-            <span style="font-weight:700; font-size:0.9rem; color:#0a1f30;">Terraform (main.tf)</span>
-          </div>
-          <pre style="background:#0b1e2b; color:#e6f1ff; padding:1rem; border-radius:1rem; font-size:0.75rem; overflow-x:auto; line-height:1.5;"><code># —————— main.tf ——————
-terraform {
-  required_version = ">= 1.5.0"
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "~> 3.0"
-    }
-  }
-  backend "azurerm" {
-    resource_group_name  = "tfstate-rg"
-    storage_account_name = "tfstatestorage01"
-    container_name       = "tfstate"
-    key                  = "landing-zone.tfstate"
-  }
-}
-provider "azurerm" { features {} }
-resource "azurerm_resource_group" "main" {
-  name     = "rg-landing-zone"
-  location = "eastus"
-}
-resource "azurerm_virtual_network" "main" {
-  name                = "vnet-landing-zone"
-  location            = azurerm_resource_group.main.location
-  resource_group_name = azurerm_resource_group.main.name
-  address_space       = ["10.0.0.0/16"]
-}
-# subnets, sql, etc...
-output "vnet_id" { value = azurerm_virtual_network.main.id }</code></pre>
-        </div>
-        <div style="background:white; border-radius:1.5rem; padding:1.2rem; border:1px solid #d2e0ed;">
-          <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.75rem;">
-            <i class="fas fa-terminal" style="color:#0077be;"></i>
-            <span style="font-weight:700; font-size:0.9rem; color:#0a1f30;">Azure CLI (deploy.sh)</span>
-          </div>
-          <pre style="background:#0b1e2b; color:#e6f1ff; padding:1rem; border-radius:1rem; font-size:0.75rem; overflow-x:auto; line-height:1.5;"><code>#!/bin/bash
-RG="rg-landing-zone"
-LOCATION="eastus"
-VNET="vnet-landing-zone"
-
-az group create --name $RG --location $LOCATION
-az network vnet create -g $RG -n $VNET --address-prefix 10.0.0.0/16
-az network vnet subnet create -g $RG --vnet-name $VNET -n snet-app-gw --address-prefix 10.0.5.0/24
-az network vnet subnet create -g $RG --vnet-name $VNET -n snet-bastion --address-prefix 10.0.4.0/24
-az network vnet subnet create -g $RG --vnet-name $VNET -n snet-backend --address-prefix 10.0.2.0/24
-az network vnet subnet create -g $RG --vnet-name $VNET -n snet-database --address-prefix 10.0.3.0/24
-az sql server create --name sql-landing-zone -g $RG -l $LOCATION --admin-user sqladmin --admin-password SecurePass123!
-az sql db create -g $RG --server sql-landing-zone -n db-landing-zone --edition Basic
-echo "✅ Landing zone deployed!"</code></pre>
-        </div>
-      </div>
-      <div style="margin-top:1rem; font-size:0.85rem; color:#3d627e; display:flex; gap:1rem; flex-wrap:wrap;">
-        <span><i class="fas fa-check-circle" style="color:#2e7d32;"></i> Terraform state remote</span>
-        <span><i class="fas fa-check-circle" style="color:#2e7d32;"></i> Azure CLI automation</span>
-        <span><i class="fas fa-check-circle" style="color:#2e7d32;"></i> 4 subnets + PaaS</span>
-        <span><i class="fas fa-check-circle" style="color:#2e7d32;"></i> Security groups</span>
-      </div>
-    </div>
   </div>
 
-  <!-- ========== AZURE DEVOPS ========== -->
+  <!-- AZURE DEVOPS (25 Questions) -->
   <div class="section-title" style="margin-top:3.5rem;">
-    <h2><i class="fab fa-microsoft"></i> Azure DevOps - Top 100 Questions</h2>
-    <span class="badge-soft"><i class="fas fa-question-circle"></i> 100 Q&A</span>
+    <h2><i class="fab fa-microsoft"></i> Azure DevOps - 25 Questions</h2>
+    <span class="badge-soft"><i class="fas fa-question-circle"></i> 25 Q&A</span>
   </div>
   <div class="azure-devops-section">
     <div class="azure-tabs">
@@ -1194,9 +1071,9 @@ echo "✅ Landing zone deployed!"</code></pre>
     <div class="azure-qa-grid" id="azureQAGrid"></div>
   </div>
 
-  <!-- ========== GITHUB ACTIONS ========== -->
+  <!-- GITHUB ACTIONS (25 Scenarios) -->
   <div class="section-title" style="margin-top:3.5rem;">
-    <h2><i class="fab fa-github"></i> GitHub Actions - CI/CD Scenarios</h2>
+    <h2><i class="fab fa-github"></i> GitHub Actions - 25 Scenarios</h2>
     <span class="badge-soft"><i class="fas fa-question-circle"></i> 25 Scenarios</span>
   </div>
   <div class="github-section">
@@ -1209,7 +1086,7 @@ echo "✅ Landing zone deployed!"</code></pre>
     <div class="github-qa-grid" id="githubQAGrid"></div>
   </div>
 
-  <!-- ========== INTERVIEW ========== -->
+  <!-- INTERVIEW (14 Terraform) -->
   <div class="section-title" style="margin-top:3.5rem;">
     <h2><i class="fas fa-question-circle"></i> Interview Questions</h2>
     <span class="badge-soft"><i class="fas fa-code-branch"></i> Terraform · 14 Q&A</span>
@@ -1224,7 +1101,7 @@ echo "✅ Landing zone deployed!"</code></pre>
     <div class="qa-grid" id="qaGrid"></div>
   </div>
 
-  <!-- ========== BLOG ========== -->
+  <!-- BLOG -->
   <div class="section-title" style="margin-top:3.5rem;">
     <h2><i class="fas fa-newspaper"></i> 📰 Latest Blog Posts</h2>
     <span class="badge-soft"><i class="fas fa-calendar-day"></i> Daily updates</span>
@@ -1275,6 +1152,7 @@ echo "✅ Landing zone deployed!"</code></pre>
 
 <script>
   (function() {
+    // Date
     const now = new Date();
     document.getElementById('headerDate').textContent = now.toLocaleDateString('en-US', { year:'numeric', month:'short', day:'numeric' });
 
@@ -1290,8 +1168,7 @@ echo "✅ Landing zone deployed!"</code></pre>
       { icon:'fa-file-alt', title:'Resume Review', desc:'Professional resume review for DevOps / SRE roles.', tag:'review' },
       { icon:'fa-users', title:'Community', desc:'Join the CMS DevOps community — slack, events, mentorship.', tag:'join', extra:'community' }
     ];
-    const grid = document.getElementById('mainGrid');
-    grid.innerHTML = sections.map(s => `
+    document.getElementById('mainGrid').innerHTML = sections.map(s => `
       <div class="card${s.extra ? ' ' + s.extra : ''}">
         <div class="card-icon"><i class="fas ${s.icon}"></i></div>
         <h3>${s.title}</h3>
@@ -1301,7 +1178,174 @@ echo "✅ Landing zone deployed!"</code></pre>
       </div>
     `).join('');
 
-    // ---------- AZURE DEVOPS ----------
+    // ==================== TERRAFORM PROJECTS ====================
+    const tfProjects = [
+      {
+        name: 'AWS VPC + EC2 + RDS',
+        desc: 'Complete AWS infrastructure with VPC, public/private subnets, EC2 instances, and RDS PostgreSQL.',
+        tags: ['AWS', 'VPC', 'EC2', 'RDS'],
+        code: `# main.tf
+provider "aws" {
+  region = "us-east-1"
+}
+
+resource "aws_vpc" "main" {
+  cidr_block = "10.0.0.0/16"
+}
+
+resource "aws_subnet" "public" {
+  vpc_id     = aws_vpc.main.id
+  cidr_block = "10.0.1.0/24"
+  map_public_ip_on_launch = true
+}
+
+resource "aws_subnet" "private" {
+  vpc_id     = aws_vpc.main.id
+  cidr_block = "10.0.2.0/24"
+}
+
+resource "aws_instance" "web" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = "t2.micro"
+  subnet_id     = aws_subnet.public.id
+}
+
+resource "aws_db_instance" "postgres" {
+  allocated_storage    = 20
+  engine               = "postgres"
+  engine_version       = "13.4"
+  instance_class       = "db.t3.micro"
+  db_name              = "mydb"
+  username             = "admin"
+  password             = "SecurePass123!"
+  db_subnet_group_name = aws_db_subnet_group.main.name
+}
+
+resource "aws_db_subnet_group" "main" {
+  name       = "main-subnet-group"
+  subnet_ids = [aws_subnet.private.id]
+}`
+      },
+      {
+        name: 'Azure AKS + ACR + PostgreSQL',
+        desc: 'Azure Kubernetes Service cluster with ACR integrated and Azure Database for PostgreSQL.',
+        tags: ['Azure', 'AKS', 'ACR', 'PostgreSQL'],
+        code: `# main.tf
+provider "azurerm" {
+  features {}
+}
+
+resource "azurerm_resource_group" "rg" {
+  name     = "rg-aks-demo"
+  location = "eastus"
+}
+
+resource "azurerm_kubernetes_cluster" "aks" {
+  name                = "aks-demo"
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
+  dns_prefix          = "aksdemo"
+
+  default_node_pool {
+    name       = "default"
+    node_count = 2
+    vm_size    = "Standard_DS2_v2"
+  }
+
+  identity {
+    type = "SystemAssigned"
+  }
+}
+
+resource "azurerm_container_registry" "acr" {
+  name                = "acrdemo123"
+  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.rg.location
+  sku                 = "Standard"
+  admin_enabled       = true
+}
+
+resource "azurerm_postgresql_server" "postgres" {
+  name                         = "postgres-demo"
+  resource_group_name          = azurerm_resource_group.rg.name
+  location                     = azurerm_resource_group.rg.location
+  version                      = "11"
+  administrator_login          = "admin"
+  administrator_login_password = "SecurePass123!"
+  sku_name                     = "B_Gen5_1"
+}`
+      },
+      {
+        name: 'GCP GKE + Cloud SQL + VPC',
+        desc: 'Google Kubernetes Engine with Cloud SQL PostgreSQL and custom VPC network.',
+        tags: ['GCP', 'GKE', 'Cloud SQL', 'VPC'],
+        code: `# main.tf
+provider "google" {
+  project = "my-project"
+  region  = "us-central1"
+}
+
+resource "google_compute_network" "vpc" {
+  name                    = "gke-vpc"
+  auto_create_subnetworks = false
+}
+
+resource "google_compute_subnetwork" "subnet" {
+  name          = "gke-subnet"
+  ip_cidr_range = "10.0.0.0/24"
+  network       = google_compute_network.vpc.id
+  region        = "us-central1"
+}
+
+resource "google_container_cluster" "gke" {
+  name     = "gke-demo"
+  location = "us-central1"
+  network  = google_compute_network.vpc.name
+  subnetwork = google_compute_subnetwork.subnet.name
+
+  initial_node_count = 2
+  node_config {
+    machine_type = "e2-medium"
+  }
+}
+
+resource "google_sql_database_instance" "postgres" {
+  name             = "postgres-demo"
+  database_version = "POSTGRES_13"
+  region           = "us-central1"
+
+  settings {
+    tier = "db-f1-micro"
+  }
+}
+
+resource "google_sql_database" "database" {
+  name     = "mydb"
+  instance = google_sql_database_instance.postgres.name
+}`
+      }
+    ];
+
+    document.getElementById('tfProjectsGrid').innerHTML = tfProjects.map((p, idx) => `
+      <div class="tf-project-card">
+        <div class="project-icon"><i class="fas fa-project-diagram"></i></div>
+        <h4>${p.name}</h4>
+        <p class="project-desc">${p.desc}</p>
+        <div class="project-tags">${p.tags.map(t => `<span>#${t}</span>`).join('')}</div>
+        <div class="code-preview">${p.code.split('\n').slice(0, 6).join('\n')} ...</div>
+        <button class="expand-btn" onclick="toggleCode(${idx})">Show Full Code</button>
+        <div class="full-code" id="code-${idx}">${p.code}</div>
+      </div>
+    `).join('');
+
+    window.toggleCode = (idx) => {
+      const el = document.getElementById(`code-${idx}`);
+      el.classList.toggle('show');
+      const btn = el.closest('.tf-project-card').querySelector('.expand-btn');
+      btn.textContent = el.classList.contains('show') ? 'Hide Code' : 'Show Full Code';
+    };
+
+    // ==================== AZURE DEVOPS (25) ====================
     const azureQA = [
       { id:1, question:'What is Azure DevOps?', answer:'Azure DevOps is a set of cloud-based tools for software development and delivery. It includes Azure Boards, Azure Repos, Azure Pipelines, Azure Test Plans, and Azure Artifacts.', level:'beginner' },
       { id:2, question:'What are the core services?', answer:'<ul><li>Azure Boards - Work tracking</li><li>Azure Repos - Source control</li><li>Azure Pipelines - CI/CD</li><li>Azure Test Plans - Testing</li><li>Azure Artifacts - Package management</li></ul>', level:'beginner' },
@@ -1312,8 +1356,24 @@ echo "✅ Landing zone deployed!"</code></pre>
       { id:7, question:'What is Azure Artifacts?', answer:'Azure Artifacts is a package management service that allows you to create, host, and share packages with your team.', level:'beginner' },
       { id:8, question:'What is a Project in Azure DevOps?', answer:'A Project is a container for all Azure DevOps services. It includes Boards, Repos, Pipelines, Test Plans, and Artifacts for a specific application.', level:'beginner' },
       { id:9, question:'What is a Pipeline in Azure DevOps?', answer:'A Pipeline is a definition of a build, test, and deploy process. It can be defined using YAML or the classic editor.', level:'beginner' },
-      { id:10, question:'What is YAML in Azure Pipelines?', answer:'YAML is a human-readable configuration language used to define CI/CD pipelines. It\'s stored in the repository alongside your code.', level:'beginner' }
+      { id:10, question:'What is YAML in Azure Pipelines?', answer:'YAML is a human-readable configuration language used to define CI/CD pipelines. It\'s stored in the repository alongside your code.', level:'beginner' },
+      { id:11, question:'What is a trigger in Azure Pipelines?', answer:'A trigger defines when a pipeline should run. Common triggers include CI (continuous integration) and PR (pull request) triggers.', level:'intermediate' },
+      { id:12, question:'What is a stage in a pipeline?', answer:'A stage is a logical grouping of jobs within a pipeline. It helps organize the pipeline into phases like Build, Test, Deploy.', level:'intermediate' },
+      { id:13, question:'What is a job in Azure Pipelines?', answer:'A job is a collection of steps that run sequentially on a single agent. Each job runs in its own container or VM.', level:'intermediate' },
+      { id:14, question:'What is a task in Azure Pipelines?', answer:'A task is a reusable building block that performs a specific action, like running a script, publishing artifacts, or deploying to Azure.', level:'intermediate' },
+      { id:15, question:'What is a service connection?', answer:'A service connection allows Azure Pipelines to connect to external services like Azure, AWS, or GitHub, using credentials or tokens.', level:'intermediate' },
+      { id:16, question:'What is an artifact in Azure DevOps?', answer:'An artifact is a deployable component produced by a build pipeline, such as a compiled application, a Docker image, or a NuGet package.', level:'intermediate' },
+      { id:17, question:'What is a multi-stage pipeline?', answer:'A multi-stage pipeline defines multiple stages (e.g., Build, Test, Deploy) in a single YAML file, allowing for complex CI/CD workflows.', level:'advanced' },
+      { id:18, question:'How do you implement approval gates in Azure Pipelines?', answer:'Use environments with approval checks. You can add manual approval checks to environments, which pause the pipeline until approved.', level:'advanced' },
+      { id:19, question:'What is a variable group?', answer:'A variable group is a collection of variables that can be shared across multiple pipelines, making it easy to manage common values.', level:'intermediate' },
+      { id:20, question:'How do you secure secrets in Azure Pipelines?', answer:'Use Azure Key Vault or library variable groups marked as secret. Reference them using $(secretName) and they will be masked in logs.', level:'advanced' },
+      { id:21, question:'What is a template in Azure Pipelines?', answer:'A template is a reusable YAML file that can be included in other pipelines to avoid duplication and standardize workflows.', level:'intermediate' },
+      { id:22, question:'What is a self-hosted agent?', answer:'A self-hosted agent is a machine you manage and configure yourself, instead of using Microsoft-hosted agents. It gives you more control.', level:'intermediate' },
+      { id:23, question:'What is the difference between CI and CD?', answer:'CI (Continuous Integration) is the practice of merging code changes frequently and automatically building/testing them. CD (Continuous Delivery) is the automated deployment of these validated changes to production.', level:'beginner' },
+      { id:24, question:'What is a pipeline artifact?', answer:'A pipeline artifact is a file or folder published by a pipeline and made available for consumption by other pipelines or releases.', level:'intermediate' },
+      { id:25, question:'How do you trigger a pipeline on a schedule?', answer:'Use the <code>schedules</code> trigger with cron syntax. Example: <pre>schedules:\n  cron: "0 9 * * *"\n  displayName: Daily 9 AM</pre>', level:'intermediate' }
     ];
+
     const renderAzure = (items) => {
       document.getElementById('azureQAGrid').innerHTML = items.map(item => `
         <div class="azure-qa-item">
@@ -1327,12 +1387,13 @@ echo "✅ Landing zone deployed!"</code></pre>
     window.filterAzureQA = (cat, btn) => {
       document.querySelectorAll('.azure-tabs .tab-btn').forEach(t => t.classList.remove('active'));
       btn.classList.add('active');
-      renderAzure(cat === 'all' ? azureQA : azureQA.filter(q => q.level === cat));
+      if (cat === 'all') renderAzure(azureQA);
+      else renderAzure(azureQA.filter(q => q.level === cat));
     };
 
-    // ---------- GITHUB ACTIONS ----------
+    // ==================== GITHUB ACTIONS (25) ====================
     const githubQA = [
-      { id:1, question:'Scenario: CI on push to main', answer:'Create <code>.github/workflows/ci.yml</code> with:<br><pre>name: CI\non: push\n  branches: [ main ]\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - run: echo "Building..."</pre>', level:'beginner' },
+      { id:1, question:'Scenario: CI on push to main', answer:'Create <code>.github/workflows/ci.yml</code> with:<br><pre>name: CI\non:\n  push:\n    branches: [ main ]\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - run: echo "Building..."</pre>', level:'beginner' },
       { id:2, question:'Scenario: Run on pull_request', answer:'Use <code>on: pull_request</code> trigger:<br><pre>on:\n  pull_request:\n    branches: [ main ]</pre>', level:'beginner' },
       { id:3, question:'Scenario: Install Node.js', answer:'Use <code>actions/setup-node</code>:<br><pre>steps:\n  - uses: actions/setup-node@v4\n    with:\n      node-version: \'18\'\n  - run: npm install\n  - run: npm test</pre>', level:'beginner' },
       { id:4, question:'Scenario: Cache npm dependencies', answer:'Use <code>actions/cache</code>:<br><pre>steps:\n  - uses: actions/cache@v3\n    with:\n      path: ~/.npm\n      key: ${{ runner.os }}-node-${{ hashFiles(\'**/package-lock.json\') }}\n  - run: npm install</pre>', level:'beginner' },
@@ -1341,12 +1402,28 @@ echo "✅ Landing zone deployed!"</code></pre>
       { id:7, question:'Scenario: Schedule daily at 9 AM', answer:'Use <code>schedule</code> cron:<br><pre>on:\n  schedule:\n    - cron: \'0 9 * * *\'</pre>', level:'beginner' },
       { id:8, question:'Scenario: Environment variables', answer:'Use <code>env</code> context:<br><pre>env:\n  NODE_ENV: production\nsteps:\n  - run: echo ${{ env.NODE_ENV }}</pre>', level:'beginner' },
       { id:9, question:'Scenario: Deploy to Azure Web App', answer:'Use <code>azure/webapps-deploy</code>:<br><pre>jobs:\n  build:\n    steps:\n      - uses: azure/webapps-deploy@v2\n        with:\n          app-name: \'my-webapp\'\n          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}\n          package: \'./build\'</pre>', level:'intermediate' },
-      { id:10, question:'Scenario: Use secrets', answer:'Store in GitHub Settings → Secrets. Access via <code>${{ secrets.SECRET_NAME }}</code>.<br><pre>steps:\n  - run: echo ${{ secrets.API_KEY }}</pre>', level:'intermediate' }
+      { id:10, question:'Scenario: Use secrets', answer:'Store in GitHub Settings → Secrets. Access via <code>${{ secrets.SECRET_NAME }}</code>.<br><pre>steps:\n  - run: echo ${{ secrets.API_KEY }}</pre>', level:'intermediate' },
+      { id:11, question:'Scenario: Run on schedule and manual', answer:'Combine <code>schedule</code> and <code>workflow_dispatch</code> triggers:<br><pre>on:\n  schedule:\n    - cron: \'0 9 * * *\'\n  workflow_dispatch:</pre>', level:'intermediate' },
+      { id:12, question:'Scenario: Use matrix strategy', answer:'Use <code>strategy.matrix</code> to run jobs with multiple configurations:<br><pre>jobs:\n  test:\n    strategy:\n      matrix:\n        node-version: [16, 18, 20]\n    steps:\n      - uses: actions/setup-node@v4\n        with:\n          node-version: ${{ matrix.node-version }}</pre>', level:'intermediate' },
+      { id:13, question:'Scenario: Run job conditionally on event', answer:'Use <code>github.event_name</code> condition:<br><pre>if: github.event_name == \'push\'</pre>', level:'intermediate' },
+      { id:14, question:'Scenario: Use environment protection rules', answer:'Define environment with required reviewers:<br><pre>environment:\n  name: production\n  url: https://prod.example.com\n  on:\n    pull_request:\n      branches: [ main ]</pre>', level:'advanced' },
+      { id:15, question:'Scenario: Run job on self-hosted runner', answer:'Specify <code>runs-on: self-hosted</code> in job definition.', level:'intermediate' },
+      { id:16, question:'Scenario: Pass outputs between jobs', answer:'Use <code>outputs</code> in job and <code>needs</code> to depend:<br><pre>jobs:\n  build:\n    outputs:\n      build_id: ${{ steps.build.outputs.id }}\n  deploy:\n    needs: build\n    steps:\n      - run: echo ${{ needs.build.outputs.build_id }}</pre>', level:'advanced' },
+      { id:17, question:'Scenario: Use Docker container in job', answer:'Use <code>container</code> keyword:<br><pre>jobs:\n  build:\n    container:\n      image: node:18</pre>', level:'intermediate' },
+      { id:18, question:'Scenario: Cache multiple paths', answer:'Use <code>path</code> as array in cache action:<br><pre>with:\n  path: |\n    ~/.npm\n    ~/.cache</pre>', level:'intermediate' },
+      { id:19, question:'Scenario: Run a job on a specific branch', answer:'Use <code>if: github.ref == \'refs/heads/main\'</code> or use branch filters in push/pull_request triggers.', level:'beginner' },
+      { id:20, question:'Scenario: Cancel in-progress jobs on new push', answer:'Use <code>concurrency</code> setting:<br><pre>concurrency:\n  group: ${{ github.workflow }}-${{ github.ref }}\n  cancel-in-progress: true</pre>', level:'advanced' },
+      { id:21, question:'Scenario: Run job on Windows, Linux, and macOS', answer:'Use matrix with <code>os</code>:<br><pre>strategy:\n  matrix:\n    os: [ubuntu-latest, windows-latest, macos-latest]</pre>', level:'intermediate' },
+      { id:22, question:'Scenario: Use third-party actions from marketplace', answer:'Use <code>uses: owner/repo@version</code> syntax, e.g., <code>uses: actions/setup-node@v4</code>.', level:'beginner' },
+      { id:23, question:'Scenario: Run a step only if a file changed', answer:'Use <code>dorny/paths-filter</code> action to detect changes and conditionally run steps.', level:'advanced' },
+      { id:24, question:'Scenario: Deploy to AWS S3', answer:'Use <code>aws-actions/configure-aws-credentials</code> and <code>aws-actions/aws-cli</code> to sync files to S3.', level:'intermediate' },
+      { id:25, question:'Scenario: Run job in parallel', answer:'By default, jobs run in parallel unless they have <code>needs</code> dependencies. Use <code>needs</code> to enforce sequential execution.', level:'intermediate' }
     ];
+
     const renderGithub = (items) => {
       document.getElementById('githubQAGrid').innerHTML = items.map(item => `
         <div class="github-qa-item">
-          <span class="q-number">Scenario ${item.id}</span>
+          <span class="q-number">S${item.id}</span>
           <h4><i class="fas fa-code"></i> ${item.question}</h4>
           <div class="answer">${item.answer}</div>
         </div>
@@ -1356,25 +1433,31 @@ echo "✅ Landing zone deployed!"</code></pre>
     window.filterGithubQA = (cat, btn) => {
       document.querySelectorAll('.github-tabs .tab-btn').forEach(t => t.classList.remove('active'));
       btn.classList.add('active');
-      renderGithub(cat === 'all' ? githubQA : githubQA.filter(q => q.level === cat));
+      if (cat === 'all') renderGithub(githubQA);
+      else renderGithub(githubQA.filter(q => q.level === cat));
     };
 
-    // ---------- INTERVIEW ----------
+    // ==================== INTERVIEW (14 Terraform) ====================
     const qaData = [
-      { id:1, question:'What is a Terraform block?', answer:'A Terraform block is the root configuration block that defines Terraform-specific settings.', category:'terraform', level:'beginner' },
-      { id:2, question:'Purpose of Terraform block?', answer:'Used to specify required Terraform version and required providers.', category:'terraform', level:'beginner' },
-      { id:3, question:'What is required_version?', answer:'Specifies the Terraform CLI version required.', category:'terraform', level:'beginner' },
-      { id:4, question:'What is required_providers?', answer:'Specifies which providers Terraform should download.', category:'terraform', level:'beginner' },
-      { id:5, question:'What is a backend?', answer:'Defines where Terraform stores its state file.', category:'terraform', level:'beginner' },
-      { id:6, question:'Why remote backend?', answer:'Provides centralized state management and team collaboration.', category:'terraform', level:'advanced' },
-      { id:7, question:'Does Terraform block create resources?', answer:'No. Only configures Terraform itself.', category:'terraform', level:'beginner' },
-      { id:8, question:'Which command downloads providers?', answer:'<code>terraform init</code> downloads providers and initializes the backend.', category:'terraform', level:'beginner' },
-      { id:9, question:'Provider version not specified?', answer:'Terraform selects a compatible version automatically.', category:'terraform', level:'advanced' },
-      { id:10, question:'Why specify provider version?', answer:'Ensures stable and predictable deployments.', category:'terraform', level:'advanced' }
+      { id:1, question:'What is a Terraform block?', answer:'A Terraform block is the root configuration block that defines Terraform-specific settings, required version, and required providers.', category:'terraform', level:'beginner' },
+      { id:2, question:'Purpose of Terraform block?', answer:'Used to specify required Terraform version and required providers. It does not create any resources.', category:'terraform', level:'beginner' },
+      { id:3, question:'What is required_version?', answer:'Specifies the Terraform CLI version required for the configuration. Example: <code>required_version = ">= 1.5.0"</code>.', category:'terraform', level:'beginner' },
+      { id:4, question:'What is required_providers?', answer:'Specifies which providers Terraform should download and their version constraints. Example: <code>azurerm = { source = "hashicorp/azurerm", version = "~> 3.0" }</code>.', category:'terraform', level:'beginner' },
+      { id:5, question:'What is a backend?', answer:'Defines where Terraform stores its state file. Common backends: local, S3, Azure Storage, etc.', category:'terraform', level:'beginner' },
+      { id:6, question:'Why remote backend?', answer:'Provides centralized state management, team collaboration, state locking, and better security.', category:'terraform', level:'advanced' },
+      { id:7, question:'Does Terraform block create resources?', answer:'No. The Terraform block only configures Terraform itself. Resources are created using resource blocks.', category:'terraform', level:'beginner' },
+      { id:8, question:'Which command downloads providers?', answer:'<code>terraform init</code> downloads the required providers and initializes the backend.', category:'terraform', level:'beginner' },
+      { id:9, question:'Provider version not specified?', answer:'Terraform will automatically select the latest compatible version, which can lead to unexpected changes.', category:'terraform', level:'advanced' },
+      { id:10, question:'Why specify provider version?', answer:'Ensures stable and predictable deployments by locking the provider version.', category:'terraform', level:'advanced' },
+      { id:11, question:'What is a Terraform module?', answer:'A module is a container for multiple resources that are used together. It helps organize, reuse, and share infrastructure code.', category:'terraform', level:'intermediate' },
+      { id:12, question:'What is a Terraform state?', answer:'The state file maps your configuration to real-world resources. It is used by Terraform to track the current state of infrastructure.', category:'terraform', level:'intermediate' },
+      { id:13, question:'What is the difference between <code>terraform plan</code> and <code>terraform apply</code>?', answer:'<code>terraform plan</code> shows the changes that will be made without applying them. <code>terraform apply</code> actually applies those changes to the infrastructure.', category:'terraform', level:'beginner' },
+      { id:14, question:'What is the purpose of <code>terraform destroy</code>?', answer:'It destroys all resources defined in the current configuration, effectively tearing down the infrastructure.', category:'terraform', level:'beginner' }
     ];
+
     const renderQA = (items) => {
       document.getElementById('qaGrid').innerHTML = items.map(item => `
-        <div class="qa-item terraform-qa">
+        <div class="qa-item">
           <span class="q-number">Q${item.id}</span>
           <h4><i class="fas fa-question-circle"></i> ${item.question}</h4>
           <div class="answer">${item.answer}</div>
@@ -1385,14 +1468,12 @@ echo "✅ Landing zone deployed!"</code></pre>
     window.filterQA = (cat, btn) => {
       document.querySelectorAll('.interview-tabs .tab-btn').forEach(t => t.classList.remove('active'));
       btn.classList.add('active');
-      let filtered = qaData;
-      if (cat === 'terraform') filtered = qaData.filter(q => q.category === 'terraform');
-      else if (cat === 'beginner') filtered = qaData.filter(q => q.level === 'beginner');
-      else if (cat === 'advanced') filtered = qaData.filter(q => q.level === 'advanced');
-      renderQA(filtered);
+      if (cat === 'all') renderQA(qaData);
+      else if (cat === 'terraform') renderQA(qaData.filter(q => q.category === 'terraform'));
+      else renderQA(qaData.filter(q => q.level === cat));
     };
 
-    // ---------- BLOG ----------
+    // ==================== BLOG ====================
     const blogPosts = [
       { id:1, title:'🚀 Complete CI/CD Pipeline with GitHub Actions', excerpt:'Learn how to build a production-grade CI/CD pipeline for Node.js applications.', date:'15 Aug 2026', category:'CI/CD', readTime:'8 min', tags:['GitHub Actions','Docker'] },
       { id:2, title:'☁️ Kubernetes Networking: A Deep Dive', excerpt:'Understanding Services, Ingress Controllers, Network Policies in K8s.', date:'14 Aug 2026', category:'Kubernetes', readTime:'12 min', tags:['K8s','Networking'] },
@@ -1401,6 +1482,7 @@ echo "✅ Landing zone deployed!"</code></pre>
       { id:5, title:'📊 Prometheus & Grafana Monitoring Stack', excerpt:'Complete guide to setting up monitoring for your microservices.', date:'11 Aug 2026', category:'Monitoring', readTime:'10 min', tags:['Prometheus','Grafana'] },
       { id:6, title:'🔒 DevSecOps: Shift-Left Security', excerpt:'Integrate security scanners early in your CI/CD pipeline.', date:'10 Aug 2026', category:'Security', readTime:'7 min', tags:['DevSecOps'] }
     ];
+
     const renderPosts = (posts) => {
       document.getElementById('blogMain').innerHTML = posts.map(p => `
         <article class="blog-post">

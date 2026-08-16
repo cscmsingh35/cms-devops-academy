@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CMS DevOps Academy · Full platform</title>
+  <title>CMS DevOps Academy · viral vibe</title>
   <!-- Font Awesome 6 (free) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
@@ -14,31 +14,33 @@
     }
 
     body {
-      background: #f4f9fe;
+      background: #f0f5fe;
       font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
-      color: #0b263a;
-      line-height: 1.6;
-      padding: 2rem 1.2rem;
+      color: #0b1e2b;
+      line-height: 1.5;
+      padding: 1.5rem 1.2rem;
     }
 
     .container {
-      max-width: 1320px;
+      max-width: 1360px;
       margin: 0 auto;
     }
 
-    /* ---------- HEADER / ACADEMY BRAND ---------- */
+    /* ---------- HEADER / ACADEMY BRAND · glassmorphism ---------- */
     .academy-header {
-      background: #ffffff;
-      border-radius: 2.8rem;
-      padding: 1.8rem 2.5rem;
-      box-shadow: 0 16px 36px -12px rgba(0, 30, 50, 0.08);
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 3rem;
+      padding: 1.2rem 2.2rem;
+      box-shadow: 0 20px 40px -12px rgba(0, 20, 40, 0.12), 0 0 0 1px rgba(255,255,255,0.6);
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
       gap: 1.5rem;
       margin-bottom: 2.8rem;
-      border: 1px solid rgba(0, 60, 100, 0.04);
+      border: 1px solid rgba(255,255,255,0.3);
     }
 
     .brand {
@@ -48,95 +50,103 @@
     }
 
     .brand-icon {
-      background: linear-gradient(145deg, #0c3b57, #1b5c7e);
-      width: 56px;
-      height: 56px;
-      border-radius: 18px;
+      background: linear-gradient(135deg, #0066cc, #00a3ff);
+      width: 54px;
+      height: 54px;
+      border-radius: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
       font-size: 1.8rem;
-      box-shadow: 0 8px 14px -4px rgba(0, 50, 80, 0.25);
+      box-shadow: 0 12px 20px -8px rgba(0, 80, 200, 0.35);
     }
 
     .brand h1 {
-      font-size: 1.9rem;
-      font-weight: 700;
+      font-size: 2rem;
+      font-weight: 800;
       letter-spacing: -0.5px;
-      color: #082434;
+      color: #0a1f30;
+      background: linear-gradient(135deg, #0a1f30, #00509e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .brand h1 span {
-      font-weight: 400;
-      font-size: 0.8rem;
-      background: #dce9f5;
-      color: #003359;
+      font-weight: 500;
+      font-size: 0.7rem;
+      background: #e5f0ff;
+      color: #00509e;
       padding: 0.2rem 1rem;
       border-radius: 40px;
       margin-left: 0.5rem;
-      letter-spacing: 0.2px;
+      -webkit-text-fill-color: #00509e;
+      letter-spacing: 0.3px;
     }
 
     .header-actions {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 0.8rem 1.5rem;
+      gap: 0.8rem 1.2rem;
     }
 
     .header-actions .cta-btn {
-      background: #0b2b44;
+      background: linear-gradient(135deg, #0a1f30, #00509e);
       color: white;
-      padding: 0.45rem 1.6rem;
+      padding: 0.5rem 2rem;
       border-radius: 60px;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 0.9rem;
       border: none;
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
       transition: 0.2s;
       text-decoration: none;
       cursor: pointer;
+      box-shadow: 0 6px 14px rgba(0, 80, 200, 0.2);
     }
 
     .header-actions .cta-btn i {
-      color: #8fcbff;
+      color: #9acdff;
     }
 
     .header-actions .cta-btn:hover {
-      background: #144a6b;
-      transform: scale(1.01);
+      transform: scale(1.02) translateY(-2px);
+      box-shadow: 0 12px 24px rgba(0, 80, 200, 0.3);
     }
 
     .header-actions .date-badge {
-      background: #f0f7ff;
-      padding: 0.3rem 1.3rem;
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(4px);
+      padding: 0.3rem 1.4rem;
       border-radius: 60px;
       font-size: 0.85rem;
-      font-weight: 500;
-      border: 1px solid #d2e0ed;
-      color: #16445f;
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.8);
+      color: #1a405a;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
     }
 
-    /* ---------- NAV GRID (all sections) ---------- */
+    /* ---------- NAV GRID · pills ---------- */
     .nav-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
-      margin-bottom: 2.8rem;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0.8rem;
+      margin-bottom: 3rem;
     }
 
     .nav-item {
-      background: white;
-      padding: 0.9rem 0.6rem;
-      border-radius: 2rem;
+      background: rgba(255,255,255,0.5);
+      backdrop-filter: blur(4px);
+      padding: 0.8rem 0.5rem;
+      border-radius: 3rem;
       text-align: center;
       font-weight: 600;
-      color: #1a405a;
-      box-shadow: 0 4px 12px rgba(0, 20, 30, 0.02);
-      border: 1px solid #e6eff8;
+      color: #1a3a55;
+      border: 1px solid rgba(255,255,255,0.7);
       transition: 0.2s;
       display: flex;
       align-items: center;
@@ -144,91 +154,112 @@
       gap: 0.6rem;
       flex-wrap: wrap;
       cursor: default;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
     }
 
     .nav-item i {
-      color: #1a6b97;
+      color: #0066cc;
       font-size: 1.1rem;
     }
 
     .nav-item:hover {
-      background: #e8f2fc;
-      border-color: #b3cee8;
-      transform: translateY(-3px);
+      background: white;
+      border-color: #0066cc;
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 12px 28px -8px rgba(0, 80, 200, 0.15);
     }
 
-    /* ---------- MAIN CONTENT (cards) ---------- */
+    /* ---------- MAIN CARDS · modern with gradients ---------- */
     .section-title {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
+      align-items: center;
       flex-wrap: wrap;
-      margin: 2.2rem 0 1.2rem;
+      margin: 2.5rem 0 1.5rem;
     }
 
     .section-title h2 {
-      font-size: 1.7rem;
-      font-weight: 650;
-      color: #082434;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #0a1f30;
       letter-spacing: -0.3px;
     }
 
     .section-title h2 i {
-      color: #0066a0;
+      color: #0066cc;
       margin-right: 0.6rem;
     }
 
     .section-title .badge-soft {
-      background: white;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(4px);
       padding: 0.2rem 1.6rem;
       border-radius: 60px;
       font-size: 0.8rem;
-      font-weight: 500;
-      border: 1px solid #d2e0ed;
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.8);
       color: #16445f;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
     }
 
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.8rem;
+      gap: 2rem;
       margin: 1rem 0 1.8rem;
     }
 
     .card {
       background: white;
-      border-radius: 1.8rem;
-      padding: 1.6rem 1.6rem 1.4rem;
-      box-shadow: 0 6px 18px rgba(0, 20, 30, 0.03);
-      border: 1px solid rgba(0,0,0,0.02);
-      transition: 0.25s;
+      border-radius: 2.2rem;
+      padding: 1.8rem 1.8rem 1.5rem;
+      box-shadow: 0 12px 30px -10px rgba(0, 20, 30, 0.06);
+      transition: 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      border: 1px solid rgba(255,255,255,0.6);
       display: flex;
       flex-direction: column;
-      border-bottom: 3px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #0066cc, #00a3ff, #66d0ff);
+      opacity: 0;
+      transition: 0.3s;
+    }
+
+    .card:hover::before {
+      opacity: 1;
     }
 
     .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 34px -12px rgba(0, 50, 80, 0.10);
-      border-bottom-color: #1b6b99;
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 28px 48px -16px rgba(0, 60, 120, 0.18);
+      border-color: #cce4ff;
     }
 
     .card-icon {
-      font-size: 1.8rem;
-      color: #006696;
+      font-size: 2rem;
+      color: #0066cc;
       margin-bottom: 0.3rem;
     }
 
     .card h3 {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       font-weight: 700;
-      color: #0b2b44;
-      margin-bottom: 0.3rem;
+      color: #0a1f30;
+      margin-bottom: 0.2rem;
     }
 
     .card p {
-      color: #1f4460;
+      color: #2a4b66;
       font-size: 0.95rem;
       flex: 1;
       margin-bottom: 0.8rem;
@@ -236,13 +267,13 @@
 
     .card .meta-tag {
       display: inline-block;
-      background: #eaf2fa;
+      background: #e5f0ff;
       font-size: 0.7rem;
-      font-weight: 600;
-      padding: 0.15rem 0.9rem;
+      font-weight: 700;
+      padding: 0.2rem 1rem;
       border-radius: 30px;
-      color: #1f5b7e;
-      letter-spacing: 0.2px;
+      color: #00509e;
+      letter-spacing: 0.3px;
       text-transform: uppercase;
       align-self: flex-start;
     }
@@ -256,8 +287,8 @@
     }
 
     .card-footer-link a {
-      color: #006696;
-      font-weight: 600;
+      color: #0066cc;
+      font-weight: 700;
       font-size: 0.85rem;
       text-decoration: none;
       display: inline-flex;
@@ -268,55 +299,56 @@
 
     .card-footer-link a i {
       font-size: 0.7rem;
+      transition: 0.2s;
     }
 
     .card-footer-link a:hover {
-      color: #003153;
+      color: #003d7a;
     }
     .card-footer-link a:hover i {
-      transform: translateX(4px);
+      transform: translateX(6px);
     }
 
-    /* special community card */
     .card.community {
-      background: #f2f9ff;
-      border-left: 4px solid #0077be;
+      background: linear-gradient(145deg, #f2f9ff, #e6f2ff);
+      border-left: 4px solid #0066cc;
     }
 
-    /* ========== PORTFOLIO DETAIL SECTION ========== */
+    /* ---------- PORTFOLIO DETAIL · glass + gradient ---------- */
     .portfolio-detail {
-      background: white;
-      border-radius: 1.8rem;
+      background: rgba(255,255,255,0.5);
+      backdrop-filter: blur(8px);
+      border-radius: 2.2rem;
       padding: 2.5rem;
       margin-top: 1.5rem;
-      box-shadow: 0 6px 18px rgba(0, 20, 30, 0.03);
-      border: 1px solid rgba(0,0,0,0.02);
+      box-shadow: 0 12px 30px -10px rgba(0, 20, 30, 0.04);
+      border: 1px solid rgba(255,255,255,0.5);
     }
 
     .portfolio-detail h3 {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: 700;
-      color: #0b2b44;
-      margin-bottom: 0.5rem;
+      color: #0a1f30;
+      margin-bottom: 0.3rem;
     }
 
     .portfolio-detail h3 i {
-      color: #006696;
+      color: #0066cc;
       margin-right: 0.5rem;
     }
 
     .portfolio-detail .subtitle {
-      color: #6b8ba3;
+      color: #3d6a8a;
       font-size: 0.95rem;
       margin-bottom: 1.5rem;
     }
 
-    /* Architecture Diagram */
     .architecture-diagram {
-      background: #f8faff;
-      border-radius: 1.2rem;
+      background: rgba(255,255,255,0.4);
+      backdrop-filter: blur(4px);
+      border-radius: 1.8rem;
       padding: 2rem;
-      border: 1px solid #d2e0ed;
+      border: 1px solid rgba(255,255,255,0.6);
       overflow-x: auto;
     }
 
@@ -329,21 +361,23 @@
 
     .arch-layer {
       background: white;
-      border-radius: 1rem;
-      padding: 1.2rem;
-      border: 2px solid #d2e0ed;
-      transition: 0.2s;
+      border-radius: 1.8rem;
+      padding: 1.4rem;
+      border: 2px solid #eaf2fa;
+      transition: 0.25s;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.02);
     }
 
     .arch-layer:hover {
-      border-color: #006696;
-      box-shadow: 0 8px 20px -8px rgba(0, 50, 80, 0.12);
+      border-color: #0066cc;
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px -12px rgba(0, 60, 120, 0.12);
     }
 
     .arch-layer .layer-title {
       font-weight: 700;
       font-size: 1rem;
-      color: #0b2b44;
+      color: #0a1f30;
       text-align: center;
       padding-bottom: 0.5rem;
       border-bottom: 2px solid #ecf3fa;
@@ -351,16 +385,15 @@
     }
 
     .arch-layer .layer-title i {
-      margin-right: 0.5rem;
+      margin-right: 0.4rem;
     }
-
     .arch-layer .layer-title .badge {
       font-size: 0.6rem;
-      background: #eaf2fa;
-      padding: 0.1rem 0.6rem;
-      border-radius: 12px;
-      color: #1f5b7e;
-      font-weight: 600;
+      background: #e5f0ff;
+      padding: 0.1rem 0.8rem;
+      border-radius: 20px;
+      color: #00509e;
+      font-weight: 700;
     }
 
     .arch-item {
@@ -370,102 +403,77 @@
       padding: 0.4rem 0.6rem;
       margin: 0.3rem 0;
       background: #f4f9fe;
-      border-radius: 8px;
+      border-radius: 12px;
       font-size: 0.82rem;
       color: #1f4460;
       transition: 0.15s;
     }
 
     .arch-item:hover {
-      background: #e8f2fc;
+      background: #e5f0ff;
     }
 
     .arch-item i {
-      color: #006696;
+      color: #0066cc;
       width: 18px;
       font-size: 0.85rem;
     }
-
     .arch-item .sub-item {
       padding-left: 1.5rem;
       font-size: 0.75rem;
       color: #4a6f8a;
     }
 
-    .arch-layer.management {
-      border-color: #6b4c9a;
-      background: #f8f4ff;
-    }
+    .arch-layer.management { border-color: #6b4c9a; background: #f8f4ff; }
+    .arch-layer.management .layer-title { color: #6b4c9a; }
+    .arch-layer.networking { border-color: #0077be; background: #f2f9ff; }
+    .arch-layer.networking .layer-title { color: #0077be; }
+    .arch-layer.compute { border-color: #f5a623; background: #fffbf0; }
+    .arch-layer.compute .layer-title { color: #c47f1a; }
+    .arch-layer.database { border-color: #2e7d32; background: #f0f7f0; }
+    .arch-layer.database .layer-title { color: #2e7d32; }
 
-    .arch-layer.management .layer-title {
-      color: #6b4c9a;
-    }
-
-    .arch-layer.networking {
-      border-color: #0077be;
-      background: #f2f9ff;
-    }
-
-    .arch-layer.networking .layer-title {
-      color: #0077be;
-    }
-
-    .arch-layer.compute {
-      border-color: #f5a623;
-      background: #fffbf0;
-    }
-
-    .arch-layer.compute .layer-title {
-      color: #c47f1a;
-    }
-
-    .arch-layer.database {
-      border-color: #2e7d32;
-      background: #f0f7f0;
-    }
-
-    .arch-layer.database .layer-title {
-      color: #2e7d32;
-    }
-
-    /* ========== AZURE DEVOPS QUESTIONS SECTION ========== */
+    /* ========== AZURE DEVOPS · clean cards ========== */
     .azure-devops-section {
-      background: white;
-      border-radius: 1.8rem;
+      background: rgba(255,255,255,0.5);
+      backdrop-filter: blur(8px);
+      border-radius: 2.2rem;
       padding: 2rem;
       margin-top: 1rem;
-      box-shadow: 0 6px 18px rgba(0, 20, 30, 0.03);
-      border: 1px solid rgba(0,0,0,0.02);
+      border: 1px solid rgba(255,255,255,0.5);
     }
 
     .azure-tabs {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.8rem;
+      gap: 0.6rem;
       margin-bottom: 1.5rem;
-      border-bottom: 2px solid #ecf3fa;
+      border-bottom: 2px solid #eaf2fa;
       padding-bottom: 1rem;
     }
 
     .azure-tabs .tab-btn {
-      background: #f4f9fe;
+      background: rgba(255,255,255,0.5);
       border: none;
-      padding: 0.5rem 1.5rem;
+      padding: 0.5rem 1.6rem;
       border-radius: 60px;
       font-weight: 600;
       color: #1a405a;
       cursor: pointer;
       transition: 0.2s;
       font-size: 0.9rem;
+      backdrop-filter: blur(4px);
     }
 
     .azure-tabs .tab-btn:hover {
-      background: #e8f2fc;
+      background: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
     }
 
     .azure-tabs .tab-btn.active {
-      background: #0078d4;
+      background: #0066cc;
       color: white;
+      box-shadow: 0 8px 20px -8px rgba(0, 80, 200, 0.3);
     }
 
     .azure-qa-grid {
@@ -477,119 +485,88 @@
       padding-right: 0.5rem;
     }
 
-    .azure-qa-grid::-webkit-scrollbar {
-      width: 6px;
-    }
-
-    .azure-qa-grid::-webkit-scrollbar-track {
-      background: #f4f9fe;
-      border-radius: 10px;
-    }
-
-    .azure-qa-grid::-webkit-scrollbar-thumb {
-      background: #0078d4;
-      border-radius: 10px;
-    }
+    .azure-qa-grid::-webkit-scrollbar { width: 6px; }
+    .azure-qa-grid::-webkit-scrollbar-track { background: #eaf2fa; border-radius: 10px; }
+    .azure-qa-grid::-webkit-scrollbar-thumb { background: #0066cc; border-radius: 10px; }
 
     .azure-qa-item {
-      background: #f8faff;
-      border-radius: 1.2rem;
+      background: white;
+      border-radius: 1.8rem;
       padding: 1.5rem;
-      border: 1px solid #e6eff8;
+      border: 1px solid #eaf2fa;
       transition: 0.25s;
-      border-left: 4px solid #0078d4;
+      border-left: 4px solid #0066cc;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
     }
 
     .azure-qa-item:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 24px -8px rgba(0, 50, 80, 0.08);
+      box-shadow: 0 16px 32px -12px rgba(0, 60, 120, 0.10);
+      border-color: #cce4ff;
     }
 
     .azure-qa-item .q-number {
       display: inline-block;
-      background: #0078d4;
+      background: #0066cc;
       color: white;
-      padding: 0.1rem 0.8rem;
-      border-radius: 20px;
+      padding: 0.1rem 0.9rem;
+      border-radius: 30px;
       font-size: 0.7rem;
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 0.5rem;
     }
 
     .azure-qa-item h4 {
       font-size: 1rem;
       font-weight: 700;
-      color: #0b2b44;
-      margin-bottom: 0.5rem;
+      color: #0a1f30;
+      margin-bottom: 0.4rem;
     }
+    .azure-qa-item h4 i { color: #0066cc; margin-right: 0.5rem; }
+    .azure-qa-item .answer { color: #1f4460; font-size: 0.9rem; line-height: 1.7; }
+    .azure-qa-item .answer code { background: #e5f0ff; padding: 0.1rem 0.4rem; border-radius: 6px; font-size: 0.8rem; color: #0066cc; }
 
-    .azure-qa-item h4 i {
-      color: #0078d4;
-      margin-right: 0.5rem;
-    }
-
-    .azure-qa-item .answer {
-      color: #1f4460;
-      font-size: 0.9rem;
-      line-height: 1.7;
-    }
-
-    .azure-qa-item .answer code {
-      background: #eaf2fa;
-      padding: 0.1rem 0.4rem;
-      border-radius: 4px;
-      font-size: 0.8rem;
-      color: #0078d4;
-    }
-
-    .azure-qa-item .answer ul, 
-    .azure-qa-item .answer ol {
-      padding-left: 1.5rem;
-      margin: 0.3rem 0;
-    }
-
-    .azure-qa-item .answer li {
-      margin-bottom: 0.2rem;
-    }
-
-    /* ========== GITHUB ACTIONS SECTION ========== */
+    /* ========== GITHUB ACTIONS ========== */
     .github-section {
-      background: white;
-      border-radius: 1.8rem;
+      background: rgba(255,255,255,0.5);
+      backdrop-filter: blur(8px);
+      border-radius: 2.2rem;
       padding: 2rem;
       margin-top: 1rem;
-      box-shadow: 0 6px 18px rgba(0, 20, 30, 0.03);
-      border: 1px solid rgba(0,0,0,0.02);
+      border: 1px solid rgba(255,255,255,0.5);
     }
 
     .github-tabs {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.8rem;
+      gap: 0.6rem;
       margin-bottom: 1.5rem;
-      border-bottom: 2px solid #ecf3fa;
+      border-bottom: 2px solid #eaf2fa;
       padding-bottom: 1rem;
     }
 
     .github-tabs .tab-btn {
-      background: #f4f9fe;
+      background: rgba(255,255,255,0.5);
       border: none;
-      padding: 0.5rem 1.5rem;
+      padding: 0.5rem 1.6rem;
       border-radius: 60px;
       font-weight: 600;
       color: #1a405a;
       cursor: pointer;
       transition: 0.2s;
       font-size: 0.9rem;
+      backdrop-filter: blur(4px);
     }
 
     .github-tabs .tab-btn:hover {
-      background: #e8f2fc;
+      background: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
     }
 
     .github-tabs .tab-btn.active {
       background: #24292e;
       color: white;
+      box-shadow: 0 8px 20px -8px rgba(0,0,0,0.2);
     }
 
     .github-qa-grid {
@@ -601,129 +578,92 @@
       padding-right: 0.5rem;
     }
 
-    .github-qa-grid::-webkit-scrollbar {
-      width: 6px;
-    }
-
-    .github-qa-grid::-webkit-scrollbar-track {
-      background: #f4f9fe;
-      border-radius: 10px;
-    }
-
-    .github-qa-grid::-webkit-scrollbar-thumb {
-      background: #24292e;
-      border-radius: 10px;
-    }
+    .github-qa-grid::-webkit-scrollbar { width: 6px; }
+    .github-qa-grid::-webkit-scrollbar-track { background: #eaf2fa; border-radius: 10px; }
+    .github-qa-grid::-webkit-scrollbar-thumb { background: #24292e; border-radius: 10px; }
 
     .github-qa-item {
-      background: #f8faff;
-      border-radius: 1.2rem;
+      background: white;
+      border-radius: 1.8rem;
       padding: 1.5rem;
-      border: 1px solid #e6eff8;
+      border: 1px solid #eaf2fa;
       transition: 0.25s;
       border-left: 4px solid #24292e;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
     }
 
     .github-qa-item:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 24px -8px rgba(0, 50, 80, 0.08);
+      box-shadow: 0 16px 32px -12px rgba(0, 60, 120, 0.10);
+      border-color: #cce4ff;
     }
 
     .github-qa-item .q-number {
       display: inline-block;
       background: #24292e;
       color: white;
-      padding: 0.1rem 0.8rem;
-      border-radius: 20px;
+      padding: 0.1rem 0.9rem;
+      border-radius: 30px;
       font-size: 0.7rem;
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 0.5rem;
     }
 
     .github-qa-item h4 {
       font-size: 1rem;
       font-weight: 700;
-      color: #0b2b44;
-      margin-bottom: 0.5rem;
+      color: #0a1f30;
+      margin-bottom: 0.4rem;
     }
-
-    .github-qa-item h4 i {
-      color: #24292e;
-      margin-right: 0.5rem;
-    }
-
-    .github-qa-item .answer {
-      color: #1f4460;
-      font-size: 0.9rem;
-      line-height: 1.7;
-    }
-
-    .github-qa-item .answer code {
-      background: #eaf2fa;
-      padding: 0.1rem 0.4rem;
-      border-radius: 4px;
-      font-size: 0.8rem;
-      color: #24292e;
-    }
-
+    .github-qa-item h4 i { color: #24292e; margin-right: 0.5rem; }
+    .github-qa-item .answer { color: #1f4460; font-size: 0.9rem; line-height: 1.7; }
+    .github-qa-item .answer code { background: #e5f0ff; padding: 0.1rem 0.4rem; border-radius: 6px; font-size: 0.8rem; color: #24292e; }
     .github-qa-item .answer pre {
-      background: #f4f9fe;
-      padding: 0.8rem;
-      border-radius: 8px;
-      overflow-x: auto;
-      font-size: 0.8rem;
-      border: 1px solid #d2e0ed;
-      margin: 0.3rem 0;
+      background: #f4f9fe; padding: 0.8rem; border-radius: 12px; overflow-x: auto;
+      font-size: 0.8rem; border: 1px solid #d2e0ed; margin: 0.3rem 0;
     }
 
-    .github-qa-item .answer ul, 
-    .github-qa-item .answer ol {
-      padding-left: 1.5rem;
-      margin: 0.3rem 0;
-    }
-
-    .github-qa-item .answer li {
-      margin-bottom: 0.2rem;
-    }
-
-    /* ========== INTERVIEW QUESTIONS SECTION ========== */
+    /* ========== INTERVIEW · terraform ========== */
     .interview-section {
-      background: white;
-      border-radius: 1.8rem;
+      background: rgba(255,255,255,0.5);
+      backdrop-filter: blur(8px);
+      border-radius: 2.2rem;
       padding: 2rem;
       margin-top: 1rem;
-      box-shadow: 0 6px 18px rgba(0, 20, 30, 0.03);
-      border: 1px solid rgba(0,0,0,0.02);
+      border: 1px solid rgba(255,255,255,0.5);
     }
 
     .interview-tabs {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.8rem;
+      gap: 0.6rem;
       margin-bottom: 1.5rem;
-      border-bottom: 2px solid #ecf3fa;
+      border-bottom: 2px solid #eaf2fa;
       padding-bottom: 1rem;
     }
 
     .interview-tabs .tab-btn {
-      background: #f4f9fe;
+      background: rgba(255,255,255,0.5);
       border: none;
-      padding: 0.5rem 1.5rem;
+      padding: 0.5rem 1.6rem;
       border-radius: 60px;
       font-weight: 600;
       color: #1a405a;
       cursor: pointer;
       transition: 0.2s;
       font-size: 0.9rem;
+      backdrop-filter: blur(4px);
     }
 
     .interview-tabs .tab-btn:hover {
-      background: #e8f2fc;
+      background: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
     }
 
     .interview-tabs .tab-btn.active {
-      background: #0b2b44;
+      background: #6b4c9a;
       color: white;
+      box-shadow: 0 8px 20px -8px rgba(107, 76, 154, 0.3);
     }
 
     .qa-grid {
@@ -733,108 +673,47 @@
     }
 
     .qa-item {
-      background: #f8faff;
-      border-radius: 1.2rem;
+      background: white;
+      border-radius: 1.8rem;
       padding: 1.5rem;
-      border: 1px solid #e6eff8;
+      border: 1px solid #eaf2fa;
       transition: 0.25s;
       border-left: 4px solid #6b4c9a;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
     }
 
     .qa-item:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 24px -8px rgba(0, 50, 80, 0.08);
+      box-shadow: 0 16px 32px -12px rgba(0, 60, 120, 0.10);
+      border-color: #cce4ff;
     }
 
     .qa-item .q-number {
       display: inline-block;
       background: #6b4c9a;
       color: white;
-      padding: 0.1rem 0.8rem;
-      border-radius: 20px;
+      padding: 0.1rem 0.9rem;
+      border-radius: 30px;
       font-size: 0.7rem;
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 0.5rem;
     }
 
     .qa-item h4 {
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-weight: 700;
-      color: #0b2b44;
-      margin-bottom: 0.5rem;
+      color: #0a1f30;
+      margin-bottom: 0.4rem;
     }
-
-    .qa-item h4 i {
-      color: #6b4c9a;
-      margin-right: 0.5rem;
-    }
-
-    .qa-item .answer {
-      color: #1f4460;
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
-
-    .qa-item .answer code {
-      background: #eaf2fa;
-      padding: 0.1rem 0.4rem;
-      border-radius: 4px;
-      font-size: 0.85rem;
-      color: #6b4c9a;
-    }
-
+    .qa-item h4 i { color: #6b4c9a; margin-right: 0.5rem; }
+    .qa-item .answer { color: #1f4460; font-size: 0.9rem; line-height: 1.7; }
+    .qa-item .answer code { background: #e5f0ff; padding: 0.1rem 0.4rem; border-radius: 6px; font-size: 0.8rem; color: #6b4c9a; }
     .qa-item .answer pre {
-      background: #f4f9fe;
-      padding: 1rem;
-      border-radius: 12px;
-      margin: 0.5rem 0;
-      overflow-x: auto;
-      font-size: 0.85rem;
-      border: 1px solid #d2e0ed;
+      background: #f4f9fe; padding: 0.8rem; border-radius: 12px; overflow-x: auto;
+      font-size: 0.8rem; border: 1px solid #d2e0ed; margin: 0.3rem 0;
     }
 
-    .qa-item .answer ul, 
-    .qa-item .answer ol {
-      padding-left: 1.5rem;
-      margin: 0.5rem 0;
-    }
-
-    .qa-item .answer li {
-      margin-bottom: 0.3rem;
-    }
-
-    .qa-item .answer table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 0.5rem 0;
-      font-size: 0.9rem;
-    }
-
-    .qa-item .answer table th {
-      background: #6b4c9a;
-      color: white;
-      padding: 0.5rem 0.8rem;
-      text-align: left;
-    }
-
-    .qa-item .answer table td {
-      padding: 0.5rem 0.8rem;
-      border-bottom: 1px solid #ecf3fa;
-    }
-
-    .qa-item .answer table tr:nth-child(even) {
-      background: #f8faff;
-    }
-
-    .qa-item.terraform-qa {
-      border-left-color: #6b4c9a;
-    }
-
-    .qa-item.terraform-qa .q-number {
-      background: #6b4c9a;
-    }
-
-    /* ========== BLOG SECTION ========== */
+    /* ========== BLOG · fresh ========== */
     .blog-layout {
       display: grid;
       grid-template-columns: 2fr 1fr;
@@ -844,17 +723,18 @@
 
     .blog-post {
       background: white;
-      border-radius: 1.8rem;
+      border-radius: 2.2rem;
       padding: 2rem;
       margin-bottom: 2rem;
-      box-shadow: 0 6px 18px rgba(0, 20, 30, 0.03);
-      border: 1px solid rgba(0,0,0,0.02);
+      box-shadow: 0 12px 30px -10px rgba(0, 20, 30, 0.04);
+      border: 1px solid rgba(255,255,255,0.6);
       transition: 0.25s;
     }
 
     .blog-post:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 34px -12px rgba(0, 50, 80, 0.10);
+      transform: translateY(-6px);
+      box-shadow: 0 24px 48px -16px rgba(0, 60, 120, 0.12);
+      border-color: #cce4ff;
     }
 
     .blog-post .post-meta {
@@ -866,45 +746,37 @@
     }
 
     .blog-post .category {
-      background: #eaf2fa;
+      background: #e5f0ff;
       padding: 0.2rem 1.2rem;
       border-radius: 30px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: #1f5b7e;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #00509e;
       text-transform: uppercase;
     }
 
-    .blog-post .date {
-      color: #6b8ba3;
-      font-size: 0.85rem;
-    }
-
-    .blog-post .read-time {
-      color: #6b8ba3;
+    .blog-post .date, .blog-post .read-time {
+      color: #3d6a8a;
       font-size: 0.85rem;
     }
 
     .blog-post h2 {
-      font-size: 1.8rem;
+      font-size: 1.7rem;
       font-weight: 700;
-      color: #0b2b44;
-      margin-bottom: 0.5rem;
+      color: #0a1f30;
+      margin-bottom: 0.4rem;
     }
 
     .blog-post h2 a {
-      color: #0b2b44;
+      color: #0a1f30;
       text-decoration: none;
     }
-
-    .blog-post h2 a:hover {
-      color: #006696;
-    }
+    .blog-post h2 a:hover { color: #0066cc; }
 
     .blog-post .excerpt {
       color: #1f4460;
       font-size: 1rem;
-      margin: 0.8rem 0 1.2rem;
+      margin: 0.6rem 0 1rem;
       line-height: 1.7;
     }
 
@@ -918,42 +790,27 @@
       padding-top: 1rem;
     }
 
-    .blog-post .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
     .blog-post .tags span {
-      background: #f0f7ff;
+      background: #f4f9fe;
       padding: 0.15rem 0.9rem;
-      border-radius: 20px;
+      border-radius: 30px;
       font-size: 0.75rem;
       color: #16445f;
     }
 
     .blog-post .read-more {
-      color: #006696;
-      font-weight: 600;
+      color: #0066cc;
+      font-weight: 700;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
     }
+    .blog-post .read-more:hover { color: #003d7a; }
+    .blog-post .read-more i { transition: 0.2s; }
+    .blog-post .read-more:hover i { transform: translateX(6px); }
 
-    .blog-post .read-more:hover {
-      color: #003153;
-    }
-
-    .blog-post .read-more i {
-      transition: 0.2s;
-    }
-
-    .blog-post .read-more:hover i {
-      transform: translateX(4px);
-    }
-
-    /* Blog Sidebar */
+    /* Sidebar */
     .sidebar {
       position: sticky;
       top: 2rem;
@@ -961,31 +818,29 @@
     }
 
     .sidebar-widget {
-      background: white;
-      border-radius: 1.8rem;
+      background: rgba(255,255,255,0.5);
+      backdrop-filter: blur(8px);
+      border-radius: 2.2rem;
       padding: 1.8rem;
       margin-bottom: 2rem;
-      box-shadow: 0 6px 18px rgba(0, 20, 30, 0.03);
-      border: 1px solid rgba(0,0,0,0.02);
+      border: 1px solid rgba(255,255,255,0.5);
+      box-shadow: 0 12px 30px -10px rgba(0, 20, 30, 0.04);
     }
 
     .sidebar-widget h3 {
       font-size: 1.1rem;
       font-weight: 700;
-      color: #0b2b44;
+      color: #0a1f30;
       margin-bottom: 1rem;
       display: flex;
       align-items: center;
       gap: 0.6rem;
     }
-
-    .sidebar-widget h3 i {
-      color: #006696;
-    }
+    .sidebar-widget h3 i { color: #0066cc; }
 
     .search-box {
       display: flex;
-      background: #f4f9fe;
+      background: white;
       border-radius: 60px;
       padding: 0.2rem;
       border: 1px solid #d2e0ed;
@@ -1001,49 +856,39 @@
     }
 
     .search-box button {
-      background: #0b2b44;
+      background: #0066cc;
       border: none;
       color: white;
       padding: 0.6rem 1.5rem;
       border-radius: 60px;
       cursor: pointer;
       transition: 0.2s;
+      font-weight: 600;
     }
+    .search-box button:hover { background: #0052a3; }
 
-    .search-box button:hover {
-      background: #144a6b;
-    }
-
-    .category-list {
-      list-style: none;
-    }
-
+    .category-list { list-style: none; }
     .category-list li {
       padding: 0.5rem 0;
       border-bottom: 1px solid #ecf3fa;
       display: flex;
       justify-content: space-between;
     }
-
-    .category-list li:last-child {
-      border-bottom: none;
-    }
-
+    .category-list li:last-child { border-bottom: none; }
     .category-list a {
       color: #1f4460;
       text-decoration: none;
       cursor: pointer;
+      font-weight: 500;
     }
-
-    .category-list a:hover {
-      color: #006696;
-    }
-
+    .category-list a:hover { color: #0066cc; }
     .category-list .count {
-      background: #eaf2fa;
-      padding: 0.1rem 0.6rem;
-      border-radius: 20px;
+      background: #e5f0ff;
+      padding: 0.1rem 0.7rem;
+      border-radius: 30px;
       font-size: 0.75rem;
+      font-weight: 600;
+      color: #00509e;
     }
 
     .popular-post {
@@ -1052,13 +897,9 @@
       padding: 0.8rem 0;
       border-bottom: 1px solid #ecf3fa;
     }
-
-    .popular-post:last-child {
-      border-bottom: none;
-    }
-
+    .popular-post:last-child { border-bottom: none; }
     .popular-post .num {
-      background: #eaf2fa;
+      background: #e5f0ff;
       width: 30px;
       height: 30px;
       border-radius: 50%;
@@ -1067,25 +908,17 @@
       justify-content: center;
       font-weight: 700;
       font-size: 0.8rem;
-      color: #1f5b7e;
+      color: #00509e;
       flex-shrink: 0;
     }
-
     .popular-post .info a {
-      color: #0b2b44;
+      color: #0a1f30;
       text-decoration: none;
       font-weight: 600;
       font-size: 0.9rem;
     }
-
-    .popular-post .info a:hover {
-      color: #006696;
-    }
-
-    .popular-post .info .small {
-      font-size: 0.75rem;
-      color: #6b8ba3;
-    }
+    .popular-post .info a:hover { color: #0066cc; }
+    .popular-post .info .small { font-size: 0.75rem; color: #3d6a8a; }
 
     .newsletter input {
       width: 100%;
@@ -1094,59 +927,54 @@
       border-radius: 60px;
       margin-bottom: 0.7rem;
       font-size: 0.9rem;
+      background: white;
     }
-
     .newsletter button {
       width: 100%;
-      background: #0b2b44;
+      background: #0066cc;
       color: white;
       border: none;
       padding: 0.7rem;
       border-radius: 60px;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
       transition: 0.2s;
     }
+    .newsletter button:hover { background: #0052a3; }
 
-    .newsletter button:hover {
-      background: #144a6b;
-    }
-
-    /* Pagination */
     .pagination {
       display: flex;
       justify-content: center;
       gap: 0.5rem;
       margin-top: 2rem;
     }
-
     .pagination a {
       padding: 0.5rem 1rem;
       background: white;
-      border-radius: 8px;
-      color: #0b2b44;
+      border-radius: 12px;
+      color: #0a1f30;
       text-decoration: none;
       border: 1px solid #d2e0ed;
       transition: 0.2s;
       cursor: pointer;
+      font-weight: 600;
     }
-
     .pagination a:hover {
-      background: #0b2b44;
+      background: #0066cc;
       color: white;
+      border-color: #0066cc;
     }
-
     .pagination a.active {
-      background: #0b2b44;
+      background: #0066cc;
       color: white;
-      border-color: #0b2b44;
+      border-color: #0066cc;
+      box-shadow: 0 8px 20px -8px rgba(0, 80, 200, 0.3);
     }
 
-    /* ---------- FOOTER ---------- */
     .footer-note {
       margin-top: 3.8rem;
       padding-top: 1.8rem;
-      border-top: 1px solid #d3e0ec;
+      border-top: 1px solid rgba(255,255,255,0.5);
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -1154,87 +982,31 @@
       color: #3d627e;
       font-size: 0.9rem;
     }
-
-    .footer-note i {
-      color: #2f7aa8;
-      margin-right: 4px;
-    }
+    .footer-note i { color: #0066cc; margin-right: 4px; }
 
     /* ---------- RESPONSIVE ---------- */
     @media (max-width: 992px) {
-      .blog-layout {
-        grid-template-columns: 1fr;
-      }
-      .qa-grid {
-        grid-template-columns: 1fr;
-      }
-      .azure-qa-grid {
-        grid-template-columns: 1fr;
-      }
-      .github-qa-grid {
-        grid-template-columns: 1fr;
-      }
-      .sidebar {
-        position: static;
-      }
-      .arch-grid {
-        grid-template-columns: 1fr 1fr;
-        min-width: unset;
-      }
+      .blog-layout { grid-template-columns: 1fr; }
+      .qa-grid, .azure-qa-grid, .github-qa-grid { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+      .arch-grid { grid-template-columns: 1fr 1fr; min-width: unset; }
     }
 
     @media (max-width: 700px) {
-      .academy-header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1.5rem 1.2rem;
-      }
-      .brand h1 {
-        font-size: 1.5rem;
-      }
-      .nav-grid {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      }
-      .blog-post h2 {
-        font-size: 1.4rem;
-      }
-      .qa-item {
-        padding: 1.2rem;
-      }
-      .azure-qa-item {
-        padding: 1.2rem;
-      }
-      .github-qa-item {
-        padding: 1.2rem;
-      }
-      .interview-tabs .tab-btn {
-        padding: 0.4rem 1rem;
-        font-size: 0.8rem;
-      }
-      .azure-tabs .tab-btn {
-        padding: 0.4rem 1rem;
-        font-size: 0.8rem;
-      }
-      .github-tabs .tab-btn {
-        padding: 0.4rem 1rem;
-        font-size: 0.8rem;
-      }
-      .portfolio-detail {
-        padding: 1.2rem;
-      }
-      .architecture-diagram {
-        padding: 1rem;
-      }
-      .arch-grid {
-        grid-template-columns: 1fr;
-      }
+      .academy-header { flex-direction: column; align-items: flex-start; padding: 1.2rem; }
+      .brand h1 { font-size: 1.5rem; }
+      .nav-grid { grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); }
+      .blog-post h2 { font-size: 1.3rem; }
+      .portfolio-detail { padding: 1.2rem; }
+      .architecture-diagram { padding: 1rem; }
+      .arch-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 <div class="container">
 
-  <!-- ========== ACADEMY HEADER ========== -->
+  <!-- ========== HEADER ========== -->
   <header class="academy-header">
     <div class="brand">
       <div class="brand-icon"><i class="fas fa-graduation-cap"></i></div>
@@ -1246,7 +1018,7 @@
     </div>
   </header>
 
-  <!-- ========== NAVIGATION (9 sections) ========== -->
+  <!-- ========== NAVIGATION ========== -->
   <div class="nav-grid">
     <div class="nav-item"><i class="fas fa-home"></i> Portfolio</div>
     <div class="nav-item"><i class="fas fa-book-open"></i> Azure DevOps</div>
@@ -1259,37 +1031,28 @@
     <div class="nav-item"><i class="fas fa-users"></i> Community</div>
   </div>
 
-  <!-- ========== MAIN CARDS (showcase each section) ========== -->
+  <!-- ========== MAIN CARDS ========== -->
   <div class="section-title">
     <h2><i class="fas fa-th-large"></i> All services & resources</h2>
     <span class="badge-soft"><i class="fas fa-star"></i> 9 domains</span>
   </div>
 
-  <div class="card-grid" id="mainGrid">
-    <!-- Cards injected via JS -->
-  </div>
+  <div class="card-grid" id="mainGrid"></div>
 
-  <!-- ========================================================== -->
-  <!-- ========== PORTFOLIO DETAIL SECTION (UPDATED) ========== -->
-  <!-- ========================================================== -->
+  <!-- ========== PORTFOLIO DETAIL ========== -->
   <div class="section-title" style="margin-top: 3.5rem;">
     <h2><i class="fas fa-project-diagram"></i> Featured Project: Secure 3‑Tier Landing Zone</h2>
     <span class="badge-soft"><i class="fas fa-cloud"></i> Azure Architecture</span>
   </div>
 
-  <div class="portfolio-detail" id="portfolioDetail">
-    <h3><i class="fas fa-archway"></i> 3-Tier Landing Zone Architecture Design</h3>
+  <div class="portfolio-detail">
+    <h3><i class="fas fa-archway"></i> 3-Tier Landing Zone Architecture</h3>
     <p class="subtitle"><i class="fas fa-tag"></i> Management Group · Subscription · Resource Group</p>
 
     <div class="architecture-diagram">
       <div class="arch-grid">
-
-        <!-- Layer 1: Management & Security -->
         <div class="arch-layer management">
-          <div class="layer-title">
-            <i class="fas fa-shield-alt"></i> Management
-            <span class="badge">MG</span>
-          </div>
+          <div class="layer-title"><i class="fas fa-shield-alt"></i> Management <span class="badge">MG</span></div>
           <div class="arch-item"><i class="fas fa-layer-group"></i> Management Group</div>
           <div class="arch-item"><i class="fas fa-receipt"></i> Subscription</div>
           <div class="arch-item"><i class="fas fa-folder"></i> Resource Group</div>
@@ -1297,13 +1060,8 @@
           <div class="arch-item"><i class="fas fa-user-shield"></i> Managed Identity</div>
           <div class="arch-item"><i class="fas fa-firewall"></i> Azure Firewall</div>
         </div>
-
-        <!-- Layer 2: Networking -->
         <div class="arch-layer networking">
-          <div class="layer-title">
-            <i class="fas fa-network-wired"></i> Networking
-            <span class="badge">10.0.0.0/16</span>
-          </div>
+          <div class="layer-title"><i class="fas fa-network-wired"></i> Networking <span class="badge">10.0.0.0/16</span></div>
           <div class="arch-item"><i class="fas fa-globe"></i> Virtual Network</div>
           <div class="arch-item"><i class="fas fa-arrows-alt-h"></i> NAT Gateway</div>
           <div class="arch-item"><i class="fas fa-shield-virus"></i> Network Security (NSG)</div>
@@ -1314,13 +1072,8 @@
           <div class="arch-item sub-item"><i class="fas fa-globe"></i> Bastion Public IP</div>
           <div class="arch-item sub-item"><i class="fas fa-terminal"></i> SSH Port 22</div>
         </div>
-
-        <!-- Layer 3: Compute -->
         <div class="arch-layer compute">
-          <div class="layer-title">
-            <i class="fas fa-server"></i> Compute Tier
-            <span class="badge">Web</span>
-          </div>
+          <div class="layer-title"><i class="fas fa-server"></i> Compute Tier <span class="badge">Web</span></div>
           <div class="arch-item"><i class="fas fa-cloud-upload-alt"></i> Application Gateway</div>
           <div class="arch-item"><i class="fas fa-balance-scale"></i> Internal Load Balancer</div>
           <div class="arch-item"><i class="fas fa-ipv6"></i> Private IP</div>
@@ -1328,56 +1081,45 @@
           <div class="arch-item"><i class="fas fa-desktop"></i> VM2 (Web Server)</div>
           <div class="arch-item"><i class="fas fa-code-branch"></i> Backend Subnet <span style="font-size:0.65rem;color:#6b8ba3;">10.0.2.0/24</span></div>
         </div>
-
-        <!-- Layer 4: Database -->
         <div class="arch-layer database">
-          <div class="layer-title">
-            <i class="fas fa-database"></i> Database Tier
-            <span class="badge">PaaS</span>
-          </div>
+          <div class="layer-title"><i class="fas fa-database"></i> Database Tier <span class="badge">PaaS</span></div>
           <div class="arch-item"><i class="fas fa-database"></i> Database Subnet <span style="font-size:0.65rem;color:#6b8ba3;">10.0.3.0/24</span></div>
           <div class="arch-item"><i class="fas fa-server"></i> SQL</div>
           <div class="arch-item"><i class="fas fa-cloud"></i> Azure SQL Database - PaaS</div>
           <div class="arch-item"><i class="fas fa-link"></i> Private Endpoint</div>
           <div class="arch-item"><i class="fas fa-user-tie"></i> Developer Access</div>
         </div>
-
       </div>
     </div>
 
-    <!-- Legend -->
-    <div class="arch-legend" style="display:flex;flex-wrap:wrap;gap:1.5rem;margin-top:1.5rem;padding-top:1rem;border-top:1px solid #ecf3fa;">
+    <div class="arch-legend" style="display:flex;flex-wrap:wrap;gap:1.5rem;margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.5);">
       <div class="arch-legend-item" style="display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;color:#1f4460;">
-        <span class="color-box" style="width:16px;height:16px;border-radius:4px;background:#6b4c9a;"></span> Management
+        <span class="color-box" style="width:16px;height:16px;border-radius:6px;background:#6b4c9a;"></span> Management
       </div>
       <div class="arch-legend-item" style="display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;color:#1f4460;">
-        <span class="color-box" style="width:16px;height:16px;border-radius:4px;background:#0077be;"></span> Networking
+        <span class="color-box" style="width:16px;height:16px;border-radius:6px;background:#0077be;"></span> Networking
       </div>
       <div class="arch-legend-item" style="display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;color:#1f4460;">
-        <span class="color-box" style="width:16px;height:16px;border-radius:4px;background:#f5a623;"></span> Compute
+        <span class="color-box" style="width:16px;height:16px;border-radius:6px;background:#f5a623;"></span> Compute
       </div>
       <div class="arch-legend-item" style="display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;color:#1f4460;">
-        <span class="color-box" style="width:16px;height:16px;border-radius:4px;background:#2e7d32;"></span> Database
+        <span class="color-box" style="width:16px;height:16px;border-radius:6px;background:#2e7d32;"></span> Database
       </div>
     </div>
 
-    <!-- ========== NEW: PROJECT CODE SNIPPET (Terraform + Azure CLI) ========== -->
-    <div style="margin-top: 2rem; background: #f4f9fe; border-radius: 1.2rem; padding: 1.5rem; border: 1px solid #d2e0ed;">
-      <h4 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; color: #0b2b44;">
-        <i class="fas fa-code" style="color: #006696;"></i> 
-        Infrastructure as Code — Terraform & Azure CLI
-        <span style="font-size: 0.7rem; background: #eaf2fa; padding: 0.2rem 1rem; border-radius: 20px; color: #1f5b7e;">deploy</span>
+    <!-- code snippet -->
+    <div style="margin-top: 2rem; background: rgba(255,255,255,0.4); backdrop-filter: blur(4px); border-radius: 1.8rem; padding: 1.5rem; border: 1px solid rgba(255,255,255,0.6);">
+      <h4 style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem; color:#0a1f30;">
+        <i class="fas fa-code" style="color:#0066cc;"></i> Infrastructure as Code — Terraform & Azure CLI
+        <span style="font-size:0.7rem; background:#e5f0ff; padding:0.2rem 1rem; border-radius:30px; color:#00509e; font-weight:700;">deploy</span>
       </h4>
-
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-        <!-- Terraform block -->
-        <div style="background: white; border-radius: 1rem; padding: 1.2rem; border: 1px solid #d2e0ed;">
-          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-            <i class="fas fa-code-branch" style="color: #6b4c9a;"></i>
-            <span style="font-weight: 700; font-size: 0.9rem; color: #0b2b44;">Terraform (main.tf)</span>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+        <div style="background:white; border-radius:1.5rem; padding:1.2rem; border:1px solid #d2e0ed;">
+          <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.75rem;">
+            <i class="fas fa-code-branch" style="color:#6b4c9a;"></i>
+            <span style="font-weight:700; font-size:0.9rem; color:#0a1f30;">Terraform (main.tf)</span>
           </div>
-          <pre style="background: #0b1e2b; color: #e6f1ff; padding: 1rem; border-radius: 0.75rem; font-size: 0.75rem; overflow-x: auto; line-height: 1.5;">
-<code># —————— main.tf ——————
+          <pre style="background:#0b1e2b; color:#e6f1ff; padding:1rem; border-radius:1rem; font-size:0.75rem; overflow-x:auto; line-height:1.5;"><code># —————— main.tf ——————
 terraform {
   required_version = ">= 1.5.0"
   required_providers {
@@ -1393,165 +1135,58 @@ terraform {
     key                  = "landing-zone.tfstate"
   }
 }
-
-provider "azurerm" {
-  features {}
-}
-
-# Resource Group
+provider "azurerm" { features {} }
 resource "azurerm_resource_group" "main" {
   name     = "rg-landing-zone"
   location = "eastus"
 }
-
-# Virtual Network
 resource "azurerm_virtual_network" "main" {
   name                = "vnet-landing-zone"
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
   address_space       = ["10.0.0.0/16"]
 }
-
-# Subnets
-resource "azurerm_subnet" "app_gateway" {
-  name                 = "snet-app-gw"
-  resource_group_name  = azurerm_resource_group.main.name
-  virtual_network_name = azurerm_virtual_network.main.name
-  address_prefixes     = ["10.0.5.0/24"]
-}
-
-resource "azurerm_subnet" "bastion" {
-  name                 = "snet-bastion"
-  resource_group_name  = azurerm_resource_group.main.name
-  virtual_network_name = azurerm_virtual_network.main.name
-  address_prefixes     = ["10.0.4.0/24"]
-}
-
-resource "azurerm_subnet" "backend" {
-  name                 = "snet-backend"
-  resource_group_name  = azurerm_resource_group.main.name
-  virtual_network_name = azurerm_virtual_network.main.name
-  address_prefixes     = ["10.0.2.0/24"]
-}
-
-resource "azurerm_subnet" "database" {
-  name                 = "snet-database"
-  resource_group_name  = azurerm_resource_group.main.name
-  virtual_network_name = azurerm_virtual_network.main.name
-  address_prefixes     = ["10.0.3.0/24"]
-}
-
-# Azure SQL Database
-resource "azurerm_sql_server" "main" {
-  name                         = "sql-landing-zone"
-  resource_group_name          = azurerm_resource_group.main.name
-  location                     = azurerm_resource_group.main.location
-  version                      = "12.0"
-  administrator_login          = "sqladmin"
-  administrator_login_password = "SecurePass123!"
-}
-
-resource "azurerm_sql_database" "main" {
-  name                = "db-landing-zone"
-  resource_group_name = azurerm_resource_group.main.name
-  server_name         = azurerm_sql_server.main.name
-  edition             = "Basic"
-}
-
-# Outputs
-output "vnet_id" {
-  value = azurerm_virtual_network.main.id
-}</code></pre>
+# subnets, sql, etc...
+output "vnet_id" { value = azurerm_virtual_network.main.id }</code></pre>
         </div>
-
-        <!-- Azure CLI block -->
-        <div style="background: white; border-radius: 1rem; padding: 1.2rem; border: 1px solid #d2e0ed;">
-          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-            <i class="fas fa-terminal" style="color: #0077be;"></i>
-            <span style="font-weight: 700; font-size: 0.9rem; color: #0b2b44;">Azure CLI (deployment script)</span>
+        <div style="background:white; border-radius:1.5rem; padding:1.2rem; border:1px solid #d2e0ed;">
+          <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.75rem;">
+            <i class="fas fa-terminal" style="color:#0077be;"></i>
+            <span style="font-weight:700; font-size:0.9rem; color:#0a1f30;">Azure CLI (deploy.sh)</span>
           </div>
-          <pre style="background: #0b1e2b; color: #e6f1ff; padding: 1rem; border-radius: 0.75rem; font-size: 0.75rem; overflow-x: auto; line-height: 1.5;">
-<code>#!/bin/bash
-# deploy-landing-zone.sh
-
-# Variables
+          <pre style="background:#0b1e2b; color:#e6f1ff; padding:1rem; border-radius:1rem; font-size:0.75rem; overflow-x:auto; line-height:1.5;"><code>#!/bin/bash
 RG="rg-landing-zone"
 LOCATION="eastus"
 VNET="vnet-landing-zone"
-ADDRESS_PREFIX="10.0.0.0/16"
 
-# 1. Create Resource Group
 az group create --name $RG --location $LOCATION
-
-# 2. Create Virtual Network
-az network vnet create \
-  --resource-group $RG \
-  --name $VNET \
-  --address-prefix $ADDRESS_PREFIX
-
-# 3. Create Subnets
-az network vnet subnet create \
-  --resource-group $RG \
-  --vnet-name $VNET \
-  --name snet-app-gw \
-  --address-prefix 10.0.5.0/24
-
-az network vnet subnet create \
-  --resource-group $RG \
-  --vnet-name $VNET \
-  --name snet-bastion \
-  --address-prefix 10.0.4.0/24
-
-az network vnet subnet create \
-  --resource-group $RG \
-  --vnet-name $VNET \
-  --name snet-backend \
-  --address-prefix 10.0.2.0/24
-
-az network vnet subnet create \
-  --resource-group $RG \
-  --vnet-name $VNET \
-  --name snet-database \
-  --address-prefix 10.0.3.0/24
-
-# 4. Create Azure SQL Server & Database
-az sql server create \
-  --name sql-landing-zone \
-  --resource-group $RG \
-  --location $LOCATION \
-  --admin-user sqladmin \
-  --admin-password SecurePass123!
-
-az sql db create \
-  --resource-group $RG \
-  --server sql-landing-zone \
-  --name db-landing-zone \
-  --edition Basic
-
-echo "✅ Landing zone deployed successfully!"</code></pre>
+az network vnet create -g $RG -n $VNET --address-prefix 10.0.0.0/16
+az network vnet subnet create -g $RG --vnet-name $VNET -n snet-app-gw --address-prefix 10.0.5.0/24
+az network vnet subnet create -g $RG --vnet-name $VNET -n snet-bastion --address-prefix 10.0.4.0/24
+az network vnet subnet create -g $RG --vnet-name $VNET -n snet-backend --address-prefix 10.0.2.0/24
+az network vnet subnet create -g $RG --vnet-name $VNET -n snet-database --address-prefix 10.0.3.0/24
+az sql server create --name sql-landing-zone -g $RG -l $LOCATION --admin-user sqladmin --admin-password SecurePass123!
+az sql db create -g $RG --server sql-landing-zone -n db-landing-zone --edition Basic
+echo "✅ Landing zone deployed!"</code></pre>
         </div>
       </div>
-      <div style="margin-top: 1rem; font-size: 0.85rem; color: #3d627e; display: flex; gap: 1rem; flex-wrap: wrap;">
-        <span><i class="fas fa-check-circle" style="color: #2e7d32;"></i> Terraform state stored remotely</span>
-        <span><i class="fas fa-check-circle" style="color: #2e7d32;"></i> Azure CLI automation</span>
-        <span><i class="fas fa-check-circle" style="color: #2e7d32;"></i> 4 subnets + PaaS database</span>
-        <span><i class="fas fa-check-circle" style="color: #2e7d32;"></i> Security groups applied</span>
+      <div style="margin-top:1rem; font-size:0.85rem; color:#3d627e; display:flex; gap:1rem; flex-wrap:wrap;">
+        <span><i class="fas fa-check-circle" style="color:#2e7d32;"></i> Terraform state remote</span>
+        <span><i class="fas fa-check-circle" style="color:#2e7d32;"></i> Azure CLI automation</span>
+        <span><i class="fas fa-check-circle" style="color:#2e7d32;"></i> 4 subnets + PaaS</span>
+        <span><i class="fas fa-check-circle" style="color:#2e7d32;"></i> Security groups</span>
       </div>
     </div>
-
   </div>
 
-  <!-- ========================================================== -->
-  <!-- ========== AZURE DEVOPS 100 QUESTIONS SECTION ========== -->
-  <!-- ========================================================== -->
-  <div class="section-title" style="margin-top: 3.5rem;">
+  <!-- ========== AZURE DEVOPS ========== -->
+  <div class="section-title" style="margin-top:3.5rem;">
     <h2><i class="fab fa-microsoft"></i> Azure DevOps - Top 100 Questions</h2>
     <span class="badge-soft"><i class="fas fa-question-circle"></i> 100 Q&A</span>
   </div>
-
   <div class="azure-devops-section">
     <div class="azure-tabs">
-      <button class="tab-btn active" onclick="filterAzureQA('all', this)"><i class="fas fa-list"></i> All Questions</button>
+      <button class="tab-btn active" onclick="filterAzureQA('all', this)"><i class="fas fa-list"></i> All</button>
       <button class="tab-btn" onclick="filterAzureQA('beginner', this)"><i class="fas fa-seedling"></i> Beginner</button>
       <button class="tab-btn" onclick="filterAzureQA('intermediate', this)"><i class="fas fa-chart-line"></i> Intermediate</button>
       <button class="tab-btn" onclick="filterAzureQA('advanced', this)"><i class="fas fa-star"></i> Advanced</button>
@@ -1559,17 +1194,14 @@ echo "✅ Landing zone deployed successfully!"</code></pre>
     <div class="azure-qa-grid" id="azureQAGrid"></div>
   </div>
 
-  <!-- ========================================================== -->
-  <!-- ========== GITHUB ACTIONS CI/CD SECTION ========== -->
-  <!-- ========================================================== -->
-  <div class="section-title" style="margin-top: 3.5rem;">
-    <h2><i class="fab fa-github"></i> GitHub Actions - CI/CD Scenario Questions</h2>
-    <span class="badge-soft"><i class="fas fa-question-circle"></i> 25 Scenario Q&A</span>
+  <!-- ========== GITHUB ACTIONS ========== -->
+  <div class="section-title" style="margin-top:3.5rem;">
+    <h2><i class="fab fa-github"></i> GitHub Actions - CI/CD Scenarios</h2>
+    <span class="badge-soft"><i class="fas fa-question-circle"></i> 25 Scenarios</span>
   </div>
-
   <div class="github-section">
     <div class="github-tabs">
-      <button class="tab-btn active" onclick="filterGithubQA('all', this)"><i class="fas fa-list"></i> All Scenarios</button>
+      <button class="tab-btn active" onclick="filterGithubQA('all', this)"><i class="fas fa-list"></i> All</button>
       <button class="tab-btn" onclick="filterGithubQA('beginner', this)"><i class="fas fa-seedling"></i> Beginner</button>
       <button class="tab-btn" onclick="filterGithubQA('intermediate', this)"><i class="fas fa-chart-line"></i> Intermediate</button>
       <button class="tab-btn" onclick="filterGithubQA('advanced', this)"><i class="fas fa-star"></i> Advanced</button>
@@ -1577,17 +1209,14 @@ echo "✅ Landing zone deployed successfully!"</code></pre>
     <div class="github-qa-grid" id="githubQAGrid"></div>
   </div>
 
-  <!-- ========================================================== -->
-  <!-- ========== INTERVIEW QUESTIONS SECTION ========== -->
-  <!-- ========================================================== -->
-  <div class="section-title" style="margin-top: 3.5rem;">
+  <!-- ========== INTERVIEW ========== -->
+  <div class="section-title" style="margin-top:3.5rem;">
     <h2><i class="fas fa-question-circle"></i> Interview Questions</h2>
     <span class="badge-soft"><i class="fas fa-code-branch"></i> Terraform · 14 Q&A</span>
   </div>
-
   <div class="interview-section">
     <div class="interview-tabs">
-      <button class="tab-btn active" onclick="filterQA('all', this)"><i class="fas fa-list"></i> All Questions</button>
+      <button class="tab-btn active" onclick="filterQA('all', this)"><i class="fas fa-list"></i> All</button>
       <button class="tab-btn" onclick="filterQA('terraform', this)"><i class="fas fa-code-branch"></i> Terraform</button>
       <button class="tab-btn" onclick="filterQA('beginner', this)"><i class="fas fa-seedling"></i> Beginner</button>
       <button class="tab-btn" onclick="filterQA('advanced', this)"><i class="fas fa-star"></i> Advanced</button>
@@ -1595,14 +1224,11 @@ echo "✅ Landing zone deployed successfully!"</code></pre>
     <div class="qa-grid" id="qaGrid"></div>
   </div>
 
-  <!-- ========================================================== -->
-  <!-- ========== BLOG SECTION ========== -->
-  <!-- ========================================================== -->
-  <div class="section-title" style="margin-top: 3.5rem;">
+  <!-- ========== BLOG ========== -->
+  <div class="section-title" style="margin-top:3.5rem;">
     <h2><i class="fas fa-newspaper"></i> 📰 Latest Blog Posts</h2>
     <span class="badge-soft"><i class="fas fa-calendar-day"></i> Daily updates</span>
   </div>
-
   <div class="blog-layout">
     <main id="blogMain"></main>
     <aside class="sidebar">
@@ -1625,24 +1251,23 @@ echo "✅ Landing zone deployed successfully!"</code></pre>
         <h3><i class="fas fa-envelope"></i> Newsletter</h3>
         <div class="newsletter">
           <input type="email" placeholder="Your email address" />
-          <button onclick="alert('✅ Subscribed successfully!')">Subscribe</button>
+          <button onclick="alert('✅ Subscribed!')">Subscribe</button>
         </div>
       </div>
     </aside>
   </div>
 
   <div class="pagination">
-    <a href="#" onclick="event.preventDefault(); alert('Previous page');">Prev</a>
+    <a href="#" onclick="event.preventDefault(); alert('Prev page');">Prev</a>
     <a href="#" class="active">1</a>
     <a href="#" onclick="event.preventDefault(); alert('Page 2');">2</a>
     <a href="#" onclick="event.preventDefault(); alert('Page 3');">3</a>
     <a href="#" onclick="event.preventDefault(); alert('Next page');">Next</a>
   </div>
 
-  <!-- ========== FOOTER ========== -->
   <div class="footer-note">
     <span><i class="fas fa-graduation-cap"></i> CMS DevOps Academy</span>
-    <span><i class="fas fa-circle" style="color: #2b7aa0; font-size: 0.35rem; align-self: center;"></i></span>
+    <span><i class="fas fa-circle" style="color:#0066cc; font-size:0.35rem; align-self:center;"></i></span>
     <span><i class="fas fa-users"></i> #community · #devops</span>
     <span><i class="fas fa-calendar-week"></i> daily updates</span>
   </div>
@@ -1650,277 +1275,177 @@ echo "✅ Landing zone deployed successfully!"</code></pre>
 
 <script>
   (function() {
-    // ---------- date ----------
     const now = new Date();
-    const dateStr = now.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
-    document.getElementById('headerDate').textContent = dateStr;
+    document.getElementById('headerDate').textContent = now.toLocaleDateString('en-US', { year:'numeric', month:'short', day:'numeric' });
 
-    // ---------- DATA: 9 sections with cards ----------
+    // Cards
     const sections = [
-      { id: 'portfolio', icon: 'fa-home', title: 'Portfolio', desc: 'Showcase of DevOps projects, architectures, and case studies.', tag: 'featured', link: '#portfolio' },
-      { id: 'azure', icon: 'fa-cloud', title: 'Azure DevOps Course', desc: 'End-to-end Azure Pipelines, Boards, Repos, and Artifacts.', tag: 'course', link: '#azure' },
-      { id: 'blog', icon: 'fa-pen-fancy', title: 'Blog', desc: 'Daily articles: CI/CD, K8s, automation, and cloud native.', tag: 'new', link: '#blog' },
-      { id: 'terraform', icon: 'fa-code-branch', title: 'Terraform Projects', desc: 'Infra as Code — modules, workspaces, state management, AWS/Azure.', tag: 'projects', link: '#terraform' },
-      { id: 'interview', icon: 'fa-question-circle', title: 'Interview Questions', desc: 'Curated DevOps / SRE questions with detailed answers.', tag: 'Q&A', link: '#interview' },
-      { id: 'freelance', icon: 'fa-briefcase', title: 'Freelancing Services', desc: 'CI/CD setup, cloud migration, K8s consulting & support.', tag: 'services', link: '#freelance' },
-      { id: 'mock', icon: 'fa-calendar-check', title: 'Mock Interview Booking', desc: '1:1 mock sessions with DevOps experts. Real-time feedback.', tag: 'booking', link: '#mock' },
-      { id: 'resume', icon: 'fa-file-alt', title: 'Resume Review', desc: 'Professional resume review for DevOps / SRE roles.', tag: 'review', link: '#resume' },
-      { id: 'community', icon: 'fa-users', title: 'Community', desc: 'Join the CMS DevOps community — slack, events, mentorship.', tag: 'join', link: '#community', extraClass: 'community' }
+      { icon:'fa-home', title:'Portfolio', desc:'Showcase of DevOps projects, architectures, and case studies.', tag:'featured' },
+      { icon:'fa-cloud', title:'Azure DevOps Course', desc:'End-to-end Azure Pipelines, Boards, Repos, and Artifacts.', tag:'course' },
+      { icon:'fa-pen-fancy', title:'Blog', desc:'Daily articles: CI/CD, K8s, automation, and cloud native.', tag:'new' },
+      { icon:'fa-code-branch', title:'Terraform Projects', desc:'Infra as Code — modules, workspaces, state management, AWS/Azure.', tag:'projects' },
+      { icon:'fa-question-circle', title:'Interview Questions', desc:'Curated DevOps / SRE questions with detailed answers.', tag:'Q&A' },
+      { icon:'fa-briefcase', title:'Freelancing Services', desc:'CI/CD setup, cloud migration, K8s consulting & support.', tag:'services' },
+      { icon:'fa-calendar-check', title:'Mock Interview Booking', desc:'1:1 mock sessions with DevOps experts. Real-time feedback.', tag:'booking' },
+      { icon:'fa-file-alt', title:'Resume Review', desc:'Professional resume review for DevOps / SRE roles.', tag:'review' },
+      { icon:'fa-users', title:'Community', desc:'Join the CMS DevOps community — slack, events, mentorship.', tag:'join', extra:'community' }
     ];
-
     const grid = document.getElementById('mainGrid');
-    if (grid) {
-      let html = '';
-      sections.forEach(s => {
-        const extra = s.extraClass ? ` ${s.extraClass}` : '';
-        html += `
-          <div class="card${extra}">
-            <div class="card-icon"><i class="fas ${s.icon}"></i></div>
-            <h3>${s.title}</h3>
-            <p>${s.desc}</p>
-            <span class="meta-tag"><i class="fas fa-tag"></i> ${s.tag}</span>
-            <div class="card-footer-link">
-              <a href="#" onclick="event.preventDefault(); alert('🔗 ${s.title} — explore more');">
-                explore <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        `;
-      });
-      grid.innerHTML = html;
-    }
+    grid.innerHTML = sections.map(s => `
+      <div class="card${s.extra ? ' ' + s.extra : ''}">
+        <div class="card-icon"><i class="fas ${s.icon}"></i></div>
+        <h3>${s.title}</h3>
+        <p>${s.desc}</p>
+        <span class="meta-tag"><i class="fas fa-tag"></i> ${s.tag}</span>
+        <div class="card-footer-link"><a href="#" onclick="event.preventDefault(); alert('🔗 ${s.title}');">explore <i class="fas fa-arrow-right"></i></a></div>
+      </div>
+    `).join('');
 
-    // ==========================================================
-    // ========== AZURE DEVOPS 100 QUESTIONS ==========
-    // ==========================================================
+    // ---------- AZURE DEVOPS ----------
     const azureQA = [
-      { id: 1, question: 'What is Azure DevOps?', answer: 'Azure DevOps is a set of cloud-based tools for software development and delivery. It includes Azure Boards, Azure Repos, Azure Pipelines, Azure Test Plans, and Azure Artifacts.', level: 'beginner' },
-      { id: 2, question: 'What are the core services of Azure DevOps?', answer: '<ul><li>Azure Boards - Work tracking</li><li>Azure Repos - Source control</li><li>Azure Pipelines - CI/CD</li><li>Azure Test Plans - Testing</li><li>Azure Artifacts - Package management</li></ul>', level: 'beginner' },
-      { id: 3, question: 'What is Azure Boards?', answer: 'Azure Boards is a work tracking service that helps teams plan, track, and discuss work using Kanban boards, backlogs, and scrum practices.', level: 'beginner' },
-      { id: 4, question: 'What is Azure Repos?', answer: 'Azure Repos is a set of version control tools that you can use to manage your code. It supports both Git and Team Foundation Version Control (TFVC).', level: 'beginner' },
-      { id: 5, question: 'What is Azure Pipelines?', answer: 'Azure Pipelines is a continuous integration and continuous delivery (CI/CD) service that works with any language, platform, and cloud.', level: 'beginner' },
-      { id: 6, question: 'What is Azure Test Plans?', answer: 'Azure Test Plans provides tools for manual testing, exploratory testing, and continuous testing of your applications.', level: 'beginner' },
-      { id: 7, question: 'What is Azure Artifacts?', answer: 'Azure Artifacts is a package management service that allows you to create, host, and share packages with your team.', level: 'beginner' },
-      { id: 8, question: 'What is a Project in Azure DevOps?', answer: 'A Project is a container for all Azure DevOps services. It includes Boards, Repos, Pipelines, Test Plans, and Artifacts for a specific application.', level: 'beginner' },
-      { id: 9, question: 'What is a Pipeline in Azure DevOps?', answer: 'A Pipeline is a definition of a build, test, and deploy process. It can be defined using YAML or the classic editor.', level: 'beginner' },
-      { id: 10, question: 'What is YAML in Azure Pipelines?', answer: 'YAML is a human-readable configuration language used to define CI/CD pipelines. It\'s stored in the repository alongside your code.', level: 'beginner' }
+      { id:1, question:'What is Azure DevOps?', answer:'Azure DevOps is a set of cloud-based tools for software development and delivery. It includes Azure Boards, Azure Repos, Azure Pipelines, Azure Test Plans, and Azure Artifacts.', level:'beginner' },
+      { id:2, question:'What are the core services?', answer:'<ul><li>Azure Boards - Work tracking</li><li>Azure Repos - Source control</li><li>Azure Pipelines - CI/CD</li><li>Azure Test Plans - Testing</li><li>Azure Artifacts - Package management</li></ul>', level:'beginner' },
+      { id:3, question:'What is Azure Boards?', answer:'Azure Boards is a work tracking service that helps teams plan, track, and discuss work using Kanban boards, backlogs, and scrum practices.', level:'beginner' },
+      { id:4, question:'What is Azure Repos?', answer:'Azure Repos is a set of version control tools that you can use to manage your code. It supports both Git and Team Foundation Version Control (TFVC).', level:'beginner' },
+      { id:5, question:'What is Azure Pipelines?', answer:'Azure Pipelines is a continuous integration and continuous delivery (CI/CD) service that works with any language, platform, and cloud.', level:'beginner' },
+      { id:6, question:'What is Azure Test Plans?', answer:'Azure Test Plans provides tools for manual testing, exploratory testing, and continuous testing of your applications.', level:'beginner' },
+      { id:7, question:'What is Azure Artifacts?', answer:'Azure Artifacts is a package management service that allows you to create, host, and share packages with your team.', level:'beginner' },
+      { id:8, question:'What is a Project in Azure DevOps?', answer:'A Project is a container for all Azure DevOps services. It includes Boards, Repos, Pipelines, Test Plans, and Artifacts for a specific application.', level:'beginner' },
+      { id:9, question:'What is a Pipeline in Azure DevOps?', answer:'A Pipeline is a definition of a build, test, and deploy process. It can be defined using YAML or the classic editor.', level:'beginner' },
+      { id:10, question:'What is YAML in Azure Pipelines?', answer:'YAML is a human-readable configuration language used to define CI/CD pipelines. It\'s stored in the repository alongside your code.', level:'beginner' }
     ];
-
-    // Render only 10 questions for demo - full 100 in actual code
-    function renderAzureQA(items) {
-      const grid = document.getElementById('azureQAGrid');
-      if (!grid) return;
-      let html = '';
-      items.forEach((item) => {
-        html += `
-          <div class="azure-qa-item">
-            <span class="q-number">Q${item.id}</span>
-            <h4><i class="fas fa-question-circle"></i> ${item.question}</h4>
-            <div class="answer">${item.answer}</div>
-          </div>
-        `;
-      });
-      grid.innerHTML = html;
-    }
-    renderAzureQA(azureQA);
-
-    window.filterAzureQA = function(category, btn) {
-      document.querySelectorAll('.azure-tabs .tab-btn').forEach(tab => tab.classList.remove('active'));
+    const renderAzure = (items) => {
+      document.getElementById('azureQAGrid').innerHTML = items.map(item => `
+        <div class="azure-qa-item">
+          <span class="q-number">Q${item.id}</span>
+          <h4><i class="fas fa-question-circle"></i> ${item.question}</h4>
+          <div class="answer">${item.answer}</div>
+        </div>
+      `).join('');
+    };
+    renderAzure(azureQA);
+    window.filterAzureQA = (cat, btn) => {
+      document.querySelectorAll('.azure-tabs .tab-btn').forEach(t => t.classList.remove('active'));
       btn.classList.add('active');
-      let filtered = azureQA;
-      if (category === 'beginner') filtered = azureQA.filter(q => q.level === 'beginner');
-      else if (category === 'intermediate') filtered = azureQA.filter(q => q.level === 'intermediate');
-      else if (category === 'advanced') filtered = azureQA.filter(q => q.level === 'advanced');
-      renderAzureQA(filtered);
-    }
+      renderAzure(cat === 'all' ? azureQA : azureQA.filter(q => q.level === cat));
+    };
 
-    // ==========================================================
-    // ========== GITHUB ACTIONS CI/CD SCENARIO QUESTIONS ==========
-    // ==========================================================
+    // ---------- GITHUB ACTIONS ----------
     const githubQA = [
-      { id: 1, question: 'Scenario: You need to run a simple CI pipeline on every push to main branch. How do you configure it?', answer: 'Create a YAML file at <code>.github/workflows/ci.yml</code> with:<br><pre>name: CI\non:\n  push:\n    branches: [ main ]\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - name: Run build\n        run: echo "Building..."</pre>', level: 'beginner' },
-      { id: 2, question: 'Scenario: You want to run a workflow only when a pull request is opened. How?', answer: 'Use <code>on: pull_request</code> trigger:<br><pre>on:\n  pull_request:\n    branches: [ main ]</pre>This triggers when a PR is opened, updated, or reopened.', level: 'beginner' },
-      { id: 3, question: 'Scenario: You need to install Node.js in your GitHub Actions workflow. How?', answer: 'Use the <code>actions/setup-node</code> action:<br><pre>steps:\n  - uses: actions/checkout@v4\n  - uses: actions/setup-node@v4\n    with:\n      node-version: \'18\'\n  - run: npm install\n  - run: npm test</pre>', level: 'beginner' },
-      { id: 4, question: 'Scenario: You want to cache npm dependencies to speed up your workflow. How?', answer: 'Use <code>actions/cache</code> action:<br><pre>steps:\n  - uses: actions/checkout@v4\n  - uses: actions/setup-node@v4\n    with:\n      node-version: \'18\'\n  - uses: actions/cache@v3\n    with:\n      path: ~/.npm\n      key: ${{ runner.os }}-node-${{ hashFiles(\'**/package-lock.json\') }}\n  - run: npm install\n  - run: npm test</pre>', level: 'beginner' },
-      { id: 5, question: 'Scenario: You need to run a workflow manually. How do you enable manual triggers?', answer: 'Use <code>workflow_dispatch</code> trigger:<br><pre>on:\n  workflow_dispatch:\n    inputs:\n      environment:\n        description: \'Deploy environment\'\n        required: true\n        type: choice\n        options:\n          - dev\n          - staging\n          - production</pre>', level: 'beginner' },
-      { id: 6, question: 'Scenario: You want to run a job only on the main branch. How?', answer: 'Use conditional <code>if</code> on job or step level:<br><pre>jobs:\n  deploy:\n    if: github.ref == \'refs/heads/main\'\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo "Deploying..."</pre>', level: 'beginner' },
-      { id: 7, question: 'Scenario: You need to run a workflow every day at 9 AM. How?', answer: 'Use <code>schedule</code> trigger with cron syntax:<br><pre>on:\n  schedule:\n    - cron: \'0 9 * * *\'</pre>This runs daily at 9:00 AM UTC.', level: 'beginner' },
-      { id: 8, question: 'Scenario: You want to use environment variables in your workflow. How?', answer: 'Use <code>env</code> context:<br><pre>env:\n  NODE_ENV: production\n  API_URL: https://api.example.com\n\nsteps:\n  - run: echo ${{ env.NODE_ENV }}</pre>', level: 'beginner' },
-      { id: 9, question: 'Scenario: You need to deploy to Azure Web App after successful build. How do you do it?', answer: 'Use <code>azure/webapps-deploy</code> action:<br><pre>jobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-node@v4\n        with:\n          node-version: \'18\'\n      - run: npm install\n      - run: npm run build\n      - name: Deploy to Azure Web App\n        uses: azure/webapps-deploy@v2\n        with:\n          app-name: \'my-webapp\'\n          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}\n          package: \'./build\'</pre>', level: 'intermediate' },
-      { id: 10, question: 'Scenario: You want to use secrets in your workflow. How do you store and access them?', answer: 'Store secrets in GitHub Settings > Secrets and variables > Actions. Access them using <code>${{ secrets.SECRET_NAME }}</code>.<br><pre>steps:\n  - run: echo ${{ secrets.API_KEY }}</pre>', level: 'intermediate' }
+      { id:1, question:'Scenario: CI on push to main', answer:'Create <code>.github/workflows/ci.yml</code> with:<br><pre>name: CI\non: push\n  branches: [ main ]\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - run: echo "Building..."</pre>', level:'beginner' },
+      { id:2, question:'Scenario: Run on pull_request', answer:'Use <code>on: pull_request</code> trigger:<br><pre>on:\n  pull_request:\n    branches: [ main ]</pre>', level:'beginner' },
+      { id:3, question:'Scenario: Install Node.js', answer:'Use <code>actions/setup-node</code>:<br><pre>steps:\n  - uses: actions/setup-node@v4\n    with:\n      node-version: \'18\'\n  - run: npm install\n  - run: npm test</pre>', level:'beginner' },
+      { id:4, question:'Scenario: Cache npm dependencies', answer:'Use <code>actions/cache</code>:<br><pre>steps:\n  - uses: actions/cache@v3\n    with:\n      path: ~/.npm\n      key: ${{ runner.os }}-node-${{ hashFiles(\'**/package-lock.json\') }}\n  - run: npm install</pre>', level:'beginner' },
+      { id:5, question:'Scenario: Manual trigger', answer:'Use <code>workflow_dispatch</code>:<br><pre>on:\n  workflow_dispatch:\n    inputs:\n      environment:\n        description: \'Deploy environment\'\n        required: true\n        type: choice\n        options:\n          - dev\n          - staging\n          - production</pre>', level:'beginner' },
+      { id:6, question:'Scenario: Conditional job on main branch', answer:'Use <code>if</code> condition:<br><pre>jobs:\n  deploy:\n    if: github.ref == \'refs/heads/main\'\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo "Deploying..."</pre>', level:'beginner' },
+      { id:7, question:'Scenario: Schedule daily at 9 AM', answer:'Use <code>schedule</code> cron:<br><pre>on:\n  schedule:\n    - cron: \'0 9 * * *\'</pre>', level:'beginner' },
+      { id:8, question:'Scenario: Environment variables', answer:'Use <code>env</code> context:<br><pre>env:\n  NODE_ENV: production\nsteps:\n  - run: echo ${{ env.NODE_ENV }}</pre>', level:'beginner' },
+      { id:9, question:'Scenario: Deploy to Azure Web App', answer:'Use <code>azure/webapps-deploy</code>:<br><pre>jobs:\n  build:\n    steps:\n      - uses: azure/webapps-deploy@v2\n        with:\n          app-name: \'my-webapp\'\n          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}\n          package: \'./build\'</pre>', level:'intermediate' },
+      { id:10, question:'Scenario: Use secrets', answer:'Store in GitHub Settings → Secrets. Access via <code>${{ secrets.SECRET_NAME }}</code>.<br><pre>steps:\n  - run: echo ${{ secrets.API_KEY }}</pre>', level:'intermediate' }
     ];
-
-    // Render function for GitHub QA
-    function renderGithubQA(items) {
-      const grid = document.getElementById('githubQAGrid');
-      if (!grid) return;
-      let html = '';
-      items.forEach((item) => {
-        html += `
-          <div class="github-qa-item">
-            <span class="q-number">Scenario ${item.id}</span>
-            <h4><i class="fas fa-code"></i> ${item.question}</h4>
-            <div class="answer">${item.answer}</div>
-          </div>
-        `;
-      });
-      grid.innerHTML = html;
-    }
-    renderGithubQA(githubQA);
-
-    window.filterGithubQA = function(category, btn) {
-      document.querySelectorAll('.github-tabs .tab-btn').forEach(tab => tab.classList.remove('active'));
+    const renderGithub = (items) => {
+      document.getElementById('githubQAGrid').innerHTML = items.map(item => `
+        <div class="github-qa-item">
+          <span class="q-number">Scenario ${item.id}</span>
+          <h4><i class="fas fa-code"></i> ${item.question}</h4>
+          <div class="answer">${item.answer}</div>
+        </div>
+      `).join('');
+    };
+    renderGithub(githubQA);
+    window.filterGithubQA = (cat, btn) => {
+      document.querySelectorAll('.github-tabs .tab-btn').forEach(t => t.classList.remove('active'));
       btn.classList.add('active');
-      let filtered = githubQA;
-      if (category === 'beginner') filtered = githubQA.filter(q => q.level === 'beginner');
-      else if (category === 'intermediate') filtered = githubQA.filter(q => q.level === 'intermediate');
-      else if (category === 'advanced') filtered = githubQA.filter(q => q.level === 'advanced');
-      renderGithubQA(filtered);
-    }
+      renderGithub(cat === 'all' ? githubQA : githubQA.filter(q => q.level === cat));
+    };
 
-    // ==========================================================
-    // ========== INTERVIEW Q&A DATA (Terraform) ==========
-    // ==========================================================
+    // ---------- INTERVIEW ----------
     const qaData = [
-      { id: 1, question: 'What is a Terraform block?', answer: 'A Terraform block is the root configuration block that defines Terraform-specific settings...', category: 'terraform', level: 'beginner' },
-      { id: 2, question: 'What is the purpose of the Terraform block?', answer: 'The Terraform block is used to: <ul><li>Specify the required Terraform version</li><li>Define required providers</li></ul>', category: 'terraform', level: 'beginner' },
-      { id: 3, question: 'What is required_version?', answer: 'The required_version argument specifies the Terraform CLI version required.', category: 'terraform', level: 'beginner' },
-      { id: 4, question: 'What is required_providers?', answer: 'The required_providers block specifies which providers Terraform should download.', category: 'terraform', level: 'beginner' },
-      { id: 5, question: 'What is a backend in Terraform?', answer: 'A backend defines where Terraform stores its state file.', category: 'terraform', level: 'beginner' },
-      { id: 6, question: 'Why should we use a remote backend?', answer: 'A remote backend provides centralized state management and team collaboration.', category: 'terraform', level: 'advanced' },
-      { id: 7, question: 'Does the Terraform block create resources?', answer: 'No. The Terraform block only configures Terraform itself.', category: 'terraform', level: 'beginner' },
-      { id: 8, question: 'Which command downloads the providers?', answer: '<code>terraform init</code> downloads providers and initializes the backend.', category: 'terraform', level: 'beginner' },
-      { id: 9, question: 'What happens if the provider version is not specified?', answer: 'Terraform selects a compatible provider version automatically.', category: 'terraform', level: 'advanced' },
-      { id: 10, question: 'Why should we specify the provider version?', answer: 'Specifying the provider version ensures stable deployments.', category: 'terraform', level: 'advanced' }
+      { id:1, question:'What is a Terraform block?', answer:'A Terraform block is the root configuration block that defines Terraform-specific settings.', category:'terraform', level:'beginner' },
+      { id:2, question:'Purpose of Terraform block?', answer:'Used to specify required Terraform version and required providers.', category:'terraform', level:'beginner' },
+      { id:3, question:'What is required_version?', answer:'Specifies the Terraform CLI version required.', category:'terraform', level:'beginner' },
+      { id:4, question:'What is required_providers?', answer:'Specifies which providers Terraform should download.', category:'terraform', level:'beginner' },
+      { id:5, question:'What is a backend?', answer:'Defines where Terraform stores its state file.', category:'terraform', level:'beginner' },
+      { id:6, question:'Why remote backend?', answer:'Provides centralized state management and team collaboration.', category:'terraform', level:'advanced' },
+      { id:7, question:'Does Terraform block create resources?', answer:'No. Only configures Terraform itself.', category:'terraform', level:'beginner' },
+      { id:8, question:'Which command downloads providers?', answer:'<code>terraform init</code> downloads providers and initializes the backend.', category:'terraform', level:'beginner' },
+      { id:9, question:'Provider version not specified?', answer:'Terraform selects a compatible version automatically.', category:'terraform', level:'advanced' },
+      { id:10, question:'Why specify provider version?', answer:'Ensures stable and predictable deployments.', category:'terraform', level:'advanced' }
     ];
-
-    function renderQA(items) {
-      const grid = document.getElementById('qaGrid');
-      if (!grid) return;
-      let html = '';
-      items.forEach((item) => {
-        html += `
-          <div class="qa-item terraform-qa">
-            <span class="q-number">Q${item.id}</span>
-            <h4><i class="fas fa-question-circle"></i> ${item.question}</h4>
-            <div class="answer">${item.answer}</div>
-          </div>
-        `;
-      });
-      grid.innerHTML = html;
-    }
+    const renderQA = (items) => {
+      document.getElementById('qaGrid').innerHTML = items.map(item => `
+        <div class="qa-item terraform-qa">
+          <span class="q-number">Q${item.id}</span>
+          <h4><i class="fas fa-question-circle"></i> ${item.question}</h4>
+          <div class="answer">${item.answer}</div>
+        </div>
+      `).join('');
+    };
     renderQA(qaData);
-
-    window.filterQA = function(category, btn) {
-      document.querySelectorAll('.interview-tabs .tab-btn').forEach(tab => tab.classList.remove('active'));
+    window.filterQA = (cat, btn) => {
+      document.querySelectorAll('.interview-tabs .tab-btn').forEach(t => t.classList.remove('active'));
       btn.classList.add('active');
       let filtered = qaData;
-      if (category === 'terraform') filtered = qaData.filter(q => q.category === 'terraform');
-      else if (category === 'beginner') filtered = qaData.filter(q => q.level === 'beginner');
-      else if (category === 'advanced') filtered = qaData.filter(q => q.level === 'advanced');
+      if (cat === 'terraform') filtered = qaData.filter(q => q.category === 'terraform');
+      else if (cat === 'beginner') filtered = qaData.filter(q => q.level === 'beginner');
+      else if (cat === 'advanced') filtered = qaData.filter(q => q.level === 'advanced');
       renderQA(filtered);
-    }
+    };
 
-    // ==========================================================
-    // ========== BLOG DATA ==========
-    // ==========================================================
+    // ---------- BLOG ----------
     const blogPosts = [
-      { id: 1, title: '🚀 Complete CI/CD Pipeline with GitHub Actions', excerpt: 'Learn how to build a production-grade CI/CD pipeline for Node.js applications.', date: '15 August 2026', category: 'CI/CD', readTime: '8 min read', tags: ['GitHub Actions', 'Docker'] },
-      { id: 2, title: '☁️ Kubernetes Networking: A Deep Dive', excerpt: 'Understanding Services, Ingress Controllers, Network Policies in K8s.', date: '14 August 2026', category: 'Kubernetes', readTime: '12 min read', tags: ['K8s', 'Networking'] },
-      { id: 3, title: '🔐 Terraform Security Best Practices', excerpt: 'Secure your Infrastructure as Code with Terraform state encryption.', date: '13 August 2026', category: 'Terraform', readTime: '9 min read', tags: ['Terraform', 'Security'] },
-      { id: 4, title: '🐳 Docker Multi-Stage Builds Explained', excerpt: 'Reduce your Docker image size by 80% using multi-stage builds.', date: '12 August 2026', category: 'Docker', readTime: '6 min read', tags: ['Docker'] },
-      { id: 5, title: '📊 Prometheus & Grafana Monitoring Stack', excerpt: 'Complete guide to setting up monitoring for your microservices.', date: '11 August 2026', category: 'Monitoring', readTime: '10 min read', tags: ['Prometheus', 'Grafana'] },
-      { id: 6, title: '🔒 DevSecOps: Shift-Left Security Approach', excerpt: 'How to integrate security scanners early in your CI/CD pipeline.', date: '10 August 2026', category: 'Security', readTime: '7 min read', tags: ['DevSecOps'] }
+      { id:1, title:'🚀 Complete CI/CD Pipeline with GitHub Actions', excerpt:'Learn how to build a production-grade CI/CD pipeline for Node.js applications.', date:'15 Aug 2026', category:'CI/CD', readTime:'8 min', tags:['GitHub Actions','Docker'] },
+      { id:2, title:'☁️ Kubernetes Networking: A Deep Dive', excerpt:'Understanding Services, Ingress Controllers, Network Policies in K8s.', date:'14 Aug 2026', category:'Kubernetes', readTime:'12 min', tags:['K8s','Networking'] },
+      { id:3, title:'🔐 Terraform Security Best Practices', excerpt:'Secure your Infrastructure as Code with Terraform state encryption.', date:'13 Aug 2026', category:'Terraform', readTime:'9 min', tags:['Terraform','Security'] },
+      { id:4, title:'🐳 Docker Multi-Stage Builds Explained', excerpt:'Reduce your Docker image size by 80% using multi-stage builds.', date:'12 Aug 2026', category:'Docker', readTime:'6 min', tags:['Docker'] },
+      { id:5, title:'📊 Prometheus & Grafana Monitoring Stack', excerpt:'Complete guide to setting up monitoring for your microservices.', date:'11 Aug 2026', category:'Monitoring', readTime:'10 min', tags:['Prometheus','Grafana'] },
+      { id:6, title:'🔒 DevSecOps: Shift-Left Security', excerpt:'Integrate security scanners early in your CI/CD pipeline.', date:'10 Aug 2026', category:'Security', readTime:'7 min', tags:['DevSecOps'] }
     ];
-
-    function renderPosts(posts) {
-      const main = document.getElementById('blogMain');
-      if (!main) return;
-      let html = '';
-      posts.forEach(post => {
-        html += `
-          <article class="blog-post">
-            <div class="post-meta">
-              <span class="category">${post.category}</span>
-              <span class="date"><i class="far fa-calendar-alt"></i> ${post.date}</span>
-              <span class="read-time"><i class="far fa-clock"></i> ${post.readTime}</span>
-            </div>
-            <h2><a href="#" onclick="event.preventDefault(); alert('📖 Reading: ${post.title}');">${post.title}</a></h2>
-            <p class="excerpt">${post.excerpt}</p>
-            <div class="post-footer">
-              <div class="tags">${post.tags.map(tag => `<span>#${tag}</span>`).join('')}</div>
-              <a href="#" class="read-more" onclick="event.preventDefault(); alert('📖 Reading: ${post.title}');">Read Full Article <i class="fas fa-arrow-right"></i></a>
-            </div>
-          </article>
-        `;
-      });
-      main.innerHTML = html;
-    }
+    const renderPosts = (posts) => {
+      document.getElementById('blogMain').innerHTML = posts.map(p => `
+        <article class="blog-post">
+          <div class="post-meta">
+            <span class="category">${p.category}</span>
+            <span class="date"><i class="far fa-calendar-alt"></i> ${p.date}</span>
+            <span class="read-time"><i class="far fa-clock"></i> ${p.readTime}</span>
+          </div>
+          <h2><a href="#" onclick="event.preventDefault(); alert('📖 ${p.title}');">${p.title}</a></h2>
+          <p class="excerpt">${p.excerpt}</p>
+          <div class="post-footer">
+            <div class="tags">${p.tags.map(t => `<span>#${t}</span>`).join('')}</div>
+            <a href="#" class="read-more" onclick="event.preventDefault(); alert('📖 ${p.title}');">Read <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+      `).join('');
+    };
     renderPosts(blogPosts);
 
-    function renderCategories() {
-      const categoryList = document.getElementById('categoryList');
-      if (!categoryList) return;
-      const categories = {};
-      blogPosts.forEach(post => { categories[post.category] = (categories[post.category] || 0) + 1; });
-      let html = '';
-      Object.keys(categories).forEach(cat => {
-        html += `<li><a onclick="filterByCategory('${cat}');">${cat}</a><span class="count">${categories[cat]}</span></li>`;
-      });
-      categoryList.innerHTML = html;
-    }
-    renderCategories();
+    const categories = {};
+    blogPosts.forEach(p => { categories[p.category] = (categories[p.category]||0)+1; });
+    document.getElementById('categoryList').innerHTML = Object.keys(categories).map(c => `
+      <li><a onclick="filterByCategory('${c}');">${c}</a><span class="count">${categories[c]}</span></li>
+    `).join('');
 
-    function renderPopular() {
-      const container = document.getElementById('popularPosts');
-      if (!container) return;
-      const popular = blogPosts.slice(0, 4);
-      let html = '';
-      popular.forEach((post, index) => {
-        html += `
-          <div class="popular-post">
-            <div class="num">${index + 1}</div>
-            <div class="info"><a href="#" onclick="event.preventDefault(); alert('📖 ${post.title}');">${post.title}</a><div class="small">${post.date}</div></div>
-          </div>
-        `;
-      });
-      container.innerHTML = html;
-    }
-    renderPopular();
+    document.getElementById('popularPosts').innerHTML = blogPosts.slice(0,4).map((p,i) => `
+      <div class="popular-post">
+        <div class="num">${i+1}</div>
+        <div class="info"><a href="#" onclick="event.preventDefault(); alert('📖 ${p.title}');">${p.title}</a><div class="small">${p.date}</div></div>
+      </div>
+    `).join('');
 
-    window.searchBlog = function() {
-      const query = document.getElementById('searchInput').value.toLowerCase();
-      if (!query) { renderPosts(blogPosts); return; }
-      const filtered = blogPosts.filter(post => 
-        post.title.toLowerCase().includes(query) || post.excerpt.toLowerCase().includes(query) || 
-        post.category.toLowerCase().includes(query) || post.tags.some(tag => tag.toLowerCase().includes(query))
-      );
-      if (filtered.length === 0) {
-        document.getElementById('blogMain').innerHTML = `
-          <div style="background:white;border-radius:1.8rem;padding:3rem;text-align:center;">
-            <i class="fas fa-search" style="font-size:3rem;color:#b3cee8;"></i>
-            <h3 style="margin:1rem 0;">No results found for "${query}"</h3>
-            <p style="color:#6b8ba3;">Try different keywords</p>
-          </div>
-        `;
-      } else { renderPosts(filtered); }
-    }
-
-    document.getElementById('searchInput').addEventListener('keypress', function(e) {
-      if (e.key === 'Enter') window.searchBlog();
-    });
-
-    window.filterByCategory = function(category) {
-      const filtered = blogPosts.filter(post => post.category === category);
-      renderPosts(filtered);
-      document.getElementById('searchInput').value = category;
-    }
-
-    console.log('🚀 CMS DevOps Academy · All features loaded!');
-    console.log('📚 Azure DevOps Questions: ' + azureQA.length + ' loaded');
-    console.log('📚 GitHub Actions Scenarios: ' + githubQA.length + ' loaded');
-    console.log('📚 Terraform Q&A: ' + qaData.length + ' loaded');
-    console.log('📝 Blog Posts: ' + blogPosts.length + ' loaded');
+    window.searchBlog = () => {
+      const q = document.getElementById('searchInput').value.toLowerCase();
+      if (!q) { renderPosts(blogPosts); return; }
+      const filtered = blogPosts.filter(p => p.title.toLowerCase().includes(q) || p.excerpt.toLowerCase().includes(q) || p.category.toLowerCase().includes(q) || p.tags.some(t => t.toLowerCase().includes(q)));
+      if (!filtered.length) {
+        document.getElementById('blogMain').innerHTML = `<div style="background:white;border-radius:2.2rem;padding:3rem;text-align:center;"><i class="fas fa-search" style="font-size:3rem;color:#b3cee8;"></i><h3 style="margin:1rem 0;">No results for "${q}"</h3></div>`;
+      } else renderPosts(filtered);
+    };
+    document.getElementById('searchInput').addEventListener('keypress', e => { if (e.key === 'Enter') searchBlog(); });
+    window.filterByCategory = (cat) => {
+      renderPosts(blogPosts.filter(p => p.category === cat));
+      document.getElementById('searchInput').value = cat;
+    };
   })();
 </script>
 
